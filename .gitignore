@@ -2,7 +2,7 @@
 .rc_secret
 
 # OSX
-*.DS_Store
+.DS_Store
 .Trash
 Applications
 Desktop
@@ -35,6 +35,9 @@ lony.iml
 Calibre-Bibliothek
 .lesshst
 .pgpass
+resources
+.config
+META-INF
 
 # Python
 .cookiecutter_replay
@@ -46,15 +49,25 @@ Calibre-Bibliothek
 # Bash
 .bash_history
 .sh_history
-#.profile
+.profile
 
 # Zsh
 .zcompdump
 .zcompdump.zwc
 .zhistory
-#.zprofile
-#.zshenv
-#.zprezto
-#.zpreztorc
-#.zlogin
-#.zlogout
+.zprofile
+.zshenv
+.zprezto
+.zpreztorc
+.zlogin
+.zlogout
+
+# SSH
+.ssh/known_hosts
+.ssh/*.pem
+.ssh/*.pub
+.ssh/id_rsa
+
+# VIM
+.viminfo
+.vim
