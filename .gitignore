@@ -55,6 +55,7 @@ META-INF
 .zcompdump
 .zcompdump.zwc
 .zhistory
+.zsh_history
 .zprofile
 .zshenv
 .zprezto
