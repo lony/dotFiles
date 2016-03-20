@@ -1,3 +1,7 @@
+# Avoid overwrite
+.ssh/config
+.rc_secret
+
 # OSX
 *.DS_Store
 .Trash
