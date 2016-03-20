@@ -1,12 +1,1 @@
-################
-# GLOBAL       #
-################
-
-if [[ -s "${HOME}/.rc" ]]; then
-  source "${HOME}/.rc"
-fi
-
-################
-# ZSH          #
-################
-
+/Users/lony/.zprezto/runcoms/zshrc
