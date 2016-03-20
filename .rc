@@ -28,11 +28,26 @@ alias ls='ls -Fh'
 alias l='ls -a'
 alias ll='ls -la'
 
+# Delete
+alias rm='rm -i'
+
+# Grep
+alias grep='grep --color'
+
 # Python
 alias p='python'
 
 # Git
-alias gitp='git pull && git fetch --prune'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gco='git checkout'
+alias gm='git merge'
+alias gs='git status -s'
+alias gp='git pull && git fetch --prune'
+# http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
+# http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
+alias gclean='git reset --hard && git checkout -- . && git clean -ndxf'
 
 
 ####------------
