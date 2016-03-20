@@ -1,0 +1,57 @@
+# OSX
+*.DS_Store
+.Trash
+Applications
+Desktop
+Documents
+Downloads
+Dropbox
+Library
+Movies
+Music
+Pictures
+Public
+
+# Tools
+.IntelliJIdea15
+.idea
+lony.iml
+.rstudio-desktop
+.Rhistory
+.CFUserTextEncoding
+.autoenv_authorized
+.autoenv_authorized.tmp
+.byobu
+.cups
+.docker
+.dropbox
+.npm
+.oracle_jre_usage
+.pgadmin_histoqueries
+.subversion
+Calibre-Bibliothek
+.lesshst
+.pgpass
+
+# Python
+.cookiecutter_replay
+.cookiecutters
+.ipython
+.jupyter
+.virtualenvs
+
+# Bash
+.bash_history
+.sh_history
+#.profile
+
+# Zsh
+.zcompdump
+.zcompdump.zwc
+.zhistory
+#.zprofile
+#.zshenv
+#.zprezto
+#.zpreztorc
+#.zlogin
+#.zlogout
