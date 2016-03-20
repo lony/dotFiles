@@ -1,5 +1,4 @@
 # Avoid overwrite
-.ssh/config
 .rc_secret
 
 # OSX
