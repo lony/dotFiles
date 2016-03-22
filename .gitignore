@@ -58,8 +58,6 @@ META-INF
 .zsh_history
 .zprofile
 .zshenv
-.zprezto
-.zpreztorc
 .zlogin
 .zlogout
 

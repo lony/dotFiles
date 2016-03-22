@@ -40,20 +40,28 @@ alias p='python'
 # Git
 alias ga='git add'
 alias gb='git branch'
-alias gc='git commit'
-alias gco='git checkout'
+alias gc='git checkout'
+alias gco='git commit'
 alias gm='git merge'
-alias gs='git status -s'
+alias gs='git status'
+alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
 # http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
 # http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
 alias gclean='git reset --hard && git checkout -- . && git clean -ndxf'
 
+################
+# EDITOR       #
+################
+
+# http://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 ####------------
 # SECRETS      -
 ##############--
 
-if [[ -s ".rc_secret" ]]; then
-  source ".rc_secret"
+if [[ -s "${HOME}/.rc_secret" ]]; then
+  source "${HOME}/.rc_secret"
 fi
