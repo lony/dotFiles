@@ -46,9 +46,11 @@ alias gm='git merge'
 alias gs='git status'
 alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
+alias gpp='git push'
 # http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
 # http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
-alias gclean='git reset --hard && git checkout -- . && git clean -ndxf'
+# https://git-scm.com/docs/git-clean
+alias gclean='git reset --hard HEAD~1 && git checkout -- . && git clean -df'
 
 ################
 # EDITOR       #
