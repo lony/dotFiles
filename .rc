@@ -47,13 +47,16 @@ alias gs='git status'
 alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
 alias gpp='git push'
+alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias gll='gl -p'
 # http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
 # http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
 # https://git-scm.com/docs/git-clean
-alias gclean='git reset --hard HEAD~1 && git checkout -- . && git clean -df'
+# http://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head
+# http://stackoverflow.com/questions/1593051/how-to-programmatically-determine-the-current-checked-out-git-branch
+alias gclean='git fetch origin && branch_name=$(git symbolic-ref -q HEAD) && branch_name=${branch_name##refs/heads/} && branch_name=${branch_name:-HEAD} && git reset --hard origin/$branch_name && git checkout -- . && git clean -df'
 
 ################
 # EDITOR       #
