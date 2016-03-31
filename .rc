@@ -47,6 +47,9 @@ alias gs='git status'
 alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
 alias gpp='git push'
+# https://coderwall.com/p/euwpig/a-better-git-log
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gll='gl -p'
 # http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
 # http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
 # https://git-scm.com/docs/git-clean
