@@ -27,6 +27,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 alias ls='ls -Fh'
 alias l='ls -a'
 alias ll='ls -la'
+alias lsize='du -shc *'
 
 # Delete
 alias rm='rm -i'
@@ -46,7 +47,7 @@ alias gm='git merge'
 alias gs='git status'
 alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
-alias gpp='git push'
+alias gpp='git push && git push origin --tags'
 alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
