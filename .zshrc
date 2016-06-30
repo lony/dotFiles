@@ -10,6 +10,13 @@ fi
 # ZSH          #
 ################
 
+# Show ls after every cd
+# http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-every-cd
+function chpwd() {
+    emulate -L zsh
+    l
+}
+
 # --------------
 # Prezto       #
 # --------------

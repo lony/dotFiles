@@ -59,6 +59,9 @@ alias gll='gl -p'
 # http://stackoverflow.com/questions/1593051/how-to-programmatically-determine-the-current-checked-out-git-branch
 alias gclean='git fetch origin && branch_name=$(git symbolic-ref -q HEAD) && branch_name=${branch_name##refs/heads/} && branch_name=${branch_name:-HEAD} && git reset --hard origin/$branch_name && git checkout -- . && git clean -df'
 
+# IntelliJ
+alias idea="/usr/local/bin/idea"
+
 ################
 # EDITOR       #
 ################
