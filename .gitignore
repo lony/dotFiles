@@ -48,6 +48,7 @@ META-INF
 
 # Bash
 .bash_history
+.bash_sessions
 .sh_history
 .profile
 
@@ -70,3 +71,9 @@ META-INF
 # VIM
 .viminfo
 .vim
+
+# AWS
+.aws/credentials
+
+# GIT
+.gitconfig
