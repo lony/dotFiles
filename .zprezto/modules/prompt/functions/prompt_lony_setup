@@ -79,8 +79,7 @@ function prompt_steeef_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
   # Define prompts.
-  PROMPT="
-[ ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ] ${_prompt_steeef_colors[5]}%~%f 
+  PROMPT="[ ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ] ${_prompt_steeef_colors[5]}%~%f
 "'$python_info[virtualenv]'"$ "
   RPROMPT='${vcs_info_msg_0_}'
 }
