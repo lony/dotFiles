@@ -17,6 +17,10 @@ function chpwd() {
     ll
 }
 
+# aws cli auto completion
+# http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
+source /usr/local/bin/aws_zsh_completer.sh
+
 # --------------
 # Prezto       #
 # --------------
