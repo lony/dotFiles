@@ -38,6 +38,8 @@ Calibre-Bibliothek
 resources
 .config
 META-INF
+.nvm
+.node*
 
 # Python
 .cookiecutter_replay
