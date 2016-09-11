@@ -16,6 +16,8 @@ Pictures
 Public
 
 # Tools
+.ansible_galaxy
+.gmvault
 .IntelliJIdea15
 .idea
 lony.iml
