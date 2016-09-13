@@ -65,6 +65,8 @@ alias idea="/usr/local/bin/idea"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+alias vi="$VISUAL"
+
 ####------------
 # SECRETS      -
 ##############--

@@ -14,10 +14,16 @@ Movies
 Music
 Pictures
 Public
+Google Drive
 
 # Tools
+.cache
+.httpie
+.grip
+.vagrant.d
 .ansible_galaxy
 .gmvault
+gmvault-db
 .IntelliJIdea15
 .idea
 lony.iml
@@ -42,6 +48,8 @@ resources
 META-INF
 .nvm
 .node*
+.gcdt
+.ramudaignore
 
 # Python
 .cookiecutter_replay
@@ -59,6 +67,7 @@ META-INF
 # Zsh
 .zcompdump
 .zcompdump.zwc
+.zcompcache
 .zhistory
 .zsh_history
 .zprofile
