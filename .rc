@@ -41,7 +41,7 @@ alias gm='git merge'
 alias gs='git status'
 alias gss='git status -s'
 alias gp='git pull && git fetch --prune'
-alias gpp='git push && git push origin --tags'
+alias gpu='git push && git push origin --tags'
 alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
