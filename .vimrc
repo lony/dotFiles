@@ -6,14 +6,12 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'junegunn/vim-easy-align'
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Plug 'mbbill/undotree'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'valloric/youcompleteme'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'valloric/youcompleteme'
 
 " Go
 "Plug 'fatih/vim-go', { 'tag': '*' }
