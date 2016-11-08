@@ -36,6 +36,7 @@ function prompt_steeef_setup {
   add-zsh-hook precmd prompt_steeef_precmd
 
   # Use extended color pallete if available.
+  # https://jonasjacek.github.io/colors/
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     _prompt_steeef_colors=(
       "%F{81}"  # Turquoise
@@ -43,6 +44,7 @@ function prompt_steeef_setup {
       "%F{135}" # Purple
       "%F{161}" # Hotpink
       "%F{118}" # Limegreen
+      "%F{239}" # Grey
     )
   else
     _prompt_steeef_colors=(
@@ -51,6 +53,7 @@ function prompt_steeef_setup {
       "%F{magenta}"
       "%F{red}"
       "%F{green}"
+      "%F{grey}"
     )
   fi
 
@@ -79,7 +82,9 @@ function prompt_steeef_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
   # Define prompts.
-  PROMPT="[ ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ] ${_prompt_steeef_colors[5]}%~%f
+  # Date:   http://stackoverflow.com/questions/13125825/zsh-update-prompt-with-current-time-when-a-command-is-started
+  #         http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+  PROMPT="[ ${_prompt_steeef_colors[6]}%D{%y-%m-%d %H:%M} | ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ] ${_prompt_steeef_colors[5]}%~%f
 "'$python_info[virtualenv]'"$ "
   RPROMPT='${vcs_info_msg_0_}'
 }
