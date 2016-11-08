@@ -31,6 +31,12 @@ call plug#end()
 set nocompatible                " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 syntax on						" Highlight file syntax
 
+" Ruby - Syntax Highlighting
+" https://blog.arangamani.net/blog/2013/11/27/syntax-highlighting-in-vim-for-vagrantfile-gemfile-and-berksfile/
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
+autocmd BufNewFile,BufRead Berksfile set filetype=ruby
+
 " http://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
 set clipboard=unnamed			" Enable clipboard copy and paste
 
