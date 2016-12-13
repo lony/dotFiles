@@ -51,8 +51,14 @@ alias gll='gl -p'
 # https://git-scm.com/docs/git-clean
 # http://stackoverflow.com/questions/1628088/reset-local-repository-branch-to-be-just-like-remote-repository-head
 # http://stackoverflow.com/questions/1593051/how-to-programmatically-determine-the-current-checked-out-git-branch
-alias gclean_f='git fetch origin && branch_name=$(git symbolic-ref -q HEAD) && branch_name=${branch_name##refs/heads/} && branch_name=${branch_name:-HEAD} && git reset --hard origin/$branch_name && git checkout -- . && git clean -df'
-alias gclean_b='git for-each-ref --format '"'"'%(refname:short)'"'"' refs/heads | grep -v '"'"'\*\|master\|develop'"'"' | xargs git branch -D'
+alias git_clean_fetch='git fetch origin && branch_name=$(git symbolic-ref -q HEAD) && branch_name=${branch_name##refs/heads/} && branch_name=${branch_name:-HEAD} && git reset --hard origin/$branch_name && git checkout -- . && git clean -df'
+alias git_clean_branch='git for-each-ref --format '"'"'%(refname:short)'"'"' refs/heads | grep -v '"'"'\*\|master\|develop'"'"' | xargs git branch -D'
+
+git_patch_1() { git show "$1" | git apply }
+git_patch_2() { git cherry-pick "$1" && git reset --soft HEAD~1 }
+
+# Vagrant
+alias vgu='vagrant destroy -f && vagrant up'
 
 # IntelliJ
 alias idea="/usr/local/bin/idea"
