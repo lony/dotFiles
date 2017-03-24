@@ -31,6 +31,4 @@ Shell Config
 
 ## Debug
 
-* Loading times [1](http://kynan.github.io/blog/2015/07/31/how-to-speed-up-your-vim-startup-time), [2](https://puroh.it/speeding-up-vim/)
-
-http://www.gbonfant.com/blog/speed-up-performance-of-iterm-and-vim
+* Loading times [1](http://kynan.github.io/blog/2015/07/31/how-to-speed-up-your-vim-startup-time), [2](https://puroh.it/speeding-up-vim/), [3](http://www.gbonfant.com/blog/speed-up-performance-of-iterm-and-vim)
