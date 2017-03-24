@@ -1,5 +1,5 @@
 # Avoid overwrite
-.rc_secret
+#.rc_secret
 
 # OSX
 .DS_Store
@@ -28,6 +28,7 @@ gmvault-db
 .IntelliJIdea15
 .idea
 lony.iml
+NetBeansProjects
 .rstudio-desktop
 .Rhistory
 .CFUserTextEncoding
@@ -55,6 +56,15 @@ META-INF
 .vscode
 .keepassx
 VirtualBox VMs
+Fiddler2
+.freemind
+.jameica.properties
+.mono
+.elinks
+.wget-hsts
+.swt
+.serverless
+.babel.json
 
 # Java
 .m2
@@ -81,6 +91,8 @@ VirtualBox VMs
 .profile
 
 # Zsh
+
+## Prezto
 .zcompdump
 .zcompdump.zwc
 .zcompcache
@@ -90,6 +102,12 @@ VirtualBox VMs
 .zshenv
 .zlogin
 .zlogout
+.zpreztorc
+
+## Oh My Zsh
+.oh-my-zsh
+.zsh-update
+.zcompdump-*
 
 # SSH
 .ssh/known_hosts
