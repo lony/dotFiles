@@ -1,5 +1,13 @@
 # Avoid overwrite
 #.rc_secret
+#.shell_config/sh/all_secret.sh
+.shell_config/sh/zsh_oh-my/plugins
+
+
+# Generated config
+#.bash_profile
+#.vimrc
+#.zshrc
 
 # OSX
 .DS_Store
@@ -114,13 +122,18 @@ Fiddler2
 .ssh/*.pem
 .ssh/*.pub
 .ssh/id_rsa
+.ssh/config
 
 # VIM
 .viminfo
 .vim
 
 # AWS
-.aws/credentials
+.aws
 
 # GIT
 .gitconfig
+.gitignore_global
+
+# hg
+.hgignore_global

@@ -1,6 +1,13 @@
+#!/usr/bin/env sh -ex
+
+
 ################
-# EXPORTS      #
+# ALL          #
 ################
+
+# --------------
+# EXPORTS     #
+# --------------
 
 # Prompt
 export SUDO_PS1='\[\033[01m\][ \[\033[01;31m\]\u@\h \[\033[00m\]\[\033[01m\]] \[\033[01;32m\]\w\[\033[00m\]\n\[\033[01;31m\]$\[\033[00m\]> '
@@ -11,11 +18,11 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # PIP
 export PIP_REQUIRE_VIRTUALENV=true
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 
-################
-# ALIASES      #
-################
+# --------------
+# ALIASES     #
+# --------------
 
 # List
 alias ls='ls -Fh'
@@ -54,29 +61,18 @@ alias gll='gl -p'
 alias git_clean_fetch='git fetch origin && branch_name=$(git symbolic-ref -q HEAD) && branch_name=${branch_name##refs/heads/} && branch_name=${branch_name:-HEAD} && git reset --hard origin/$branch_name && git checkout -- . && git clean -df'
 alias git_clean_branch='git for-each-ref --format '"'"'%(refname:short)'"'"' refs/heads | grep -v '"'"'\*\|master\|develop'"'"' | xargs git branch -D'
 
-git_patch_1() { git show "$1" | git apply }
-git_patch_2() { git cherry-pick "$1" && git reset --soft HEAD~1 }
-
 # Vagrant
 alias vgu='vagrant destroy -f && vagrant up'
 
 # IntelliJ
 alias idea="/usr/local/bin/idea"
 
-################
+# --------------
 # EDITOR       #
-################
+# --------------
 
 # http://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
 alias vi="$VISUAL"
-
-####------------
-# SECRETS      -
-##############--
-
-if [[ -s "${HOME}/.rc_secret" ]]; then
-  source "${HOME}/.rc_secret"
-fi
