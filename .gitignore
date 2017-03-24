@@ -1,13 +1,13 @@
-# Avoid overwrite
-#.rc_secret
-#.shell_config/sh/all_secret.sh
+# Config
+
+## Avoid overwrite
+.shell_config/sh/all_secret.sh
 .shell_config/sh/zsh_oh-my/plugins
 
-
-# Generated config
-#.bash_profile
-#.vimrc
-#.zshrc
+## Generated
+.bash_profile
+.vimrc
+.zshrc
 
 # OSX
 .DS_Store
