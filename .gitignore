@@ -1,8 +1,12 @@
 # Config
 
 ## Avoid overwrite
-.shell_config/sh/all_secret.sh
 .shell_config/sh/zsh_oh-my/plugins
+# HINT: Not working for already committed files like
+#  .shell_config/sh/all_secret.sh
+#  Therefore use the following command from
+#  http://stackoverflow.com/questions/9794931/keep-file-in-a-git-repo-but-dont-track-changes
+#  git update-index --assume-unchanged .shell_config/sh/all_secret.sh
 
 ## Generated
 .bash_profile
