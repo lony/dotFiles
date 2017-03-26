@@ -125,7 +125,10 @@ Fiddler2
 .zshrc.zwc
 
 # Fish
-!.config/fish
+!.config/fish/
+!.config/fish/*
+!.config/fish/*/
+!.config/fish/*/*
 
 # SSH
 .ssh/known_hosts

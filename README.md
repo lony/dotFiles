@@ -30,8 +30,3 @@ Collection of my `.`Files folowing [Dominik's](https://github.com/dhabersack/dot
         * open prompt in editor
         * delete current entry (CTRL+C)
         * switch tabs and windows
-
-* Test
-
-    - [ ] Test zim
-    - [ ] Test fish
