@@ -18,7 +18,7 @@ list = {
         "framework": "default",
     }, {
         "shell": "zsh",
-        "framework": "oh-my-zsh",
+        "framework": "zim",
     }],
 	"vim": {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.vimrc'),
@@ -54,6 +54,12 @@ list = {
             os.path.join(current_path, '..', 'sh', "all.sh"),
             os.path.join(current_path, '..', 'sh', "all_secret.sh"),
            	os.path.join(current_path, '..', 'sh', "zsh_prezto.zsh"),
+            os.path.join(current_path, '..', 'sh', "zsh.zsh"),
+        ],
+        "zim": [
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            os.path.join(current_path, '..', 'sh', "zsh_zim.zsh"),
             os.path.join(current_path, '..', 'sh', "zsh.zsh"),
         ],
     },
