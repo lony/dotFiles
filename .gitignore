@@ -121,6 +121,9 @@ Fiddler2
 .zsh-update
 .zcompdump-*
 
+# Zim
+.zshrc.zwc
+
 # SSH
 .ssh/known_hosts
 .ssh/*.pem
