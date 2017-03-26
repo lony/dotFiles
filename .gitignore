@@ -7,6 +7,8 @@
 #  Therefore use the following command from
 #  http://stackoverflow.com/questions/9794931/keep-file-in-a-git-repo-but-dont-track-changes
 #  git update-index --assume-unchanged .shell_config/sh/all_secret.sh
+# and UNDO
+#  git update-index --no-assume-unchanged .shell_config/sh/all_secret.sh
 
 ## Generated
 .bash_profile
