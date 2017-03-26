@@ -14,3 +14,6 @@
 # NVM
 # export NVM_DIR="$HOME/.nvm"
 # . "/usr/local/opt/nvm/nvm.sh"
+
+# Red bg (PROD)
+# PRODUCTION_HOST_PATTERN=""
