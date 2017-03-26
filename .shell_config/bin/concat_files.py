@@ -8,6 +8,7 @@ import os, sys
 #
 # Config
 
+current_path = os.path.dirname(__file__)
 list = {
     "use": [{
         "shell": "vim",
@@ -23,32 +24,37 @@ list = {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.vimrc'),
         "comment_char": '"',
 		"default": [
-            os.path.join('..', "vim"),
+            os.path.join(current_path, '..', "vim"),
         ],
 	},
     "bash": {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.bash_profile'),
         "comment_char": "#",
 		"default": [
-            os.path.join('..', 'sh', "all.sh"),
-            os.path.join('..', 'sh', "all_secret.sh"),
-            os.path.join('..', 'sh', "bash.bash"),
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            os.path.join(current_path, '..', 'sh', "bash.bash"),
         ],
     },
     "zsh": {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.zshrc'),
         "comment_char": "#",
+        "default": [
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            os.path.join(current_path, '..', 'sh', "zsh.zsh"),
+        ],
         "oh-my-zsh": [
-            os.path.join('..', 'sh', "all.sh"),
-            os.path.join('..', 'sh', "all_secret.sh"),
-            os.path.join('..', 'sh', "zsh_oh-my.zsh"),
-            os.path.join('..', 'sh', "zsh.zsh"),
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            os.path.join(current_path, '..', 'sh', "zsh_oh-my.zsh"),
+            os.path.join(current_path, '..', 'sh', "zsh.zsh"),
         ],
         "prezto": [
-            os.path.join('..', 'sh', "all.sh"),
-            os.path.join('..', 'sh', "all_secret.sh"),
-           	os.path.join('..', 'sh', "zsh_prezto.zsh"),
-            os.path.join('..', 'sh', "zsh.zsh"),
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+           	os.path.join(current_path, '..', 'sh', "zsh_prezto.zsh"),
+            os.path.join(current_path, '..', 'sh', "zsh.zsh"),
         ],
     },
 }

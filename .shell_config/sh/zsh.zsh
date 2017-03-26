@@ -56,7 +56,10 @@ alias ssh="colorssh"
 # --------------------------
 
 # http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-source "/usr/local/bin/aws_zsh_completer.sh"
+AWS_COMPLETE="/usr/local/bin/aws_zsh_completer.sh"
+if [[ -s "${AWS_COMPLETE}" ]]; then
+  source "${AWS_COMPLETE}"
+fi
 
 
 # -----------------------------

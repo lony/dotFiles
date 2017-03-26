@@ -9,9 +9,9 @@
 function prompt_steeef_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c${_prompt_steeef_colors[4]}●%f)"
+    branch_format="| ${_prompt_steeef_colors[1]}%b%f%u%c${_prompt_steeef_colors[4]}●%f "
   else
-    branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c)"
+    branch_format="| ${_prompt_steeef_colors[1]}%b%f%u%c "
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -45,6 +45,8 @@ function prompt_steeef_setup {
       "%F{161}" # Hotpink
       "%F{118}" # Limegreen
       "%F{239}" # Grey
+      "%F{15}"  # White
+      "%F{3}"  # Yellow
     )
   else
     _prompt_steeef_colors=(
@@ -53,7 +55,8 @@ function prompt_steeef_setup {
       "%F{magenta}"
       "%F{red}"
       "%F{green}"
-      "%F{grey}"
+      "%F{white}"
+      "%F{yellow}"
     )
   fi
 
@@ -79,14 +82,14 @@ function prompt_steeef_setup {
   zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
   # Set python-info parameters.
-  zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
+  zstyle ':prezto:module:python:info:virtualenv' format '| '"${_prompt_steeef_colors[8]}"'%v '
 
   # Define prompts.
   # Date:   http://stackoverflow.com/questions/13125825/zsh-update-prompt-with-current-time-when-a-command-is-started
   #         http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
-  PROMPT="[ ${_prompt_steeef_colors[6]}%D{%y-%m-%d %H:%M} | ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ] ${_prompt_steeef_colors[5]}%~%f
-"'$python_info[virtualenv]'"$ "
-  RPROMPT='${vcs_info_msg_0_}'
+  PROMPT="
+[ %? ${_prompt_steeef_colors[6]}| %D{%y-%m-%d %H:%M} | ${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f${_prompt_steeef_colors[6]} "'${vcs_info_msg_0_}$python_info[virtualenv]'"${_prompt_steeef_colors[7]}] ${_prompt_steeef_colors[5]}%~${_prompt_steeef_colors[7]}
+❯ "
 }
 
 prompt_steeef_setup "$@"
