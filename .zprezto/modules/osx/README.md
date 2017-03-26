@@ -40,5 +40,5 @@ Authors
 [1]: http://www.apple.com/macosx/
 [2]: http://kapeli.com/dash
 [3]: http://www.iterm2.com/
-[4]: https://github.com/sorin-ionescu/prezto/issues
+[4]: https://github.com/zsh-users/prezto/issues
 [5]: https://github.com/herrbischoff/awesome-osx-command-line

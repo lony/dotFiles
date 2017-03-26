@@ -62,3 +62,6 @@ if (( $+commands[npm] )); then
 
   unset cache_file
 fi
+
+# Source module files.
+source "${0:h}/alias.zsh"

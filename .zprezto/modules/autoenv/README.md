@@ -13,4 +13,4 @@ The iauthors of this module should be contacted via the [issue tracker][2].
     - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
  [1]: https://github.com/horosgrisa/autoenv
- [2]: https://github.com/sorin-ionescu/prezto/issues
+ [2]: https://github.com/zsh-users/prezto/issues

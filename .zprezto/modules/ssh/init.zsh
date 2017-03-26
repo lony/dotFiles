@@ -14,13 +14,32 @@ fi
 _ssh_dir="$HOME/.ssh"
 
 # Set the path to the environment file if not set by another module.
-_ssh_agent_env="${_ssh_agent_env:-${TMPDIR:-/tmp}/ssh-agent.env}"
+_ssh_agent_env="${_ssh_agent_env:-${TMPDIR:-/tmp}/ssh-agent-"$LOGNAME".env}"
 
-# Start ssh-agent if not started.
+# Due to the predictability of the env file, check the env file exists and is
+# owned by current EUID before trusting it.
+if [ -f "$_ssh_agent_env" -a ! -O "$_ssh_agent_env" ]; then
+  cat 1>&2 <<-EOF
+	ERROR: Cannot trust the SSH agent environment variables persistence
+	file because it is owned by another user.
+	The ssh-agent will not be started.
+	$_ssh_agent_env
+	EOF
+  unset _ssh_{dir,agent_env}
+  return 1
+fi
+
+# If a socket exists at SSH_AUTH_SOCK, assume ssh-agent is already running and
+# skip starting it.
 if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
-  # Export environment variables.
+  # Try to grab previously exported environment variables.
   source "$_ssh_agent_env" 2> /dev/null
-  eval "$(ssh-agent -s)"
+
+  # Do not start ssh-agent if the PID from the last start of ssh-agent exists and
+  # corresponds to a running ssh-agent under the current user.
+  if ! ps -U "$LOGNAME" -o pid,comm | grep -E -q -e "${SSH_AGENT_PID:--1}\ +.*ssh-agent$"; then
+    eval "$(ssh-agent | sed '/^echo /d' | tee "$_ssh_agent_env")"
+  fi
 fi
 
 # Load identities.
@@ -39,4 +58,4 @@ if ssh-add -l 2>&1 | grep -q 'The agent has no identities'; then
 fi
 
 # Clean up.
-unset _ssh_{dir,identities} _ssh_agent_{env,sock}
+unset _ssh_{dir,identities,agent_env}

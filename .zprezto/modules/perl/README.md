@@ -105,4 +105,4 @@ Authors
 [1]: http://www.perl.org
 [2]: http://perlbrew.pl
 [3]: https://github.com/tokuhirom/plenv
-[4]: https://github.com/sorin-ionescu/prezto/issues
+[4]: https://github.com/zsh-users/prezto/issues

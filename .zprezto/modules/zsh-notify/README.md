@@ -18,4 +18,4 @@ Authors
 
 [1]: https://github.com/marzocchi/zsh-notify
 [2]: https://github.com/alloy/terminal-notifier
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/zsh-users/prezto/issues
