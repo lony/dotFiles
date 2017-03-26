@@ -18,7 +18,7 @@ list = {
         "framework": "default",
     }, {
         "shell": "zsh",
-        "framework": "zim",
+        "framework": "prezto",
     }],
 	"vim": {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.vimrc'),
