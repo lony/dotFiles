@@ -14,6 +14,7 @@ Shell Config
 
 * [fish](/etc/shells)
 
+    * Configuration `fish_config`
     * Frameworks
 
         1. [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)

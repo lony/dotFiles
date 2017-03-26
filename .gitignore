@@ -121,8 +121,11 @@ Fiddler2
 .zsh-update
 .zcompdump-*
 
-# Zim
+## Zim
 .zshrc.zwc
+
+# Fish
+!.config/fish
 
 # SSH
 .ssh/known_hosts

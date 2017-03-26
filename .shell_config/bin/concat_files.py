@@ -19,6 +19,9 @@ list = {
     }, {
         "shell": "zsh",
         "framework": "oh-my-zsh",
+    }, {
+        "shell": "fish",
+        "framework": "default",
     }],
 	"vim": {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.vimrc'),
@@ -61,6 +64,15 @@ list = {
             os.path.join(current_path, '..', 'sh', "all_secret.sh"),
             os.path.join(current_path, '..', 'sh', "zsh_zim.zsh"),
             os.path.join(current_path, '..', 'sh', "zsh.zsh"),
+        ],
+    },
+    "fish": {
+        "outfile": os.path.abspath(os.path.expanduser('~') + '/.config/fish/config.fish'),
+        "comment_char": "#",
+		"default": [
+            os.path.join(current_path, '..', 'sh', "all.sh"),
+            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            os.path.join(current_path, '..', 'sh', "fish.fish"),
         ],
     },
 }
