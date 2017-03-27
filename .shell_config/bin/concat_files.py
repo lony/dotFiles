@@ -70,8 +70,9 @@ list = {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.config/fish/config.fish'),
         "comment_char": "#",
 		"default": [
-            os.path.join(current_path, '..', 'sh', "all.sh"),
-            os.path.join(current_path, '..', 'sh', "all_secret.sh"),
+            # The following files need to be converted
+            #os.path.join(current_path, '..', 'sh', "all.sh"),
+            #os.path.join(current_path, '..', 'sh', "all_secret.sh"),
             os.path.join(current_path, '..', 'sh', "fish.fish"),
         ],
     },
