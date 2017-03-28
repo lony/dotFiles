@@ -68,7 +68,6 @@ ZSH_CUSTOM="${HOME}/.shell_config/sh/zsh_oh-my"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	alias-tips
-	vi-mode
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 )
