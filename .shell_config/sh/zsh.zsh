@@ -4,6 +4,16 @@
 # ZSH          #
 ################
 
+# --------------------------
+# Z folder completion      #
+# --------------------------
+
+# https://github.com/rupa/z
+Z_PLUGIN="/usr/local/etc/profile.d/z.sh"
+if [[ -s "${Z_PLUGIN}" ]]; then
+  source "${Z_PLUGIN}"
+fi
+
 # ----------------------
 # SSH background color #
 # ----------------------
@@ -60,7 +70,6 @@ AWS_COMPLETE="/usr/local/bin/aws_zsh_completer.sh"
 if [[ -s "${AWS_COMPLETE}" ]]; then
   source "${AWS_COMPLETE}"
 fi
-
 
 # -----------------------------
 # Show ls after every cd      #

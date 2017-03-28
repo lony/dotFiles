@@ -98,6 +98,9 @@ Fiddler2
 .berkshelf
 .chef
 
+# Shell
+.z
+
 # Bash
 .bash_history
 .bash_sessions
