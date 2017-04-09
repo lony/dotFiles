@@ -14,8 +14,11 @@
 .bash_profile
 .vimrc
 .zshrc
+.tmux.conf
 
 # OSX
+.iterm2
+.iterm2_shell_integration.zsh
 .DS_Store
 .Trash
 .local
@@ -32,6 +35,9 @@ Public
 Google Drive
 
 # Tools
+.bookmarksmanager
+.putty
+.newsbeuter
 .cache
 .httpie
 .grip
@@ -79,6 +85,9 @@ Fiddler2
 .swt
 .serverless
 .babel.json
+
+# Go
+go
 
 # Java
 .m2
@@ -142,9 +151,13 @@ Fiddler2
 .ssh/id_rsa
 .ssh/config
 
-# VIM
+# vim
 .viminfo
 .vim
+
+# tmux
+tmux-client-*
+tmux-server-*
 
 # AWS
 .aws

@@ -5,6 +5,14 @@
 ################
 
 # --------------------------
+# bindkey                  #
+# --------------------------
+
+# http://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+
+# --------------------------
 # Z folder completion      #
 # --------------------------
 
@@ -12,6 +20,16 @@
 Z_PLUGIN="/usr/local/etc/profile.d/z.sh"
 if [[ -s "${Z_PLUGIN}" ]]; then
   source "${Z_PLUGIN}"
+fi
+
+# --------------------------
+# iTerm2 integration       #
+# --------------------------
+
+# https://www.iterm2.com/documentation-shell-integration.html
+ITERM2_PLUGIN="${HOME}/.iterm2_shell_integration.zsh"
+if [[ -s "${ITERM2_PLUGIN}" ]]; then
+  source "${ITERM2_PLUGIN}"
 fi
 
 # ----------------------

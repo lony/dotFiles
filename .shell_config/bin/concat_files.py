@@ -13,13 +13,20 @@ list = {
     "use": [{
         "shell": "vim",
         "framework": "default",
-    }, {
+    },
+    {
+        "shell": "tmux",
+        "framework": "default",
+    },
+    {
         "shell": "bash",
         "framework": "default",
-    }, {
+    },
+    {
         "shell": "zsh",
         "framework": "oh-my-zsh",
-    }, {
+    },
+    {
         "shell": "fish",
         "framework": "default",
     }],
@@ -27,7 +34,14 @@ list = {
         "outfile": os.path.abspath(os.path.expanduser('~') + '/.vimrc'),
         "comment_char": '"',
 		"default": [
-            os.path.join(current_path, '..', "vim"),
+            os.path.join(current_path, '..', "vimrc"),
+        ],
+	},
+	"tmux": {
+        "outfile": os.path.abspath(os.path.expanduser('~') + '/.tmux.conf'),
+        "comment_char": '#',
+		"default": [
+            os.path.join(current_path, '..', "tmux.conf"),
         ],
 	},
     "bash": {
