@@ -47,7 +47,9 @@ alias gco='git commit'
 alias gm='git merge'
 alias gs='git status'
 alias gss='git status -s'
-alias gp='git pull && git fetch --prune'
+# http://stackoverflow.com/questions/19298600/tag-already-exists-in-the-remote-error-after-recreating-the-git-tag
+# http://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull
+alias gp='git pull && git fetch --prune --tags'
 alias gpu='git push && git push origin --tags'
 alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log

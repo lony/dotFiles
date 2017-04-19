@@ -45,6 +45,8 @@ Google Drive
 .ansible_galaxy
 .gmvault
 gmvault-db
+# https://askubuntu.com/questions/379943/what-is-the-rnd-binary-in-my-folder
+.rnd
 .IntelliJIdea15
 .idea
 lony.iml
@@ -68,8 +70,6 @@ Calibre-Bibliothek
 resources
 .config
 META-INF
-.nvm
-.node*
 .gcdt
 .ramudaignore
 .ApacheDirectoryStudio
@@ -85,6 +85,13 @@ Fiddler2
 .swt
 .serverless
 .babel.json
+
+# JavaScript / Node
+.nvm
+.node*
+node_modules/
+yarn.lock
+.yarnrc
 
 # Go
 go

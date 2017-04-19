@@ -40,3 +40,5 @@ This is heavily inspired by the work of the following people:
         * Set default shell (use config script)
     
     - [ ] Add Ubuntu Linux support
+
+    - [ ] bindkey (jump words) not working in tmux
