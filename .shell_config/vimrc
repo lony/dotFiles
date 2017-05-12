@@ -87,6 +87,9 @@ else
 	set ttymouse=xterm2
 end
 
+" http://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+set pastetoggle=<F3>
+
 "#### Plugins Configuration
 
 " airline
