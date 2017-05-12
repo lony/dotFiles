@@ -8,9 +8,16 @@
 # bindkey                  #
 # --------------------------
 
+# Back/Forward word
+#
+# iTerm2
 # http://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
 bindkey '[C' forward-word
 bindkey '[D' backward-word
+# tmux
+# http://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
+#bindkey "^[[1;3C" forward-word
+#bindkey "^[[1;3D" backward-word
 
 # --------------------------
 # Z folder completion      #
