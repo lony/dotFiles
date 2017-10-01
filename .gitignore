@@ -35,6 +35,19 @@ Public
 Google Drive
 
 # Tools
+.v8flags.*
+.unknown-horizons
+.w3m
+.widelands
+Boostnote
+.AnyLogicPLE
+.Xauthority
+.android
+.calibre_*
+.conda
+.ghc
+.haulmont
+.idea-build
 .bookmarksmanager
 .putty
 .newsbeuter
@@ -98,6 +111,13 @@ go
 
 # Java
 .m2
+.gradle
+.tooling
+
+# Scala
+.sbt
+.ivy2
+.scala_history
 
 # Python
 .cookiecutter_replay
@@ -106,6 +126,7 @@ go
 .jupyter
 .virtualenvs
 .pylint.d
+.python_history
 
 # Ruby
 .bundle
@@ -113,6 +134,7 @@ go
 .rbenv
 .berkshelf
 .chef
+.kitchen
 
 # Shell
 .z
@@ -165,6 +187,7 @@ go
 # tmux
 tmux-client-*
 tmux-server-*
+.tmux
 
 # AWS
 .aws
