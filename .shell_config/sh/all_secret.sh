@@ -17,3 +17,6 @@
 
 # Red bg (PROD)
 # PRODUCTION_HOST_PATTERN=""
+
+# Java
+#export JAVA_HOME=""
