@@ -1,6 +1,0 @@
-#
-# zim_reset - resets the zim repository to latest commit
-#
-
-cd ${ZDOTDIR:-${HOME}}/.zim
-git reset --hard

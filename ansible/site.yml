@@ -1,0 +1,14 @@
+---
+
+- name: Setup system
+  hosts: all
+  connection: local
+
+  roles:
+    - homebrew
+    - zsh_oh-my-zsh
+    - dotfiles
+    - vim
+    - tmux
+    - python
+    - homebrew_cleanup

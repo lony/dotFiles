@@ -1,0 +1,9 @@
+---
+
+- name: homebrew install python packages
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+    update_homebrew: yes
+  with_items: "{{ brew_packages }}"

@@ -1,0 +1,8 @@
+---
+
+- name: Install dotfiles using bootstrap.py script
+  command: "{{ role_path }}/bin/bootstrap.py"
+  register: bootstrap
+
+- name: Show result of bootstrap.py
+  debug: var=bootstrap.stdout_lines

@@ -1,0 +1,10 @@
+---
+
+- name: Install oh-my-zsh (using CURL)
+  shell: 'sh -c "$(curl -fsSL \
+    https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+
+- name: Clone zsh plugin zsh-autosuggestions
+  git:
+    repo: git://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.zsh_oh-my-zsh/plugins/zsh-autosuggestions

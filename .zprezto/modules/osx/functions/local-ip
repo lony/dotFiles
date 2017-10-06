@@ -1,8 +1,0 @@
-#
-# Shows local ip address
-#
-# Authors:
-#   Rui Coelho <rui.coelho@gmail.com>
-#
-
-ipconfig getifaddr ${1:-en0}

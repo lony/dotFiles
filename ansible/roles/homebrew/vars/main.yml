@@ -1,0 +1,118 @@
+---
+
+brew_taps:
+    - caskroom/cask                                                 # Needed for binary packages
+    - homebrew/science                                              # Needed for OpenCV
+
+brew_packages:
+    - coreutils                                                     # GNU File, Shell, and Text utilities
+    - binutils                                                      # FSF Binutils for native development
+    - diffutils                                                     # File comparison utilities
+    - { name: findutils, install_options: "--default-names" }       # GNU find, xargs, and locate
+    - { name: gnu-sed, install_options: "--default-names" }
+    - gawk
+    - { name: grep, install_options: "--default-names" }
+    - less
+    - { name: gnu-which, install_options: "--default-names" }
+    - { name: gnutls, install_options: "--default-names" }          # GNU TLS
+    - openssl                                                       # SSL/TLS cryptography library
+    - pwgen                                                         # Password generator
+
+    - { name: gnu-tar, install_options: "--default-names" }
+    - unrar
+    - unzip
+    - gzip
+    - pigz                                                          # Parallel gzip
+    - xz                                                            # General-purpose data compression with high compression ratio
+    - p7zip                                                         # 7-Zip (high compression file archiver) implementation
+
+    - bash
+    - zsh
+    - zsh-syntax-highlighting
+    - fish
+    - screen
+    - z                                                             # Tracks most-used directories to make cd smarter
+    - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
+    - mc                                                            # Midnight commander
+
+    - ipcalc                                                        # Calculate various network masks
+    - netcat                                                        # Utility for managing network connections
+    - nmap                                                          # Port scanning utility for large networks
+    - rsync
+    - curl
+    - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
+    - lynx                                                          # Text-based web browser
+
+    - watch                                                         # Executes a program periodically, showing output fullscreen
+    - htop                                                          # Improved top (interactive process viewer)
+    - tree                                                          # Display directories as trees
+
+    - gd                                                            # Graphics library to dynamically manipulate images
+    - imagemagick                                                   # Tools and libraries to manipulate images in many formats
+    - gs                                                            # Interpreter for PostScript and PDF
+
+    - jq                                                            # Lightweight and flexible command-line JSON processor
+    - pv                                                            # Monitor data's progress through a pipe
+
+    - ansible
+    - go
+    - maven
+    - scala
+    - apache-spark
+
+    - git
+    - packer
+    - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
+    - docker-completion
+    - docker-compose-completion
+
+brew_cask_packages:
+    - iterm2                                                        # A better Terminal https://www.iterm2.com
+    - sublime-text
+    - keepassx
+    - veracrypt
+
+    - google-chrome
+    - firefox
+
+    - visual-studio-code
+    - netbeans
+    - sourcetree
+    - beyond-compare
+    - apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
+    - mysqlworkbench
+    - postico
+    - sequel-pro
+    - postman
+
+    - wireshark
+    - charles                                                       # HTTP proxy https://www.charlesproxy.com
+    - fiddler
+    - filezilla
+
+    - osxfuse
+    - java
+
+    - docker
+    - vagrant
+    - vagrant-manager
+    - virtualbox
+    - virtualbox-extension-pack
+
+    - dropbox
+    - rescuetime
+    - teamviewer
+
+    - xmind
+    - freemind
+
+    - gimp
+    - pencil
+    - vlc
+    - calibre                                                       # E-Book manager https://calibre-ebook.com
+    - anki
+    - gmvault
+
+    - spectacle                                                     # Resize OS X windows https://www.spectacleapp.com
+    - tomighty
+    - unetbootin

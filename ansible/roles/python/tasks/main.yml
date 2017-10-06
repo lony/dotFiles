@@ -1,0 +1,20 @@
+---
+
+- name: Execute OSX hombrew installation for python
+  import_tasks: osx-python-install.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Copy pip config
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "~"
+    force: yes
+
+# - name: Upgrade pip
+#   command: "PIP_REQUIRE_VIRTUALENV=false; pip install --upgrade pip"
+
+# - name: Install system python packages
+#   pip:
+#     name: "{{ item }}"
+#     state: latest
+#   with_items: "{{ python_packages }}"
