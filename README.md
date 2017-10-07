@@ -8,7 +8,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 # Usage
 
 1. Clone repo `git clone git@github.com:lony/dotFiles.git`
-2. Customize [all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](ansible/roles/dotfiles/src/.ssh/README.md))
+2. Customize [all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
 3. Execute `./setup.sh`
 
 # Feature
@@ -30,6 +30,9 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [ ] OSX dock configuration
 * [ ] OSX Apple store installation
 * [ ] iTerm2 configuration
+* [ ] Testing
+* [ ] Travis CI support
+* [ ] gitconfig
 
 # Architecture
 
