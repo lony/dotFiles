@@ -81,5 +81,5 @@ This is heavily inspired by the work of the following people:
 * [Michael](https://github.com/ludwigm) - cli tooling e.g. httpie, jq
 * [Sebastian's](https://github.com/hypebeast/dotfiles) - homebrew setup, tmux enhancing
 * [Florian](https://github.com/floschnell) - fish support
-* [Jeff's](https://github.com/geerlingguy/mac-dev-playbook) - Ansible deployment
+* [Jeff's](https://github.com/geerlingguy/mac-dev-playbook) - Ansible deployment, testing
 * [Chavez's](https://github.com/mtchavez/mac-ansible) - Ansible bootstrapping and vim, tmux enhanced setup
