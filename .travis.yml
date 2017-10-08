@@ -7,10 +7,12 @@ osx_image: xcode9.1
 before_install:
   # Uninstall existing brew installation
   - 'yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"'
-  - rm -rf /usr/local/Caskroom
-  - rm -rf /usr/local/Cellar
-  - rm -rf /usr/local/Homebrew
-  - rm -rf /usr/local/bin/brew
+  - 'ls -la /usr/local/'
+  - 'ls -la /usr/local/bin/'
+  #- rm -rf /usr/local/Caskroom
+  #- rm -rf /usr/local/Cellar
+  #- rm -rf /usr/local/Homebrew
+  #- rm -rf /usr/local/bin/brew
 
 script:
   # Ansible - Test playbook syntax
