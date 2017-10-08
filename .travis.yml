@@ -4,17 +4,21 @@ sudo: required
 language: objective-c
 osx_image: xcode9.1
 
+env:
+  - CMD_WAIT="travis_wait 60"
+  - CMD_EXEC="./setup.sh"
+
 before_install:
   # Uninstall existing brew installation
   - 'yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"'
 
 script:
   # Run and test
-  - 'travis_wait 30 ./setup.sh'
+  - '${CMD_WAIT} ${CMD_EXEC}'
 
   # # Test idempotence
   # - idempotence=$(mktemp)
-  # - 'travis_wait 30 ./setup.sh | tee -a ${idempotence}'
+  # - '${CMD_WAIT} ${CMD_EXEC} | tee -a ${idempotence}'
   # - >
   #   tail ${idempotence}
   #   | grep -q 'changed=0.*failed=0'
