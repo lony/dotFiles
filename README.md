@@ -1,6 +1,8 @@
 `.`Files
 ========
 
+[![Build Status](https://travis-ci.org/lony/dotFiles.svg?branch=master)](https://travis-ci.org/lony/dotFiles)
+
 This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/index.php?oldid=803771758) playbook and a custom Python script for deployment.
 
 ![Sample cli setup](image.png)
@@ -17,8 +19,8 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] [Homebrew Cask](https://caskroom.github.io/) setup
 * [x] [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) setup
 * [x] dotfiles setup, optimisation
-* [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug)
-* [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm)
+* [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug) + plugins
+* [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
 * [x] Python simple setup
 * [x] Homebrew cleanup
 * [x] Setup script to prepare Ansible
@@ -33,6 +35,8 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [ ] Testing
 * [ ] Travis CI support
 * [ ] gitconfig
+* [ ] FIX zsh-syntax-highlighting together with oh-my-zsh
+* [ ] compare brew and brew cask list
 
 # Architecture
 
