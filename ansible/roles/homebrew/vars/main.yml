@@ -12,11 +12,14 @@ brew_packages:
     - { name: gnu-sed, install_options: "--default-names" }
     - gawk
     - { name: grep, install_options: "--default-names" }
+    #- ack                                                          # Search tool like grep, but optimized for programmers
+    #- ag                                                           # Code-search similar to ack
     - less
     - { name: gnu-which, install_options: "--default-names" }
-    - { name: gnutls, install_options: "--default-names" }          # GNU TLS
-    - openssl                                                       # SSL/TLS cryptography library
-    - pwgen                                                         # Password generator
+
+    - jq                                                            # Lightweight and flexible command-line JSON processor
+    - pv                                                            # Monitor data's progress through a pipe
+    - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
 
     - { name: gnu-tar, install_options: "--default-names" }
     - unrar
@@ -31,11 +34,15 @@ brew_packages:
     #- zsh-syntax-highlighting                                      # Red/Green command checker - Now cloned in zsh_oh-my-zsh
     #- zsh-autosuggestions                                          # History of commands - Now cloned in zsh_oh-my-zsh
     - fish
+
     - screen
     - z                                                             # Tracks most-used directories to make cd smarter
     #- fasd                                                         # quick access to files and directories https://github.com/clvv/fasd
     - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
+    - grc                                                           # Colorize logfiles and command output
     - mc                                                            # Midnight commander
+    - rename
+    - hugo
 
     - ipcalc                                                        # Calculate various network masks
     - netcat                                                        # Utility for managing network connections
@@ -44,75 +51,128 @@ brew_packages:
     - curl
     - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
     - lynx                                                          # Text-based web browser
+    #- iperf
+    - iperf3
+
+    - { name: gnutls, install_options: "--default-names" }          # GNU TLS
+    - gnupg
+    - gpg-agent
+    - openssl                                                       # SSL/TLS cryptography library
+    - ssh-copy-id                                                   # Copy identy to authorized keys of remote maschine
+    - pwgen                                                         # Password generator
+    - testssl                                                       # Tool which checks for the support of TLS/SSL ciphers and flaws
 
     - watch                                                         # Executes a program periodically, showing output fullscreen
     - htop                                                          # Improved top (interactive process viewer)
     - tree                                                          # Display directories as trees
 
-    - gd                                                            # Graphics library to dynamically manipulate images
-    - imagemagick                                                   # Tools and libraries to manipulate images in many formats
-    - gs                                                            # Interpreter for PostScript and PDF
-
-    - jq                                                            # Lightweight and flexible command-line JSON processor
-    - pv                                                            # Monitor data's progress through a pipe
-
-    - ansible
-    - go
-    - maven
-    - scala
-    - apache-spark
+    #- gd                                                           # Graphics library to dynamically manipulate images
+    #- imagemagick                                                  # Tools and libraries to manipulate images in many formats
+    #- ghostscript                                                  # Interpreter for PostScript and PDF
+    #- exiftool
+    #- pandoc                                                       # Convert markup format
+    #- graphviz
+    #- ffmpeg
+    #- x264
+    #- xvid
+    #- lame
+    #- webp
 
     - git
+    - git-flow
+    #- git-extras
     - packer
-    - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
+
     - docker-completion
     - docker-compose-completion
 
+    - ansible
+    - nvm
+    - node
+    - yarn
+    #- go
+    #- rbenv
+    #- ruby
+    #- ruby-build
+    #- ant
+    #- maven
+    #- groovy
+    #- sbt
+    #- scala
+    #- apache-spark
+
+    #- sqlite
+    #- postgresql
+    #- mongodb
+
 brew_cask_packages:
     - keepassx
+    - osxfuse
     - veracrypt
-    - entropy
+    #- cryptomator
+    - entropy                                                       # Archiver GUI
+    - spectacle                                                     # Resize OS X windows https://www.spectacleapp.com
 
     - google-chrome
     - firefox
 
     - visual-studio-code
-    - netbeans
+    #- netbeans
     - sourcetree
-    - apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
-    - mysqlworkbench
-    - postico
-    - sequel-pro
+    - meld
+    #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
+    #- mysqlworkbench
+    #- postico
+    #- sequel-pro
+    #- mongodb-compass
     - postman
 
     - wireshark
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
     - fiddler
-    - filezilla
+    #- filezilla
+    #- cyberduck
 
-    - osxfuse
+    - dropbox
+    - rescuetime
+    - tomighty
+    - teamviewer
+    - skype
+
+    #- xmind
+    - freemind
+    - adobe-acrobat-reader
+    - boostnote
+
+    - imageoptim
+    - gimp
+    #- krita
+    - pencil
+    - inkscape
+    #- scribus
+    #- freecad
+    - vlc
+    - calibre                                                       # E-Book manager https://calibre-ebook.com
+    - anki
+    #- gmvault
+
+    - origami-studio
+    - google-web-designer
+
     - java
+    - jce-unlimited-strength-policy8
+    #- haskell-platform
+    #- unetbootin
 
     - docker
+    #- kitematic
     - vagrant
     - vagrant-manager
     - virtualbox
     - virtualbox-extension-pack
 
-    - dropbox
-    - rescuetime
-    - teamviewer
+    #- android-file-transfer
+    #- android-sdk
+    #- android-studio
 
-    - xmind
-    - freemind
-
-    - gimp
-    - pencil
-    - vlc
-    - calibre                                                       # E-Book manager https://calibre-ebook.com
-    - anki
-    - gmvault
-
-    - spectacle                                                     # Resize OS X windows https://www.spectacleapp.com
-    - tomighty
-    - unetbootin
+    #- openttd
