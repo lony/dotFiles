@@ -33,7 +33,6 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX Apple store installation
 * [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 * [ ] OSX file associations
-* [ ] compare brew and brew cask list
 * [ ] VSC config setup
 * [x] Testing with Travis CI support
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
