@@ -148,6 +148,7 @@ brew_cask_packages:
     - gimp
     #- krita
     - pencil
+    - xquartz
     - inkscape
     #- scribus
     #- freecad
@@ -160,7 +161,7 @@ brew_cask_packages:
     - google-web-designer
 
     - java
-    - jce-unlimited-strength-policy8
+    #- jce-unlimited-strength-policy8
     #- haskell-platform
     #- unetbootin
 
