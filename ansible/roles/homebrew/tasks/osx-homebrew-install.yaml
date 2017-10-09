@@ -1,5 +1,9 @@
 ---
 
+- name: Install homebrew (using CURL)
+  shell: '/usr/bin/ruby -e \
+    "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+
 - name: homebrew add tab's
   homebrew_tap: "tap={{ item }} state=present"
   with_items: "{{ brew_taps }}"
