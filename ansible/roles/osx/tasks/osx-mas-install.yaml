@@ -1,0 +1,36 @@
+---
+
+- name: homebrew install Mac App Store CLI (mas) package see https://github.com/mas-cli/mas
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+    update_homebrew: yes
+  with_items:
+    - mas
+
+- name: Get MAS account status
+  shell: 'mas account'
+  register: mas_account_result
+  failed_when: mas_account_result.rc > 1
+  changed_when: false
+
+- name: Sign in to MAS when email is provided, and complete password and 2FA using dialog
+  shell: 'mas signin "{{ mas_email }}" --dialog'
+  register: mas_signin_result
+  when: mas_account_result.rc == 1 and mas_email != ''
+
+- name: List installed MAS apps.
+  command: mas list
+  register: mas_list
+  check_mode: no
+  changed_when: false
+
+- name: Ensure configured MAS apps are installed
+  command: mas install "{{ item.id|default(item) }}"
+  with_items: "{{ mas_apps }}"
+  when: "'{{ item.id|default(item) }}' not in mas_list.stdout"
+
+- name: Upgrade all apps (if configured)
+  command: mas upgrade
+  when: mas_upgrade_all_apps

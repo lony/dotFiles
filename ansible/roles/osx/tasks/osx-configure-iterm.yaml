@@ -1,0 +1,20 @@
+---
+
+- name: homebrew cask install iterm2 packages
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  with_items:
+    - iterm2                                                                                                # A better Terminal https://www.iterm2.com
+
+- name: Download iterm2 shell integration
+  get_url:
+    url: "https://iterm2.com/misc/zsh_startup.in"
+    dest: "~/.iterm2_shell_integration.zsh"
+
+- name: Link iterm2 to settings folder
+  shell: "{{ item }}"
+  with_items:
+    - "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '{{ role_path }}/filesIterm'"   # Specify the preferences directory
+    - "defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true"                     # Tell iTerm2 to use the custom preferences in the directory

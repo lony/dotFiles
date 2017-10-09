@@ -6,5 +6,10 @@
 
 - name: Clone zsh plugin zsh-autosuggestions
   git:
-    repo: git://github.com/zsh-users/zsh-autosuggestions
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
     dest: ~/.zsh_oh-my-zsh/plugins/zsh-autosuggestions
+
+- name: Clone zsh plugin zsh-syntax-highlighting
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.zsh_oh-my-zsh/plugins/zsh-syntax-highlighting

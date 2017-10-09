@@ -28,10 +28,12 @@ brew_packages:
 
     - bash
     - zsh
-    - zsh-syntax-highlighting
+    #- zsh-syntax-highlighting                                      # Red/Green command checker - Now cloned in zsh_oh-my-zsh
+    #- zsh-autosuggestions                                          # History of commands - Now cloned in zsh_oh-my-zsh
     - fish
     - screen
     - z                                                             # Tracks most-used directories to make cd smarter
+    #- fasd                                                         # quick access to files and directories https://github.com/clvv/fasd
     - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
     - mc                                                            # Midnight commander
 
@@ -67,10 +69,9 @@ brew_packages:
     - docker-compose-completion
 
 brew_cask_packages:
-    - iterm2                                                        # A better Terminal https://www.iterm2.com
-    - sublime-text
     - keepassx
     - veracrypt
+    - entropy
 
     - google-chrome
     - firefox
