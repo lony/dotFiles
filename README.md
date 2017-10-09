@@ -22,6 +22,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug) + plugins
 * [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
 * [x] Sublime setup
+* [x] Beyond Compare config
 * [x] Python simple setup
 * [x] OSX [Homebrew](https://brew.sh/) setup
 * [x] OSX [Homebrew Cask](https://caskroom.github.io/) setup

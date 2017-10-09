@@ -1,0 +1,15 @@
+---
+
+- name: homebrew cask install beyond-compare packages
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  with_items:
+    - beyond-compare
+
+- name: Install beyond-compare settings
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "~/Library/Application Support/Beyond Compare/"
+    force: yes

@@ -10,7 +10,7 @@ before_install:
 
 script:
   # Run and test
-  - 'travis_wait 60 ./setup.sh'
+  - 'travis_wait 60 yes |./setup.sh'
 
   # # Test idempotence
   # - idempotence=$(mktemp)

@@ -79,7 +79,6 @@ brew_cask_packages:
     - visual-studio-code
     - netbeans
     - sourcetree
-    - beyond-compare
     - apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
     - mysqlworkbench
     - postico

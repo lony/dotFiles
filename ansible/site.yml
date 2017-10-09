@@ -9,7 +9,12 @@
       default: "Goetz Epperlein"
       private: no
     - name: "git_mail"
-      prompt: "Plese enter your git email e.g Some@foo.bar ?"
+      prompt: "Plese enter your git email e.g nobody@foo.bar?"
+      default: ""
+      private: no
+    - name: "mas_email"
+      prompt: "Plese enter your Apple Store email or leave empty?"
+      default: ""
       private: no
 
   roles:
@@ -22,4 +27,5 @@
     - tmux
     - python
     - osx
+    - beyond-compare
     - homebrew_cleanup
