@@ -43,6 +43,7 @@ brew_packages:
     - mc                                                            # Midnight commander
     - rename
     - hugo
+    - grip                                                          # Github markdown preview
 
     - ipcalc                                                        # Calculate various network masks
     - netcat                                                        # Utility for managing network connections
@@ -129,6 +130,7 @@ brew_cask_packages:
 
     - wireshark
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
+    - mono-mdk                                                      # Needed by fiddler
     - fiddler
     #- filezilla
     #- cyberduck
