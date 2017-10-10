@@ -49,7 +49,7 @@ sys_conf_commands:
   - "defaults write com.apple.finder _FXShowPosixPathInTitle -bool true" # Display full posix path in OS X Finder title Bar
   - "defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false" # Disable the extension change warning in OS X Finder
   - "defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'" # When performing a search, search the current folder by default
-  - "defaults write com.apple.finder FXPreferredViewStyle -string 'Nlsv'" # Use list view in all Finder windows by default (Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`)
+  - "defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'" # Use list view in all Finder windows by default (Four-letter codes for the other view modes: `icnv` Icon View, `Nlsv` List View, `clmv` Column View, `Flwv` Cover Flow View)
   - "defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true" # Expand the following File Info panes
   - "defaults write com.apple.finder NewWindowTarget -string 'PfHm'" # New window points to home
   - "defaults write com.apple.dock launchanim -bool false" # Disable animations when you open an application from the Dock
