@@ -9,7 +9,7 @@
   with_items:
     - mas
 
-- name: Get MAS account status
+- name: Get MAS account status for login
   shell: 'mas account'
   register: mas_account_result
   failed_when: mas_account_result.rc > 1
@@ -20,6 +20,12 @@
   register: mas_signin_result
   when: mas_account_result.rc == 1 and mas_email != ''
 
+- name: Get MAS account status for install
+  shell: 'mas account'
+  register: mas_account_result_after_login
+  failed_when: mas_account_result_after_login.rc > 1
+  changed_when: false
+
 - name: List installed MAS apps.
   command: mas list
   register: mas_list
@@ -29,8 +35,8 @@
 - name: Ensure configured MAS apps are installed
   command: mas install "{{ item.id|default(item) }}"
   with_items: "{{ mas_apps }}"
-  when: "'{{ item.id|default(item) }}' not in mas_list.stdout"
+  when: "not mas_account_result_after_login.rc == 1 and '{{ item.id|default(item) }}' not in mas_list.stdout"
 
 - name: Upgrade all apps (if configured)
   command: mas upgrade
-  when: mas_upgrade_all_apps
+  when: "not mas_account_result_after_login.rc == 1 and mas_upgrade_all_apps"
