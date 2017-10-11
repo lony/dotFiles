@@ -3,12 +3,29 @@
 - name: Setup system
   hosts: all
   connection: local
+  vars_prompt:
+    - name: "git_fullname"
+      prompt: "Plese enter your git name e.g Goetz Epperlein?"
+      default: "Goetz Epperlein"
+      private: no
+    - name: "git_mail"
+      prompt: "Plese enter your git email e.g nobody@foo.bar?"
+      default: ""
+      private: no
+    - name: "mas_email"
+      prompt: "Plese enter your Apple Store email or leave empty?"
+      default: ""
+      private: no
 
   roles:
     - homebrew
     - zsh_oh-my-zsh
     - dotfiles
+    - git
     - vim
+    - sublime
     - tmux
     - python
+    - osx
+    - beyond-compare
     - homebrew_cleanup

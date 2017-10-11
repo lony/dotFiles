@@ -8,3 +8,6 @@
     update_homebrew: yes
   with_items:
     - vim
+    #- vimr
+    #- neovim
+    #- macvim

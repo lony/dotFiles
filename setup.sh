@@ -2,13 +2,21 @@
 #
 # Script setup Ansible depending on OS
 
+# If test are run on travis avoid space intensive tasks
+if [ "$TRAVIS" == "true" ]; then
+  CMD_ANSIBLE='echo "\n### RUN df" && df -h && echo "\n### RUN ansible" && ansible-playbook -i "localhost," -c local ansible/site.yml --skip-tags "travis-do-not"'
+else
+  CMD_ANSIBLE='echo "\n### RUN ansible" && ansible-playbook -i "localhost," -c local ansible/site.yml'
+fi
+
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
-      echo "Detected environment: Mac -> Install pip + ansible"
+      echo "\n### ENV\nOSX"
+      echo "\n### INSTALL pip + ansible"
       sudo command -v pip >/dev/null 2>&1 || { sudo easy_install pip; }
       sudo command -v ansible >/dev/null 2>&1 || { sudo pip install ansible; }
-      ansible-playbook -i "localhost," -c local ansible/site.yml
+      eval $CMD_ANSIBLE
       ;;
 
     *)

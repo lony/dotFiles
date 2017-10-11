@@ -1,5 +1,16 @@
 ---
 
+- name: Check if all_secret.sh exists
+  stat:
+    path: "{{ role_path }}/src/bash_zsh/all_secret.sh"
+  register: all_secret
+
+- name: Copy all_secret.sh from *-example.sh
+  copy:
+    src:  "{{ role_path }}/src/bash_zsh/all_secret-example.sh"
+    dest: "{{ role_path }}/src/bash_zsh/all_secret.sh"
+  when: not all_secret.stat.exists
+
 - name: Install dotfiles using bootstrap.py script
   command: "{{ role_path }}/bin/bootstrap.py"
   register: bootstrap

@@ -22,3 +22,5 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
   with_items: "{{ brew_cask_packages }}"
+  tags:
+    - travis-do-not

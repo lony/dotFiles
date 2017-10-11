@@ -10,33 +10,37 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 # Usage
 
 1. Clone repo `git clone git@github.com:lony/dotFiles.git`
-2. Customize [all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
-3. Execute `./setup.sh`
+2. Execute `./setup.sh`
+3. Customize [all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
+2. Execute again `./setup.sh`
 
 # Feature
 
-* [x] [Homebrew](https://brew.sh/) setup
-* [x] [Homebrew Cask](https://caskroom.github.io/) setup
+* [x] Setup script to prepare Ansible
 * [x] [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) setup
-* [x] dotfiles setup, optimisation
+* [x] dotfiles setup, optimizations
+* [x] .gitconfig
 * [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug) + plugins
 * [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
+* [x] Sublime setup
+* [x] Beyond Compare config
 * [x] Python simple setup
-* [x] Homebrew cleanup
-* [x] Setup script to prepare Ansible
+* [x] OSX [Homebrew](https://brew.sh/) setup
+* [x] OSX [Homebrew Cask](https://caskroom.github.io/) setup
+* [x] OSX Homebrew cleanup
+* [x] OSX cli configuration see [this](https://lony.github.io/post/2016/mac-osx-setup/#user-interface)
+* [ ] OSX system configuration scutil see [here](http://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/)
+* [x] OSX Dock configuration using [dockutil](https://github.com/kcrawford/dockutil)
+* [x] OSX Apple store installation
+* [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
+* [ ] OSX file associations
+* [ ] VSC config setup
+* [x] Testing with Travis CI support
+* [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
+* [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm)
 * [x] Ansible installation for OSX
 * [ ] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
-* [ ] OSX cli configuration see [this](https://lony.github.io/post/2016/mac-osx-setup/#user-interface)
-* [ ] OSX system configuration
-* [ ] OSX dock configuration
-* [ ] OSX Apple store installation
-* [ ] iTerm2 configuration
-* [ ] Testing
-* [ ] Travis CI support
-* [ ] gitconfig
-* [ ] FIX zsh-syntax-highlighting together with oh-my-zsh
-* [ ] compare brew and brew cask list
 
 # Architecture
 
@@ -81,5 +85,6 @@ This is heavily inspired by the work of the following people:
 * [Michael](https://github.com/ludwigm) - cli tooling e.g. httpie, jq
 * [Sebastian's](https://github.com/hypebeast/dotfiles) - homebrew setup, tmux enhancing
 * [Florian](https://github.com/floschnell) - fish support
-* [Jeff's](https://github.com/geerlingguy/mac-dev-playbook) - Ansible deployment, testing
+* [Jeff's](https://github.com/geerlingguy/mac-dev-playbook) - Ansible deployment, testing, mas
 * [Chavez's](https://github.com/mtchavez/mac-ansible) - Ansible bootstrapping and vim, tmux enhanced setup
+* [Richard's](https://github.com/ricbra/mac-dev-playbook) - Dock configuration

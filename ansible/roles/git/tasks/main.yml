@@ -1,0 +1,12 @@
+---
+
+- name: Check if ~/.gitconfig exists
+  stat:
+    path: ~/.gitconfig
+  register: gitconfig
+
+- name: Create ~/.gitconfig
+  template:
+    src:  gitconfig.j2
+    dest: "~/.gitconfig"
+  when: not gitconfig.stat.exists

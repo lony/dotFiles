@@ -1,0 +1,10 @@
+---
+
+- name: Run OSX configuration command
+  shell: "{{ item }}"
+  with_items: "{{ sys_conf_commands }}"
+
+- name: Remove the 'last login' message from the terminal
+  file:
+    path: "~/.hushlogin"
+    state: touch

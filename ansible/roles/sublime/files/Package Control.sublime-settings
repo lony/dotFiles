@@ -1,0 +1,12 @@
+{
+  "installed_packages":
+  [
+    "BracketHighlighter",
+    "EditorConfig",
+    "GitGutter",
+    "HTML-CSS-JS Prettify",
+    "JsPrettier",
+    "Markdown Extended",
+    "SideBarEnhancements"
+  ]
+}
