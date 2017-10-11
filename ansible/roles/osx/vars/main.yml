@@ -52,6 +52,7 @@ sys_conf_commands:
   - "defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'" # Use list view in all Finder windows by default (Four-letter codes for the other view modes: `icnv` Icon View, `Nlsv` List View, `clmv` Column View, `Flwv` Cover Flow View)
   - "defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true" # Expand the following File Info panes
   - "defaults write com.apple.finder NewWindowTarget -string 'PfHm'" # New window points to home
+  - "defaults write com.apple.finder ShowStatusBar -bool true" # Show status bar in finder
   - "defaults write com.apple.dock launchanim -bool false" # Disable animations when you open an application from the Dock
   - "defaults write com.apple.dock expose-animation-duration -float 0.1" # Make all animations faster that are used by Mission Control
   - "defaults write com.apple.dock autohide-delay -float 0" # Disable the delay when you hide the Dock
