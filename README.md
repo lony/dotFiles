@@ -37,7 +37,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [ ] VSC config setup
 * [x] Testing with Travis CI support
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
-* [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm)
+* [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm) and [this](http://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
 * [x] Ansible installation for OSX
 * [ ] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
