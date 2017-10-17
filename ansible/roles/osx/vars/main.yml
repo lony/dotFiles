@@ -66,3 +66,6 @@ sys_conf_commands:
   - "defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25" # Disable the standard delay in rendering safari a web page
   - "defaults write com.apple.screensaver askForPassword -int 1" # Require password immediately after sleep or screen saver begins
   - "defaults write com.apple.screensaver askForPasswordDelay -int 0" # -"-
+  - "sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop" # Deactivate and Stop the Remote Management Service
+  - "sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true" # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
+  - "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on" # Enable Application Firewall
