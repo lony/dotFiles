@@ -31,6 +31,7 @@ duti_associations:
   - bundle_id: com.sublimetext.3
     utis:
       - public.plain-text
+      - md
       - .md
 
 # See https://github.com/herrbischoff/awesome-osx-command-line
