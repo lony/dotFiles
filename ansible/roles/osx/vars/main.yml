@@ -26,6 +26,13 @@ dockutil_persist:
   - { name: "Visual Studio Code", path: "/Applications/Visual Studio Code.app",        pos: 14}
   - { name: "Sublime Text",       path: "/Applications/Sublime Text.app",              pos: 15}
 
+duti_associations:
+  # Sublime
+  - bundle_id: com.sublimetext.3
+    utis:
+      - public.plain-text
+      - .md
+
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
   - "defaults write -g QLPanelAnimationDuration -float 0" # Disable animations when opening a Quick Look window
