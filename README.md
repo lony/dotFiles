@@ -33,11 +33,12 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX Dock configuration using [dockutil](https://github.com/kcrawford/dockutil)
 * [x] OSX Apple store installation
 * [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
-* [ ] OSX file associations
+* [x] OSX file associations using [duti](https://github.com/moretension/duti)
+* [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
 * [ ] VSC config setup
 * [x] Testing with Travis CI support
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
-* [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm)
+* [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm) and [this](http://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
 * [x] Ansible installation for OSX
 * [ ] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
@@ -88,3 +89,4 @@ This is heavily inspired by the work of the following people:
 * [Jeff's](https://github.com/geerlingguy/mac-dev-playbook) - Ansible deployment, testing, mas
 * [Chavez's](https://github.com/mtchavez/mac-ansible) - Ansible bootstrapping and vim, tmux enhanced setup
 * [Richard's](https://github.com/ricbra/mac-dev-playbook) - Dock configuration
+* [Fotis's](https://github.com/fgimian/macbuild) - File associations

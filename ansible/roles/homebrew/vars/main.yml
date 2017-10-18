@@ -174,7 +174,7 @@ brew_cask_packages:
     - virtualbox
     - virtualbox-extension-pack
 
-    #- android-file-transfer
+    - android-file-transfer
     #- android-sdk
     #- android-studio
 

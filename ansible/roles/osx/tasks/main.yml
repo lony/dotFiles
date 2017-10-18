@@ -8,6 +8,10 @@
   import_tasks: osx-configure-dock.yaml
   when: ansible_os_family == 'Darwin'
 
+- name: Execute OSX file association configuration
+  import_tasks: osx-configure-file-associations.yaml
+  when: ansible_os_family == 'Darwin'
+
 - name: Execute OSX configuration
   import_tasks: osx-configure-system.yaml
   when: ansible_os_family == 'Darwin'
