@@ -10,21 +10,22 @@ mas_apps:
 
 dockutil_remove:
 dockutil_persist:
-  - { name: "ScanSnap Manager",   path: "/Applications/ScanSnap/ScanSnap Manager.app", pos: 1}
-  - { name: "ScanSnap Manager",   path: "/Applications/ScanSnap/ScanSnap Manager.app", pos: 2}
-  - { name: "Preview",            path: "/Applications/Preview.app",                   pos: 3}
-  - { name: "System Preferences", path: "/Applications/System Preferences.app",        pos: 4}
-  - { name: "App Store",          path: "/Applications/App Store.app",                 pos: 5}
-  - { name: "Banking 4X",         path: "/Applications/Banking 4X.app",                pos: 6}
-  - { name: "VLC",                path: "/Applications/VLC.app",                       pos: 7}
-  - { name: "Microsoft Excel",    path: "/Applications/Microsoft Excel.app",           pos: 8}
-  - { name: "Microsoft Word",     path: "/Applications/Microsoft Word.app",            pos: 9}
-  - { name: "Beyond Compare",     path: "/Applications/Beyond Compare.app",            pos: 10}
-  - { name: "KeePassX",           path: "/Applications/KeePassX.app",                  pos: 11}
-  - { name: "Google Chrome",      path: "/Applications/Google Chrome.app",             pos: 12}
-  - { name: "iTerm",              path:  "/Applications/iTerm.app",                    pos: 13}
-  - { name: "Visual Studio Code", path: "/Applications/Visual Studio Code.app",        pos: 14}
-  - { name: "Sublime Text",       path: "/Applications/Sublime Text.app",              pos: 15}
+  - { name: "Activity Monitor",     path: "/Applications/Utilities/Activity Monitor.app", pos: 1}
+  - { name: "ScanSnap Manager",     path: "/Applications/ScanSnap/ScanSnap Manager.app",  pos: 2}
+  - { name: "Preview",              path: "/Applications/Preview.app",                    pos: 3}
+  - { name: "System Preferences",   path: "/Applications/System Preferences.app",         pos: 4}
+  - { name: "App Store",            path: "/Applications/App Store.app",                  pos: 5}
+  - { name: "Banking 4X",           path: "/Applications/Banking 4X.app",                 pos: 6}
+  - { name: "VLC",                  path: "/Applications/VLC.app",                        pos: 7}
+  - { name: "Microsoft PowerPoint", path: "/Applications/Microsoft PowerPoint.app",       pos: 8}
+  - { name: "Microsoft Excel",      path: "/Applications/Microsoft Excel.app",            pos: 9}
+  - { name: "Microsoft Word",       path: "/Applications/Microsoft Word.app",             pos: 10}
+  - { name: "Beyond Compare",       path: "/Applications/Beyond Compare.app",             pos: 11}
+  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                   pos: 12}
+  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",              pos: 13}
+  - { name: "iTerm",                path:  "/Applications/iTerm.app",                     pos: 14}
+  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",         pos: 15}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",               pos: 16}
 
 duti_associations:
   # Sublime
@@ -33,6 +34,21 @@ duti_associations:
       - public.plain-text
       - md
       - .md
+
+  # VLC
+  - bundle_id: org.videolan.vlc
+    utis:
+      - avi
+      - flac
+      - flv
+      - m4a
+      - mkv
+      - mov
+      - mp3
+      - mp4
+      - mpg
+      - wav
+      - wmv
 
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:

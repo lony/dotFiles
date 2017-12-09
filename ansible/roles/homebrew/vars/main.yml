@@ -172,7 +172,7 @@ brew_cask_packages:
     - vagrant
     - vagrant-manager
     - virtualbox
-    - virtualbox-extension-pack
+    #- virtualbox-extension-pack
 
     - android-file-transfer
     #- android-sdk
