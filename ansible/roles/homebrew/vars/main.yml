@@ -85,7 +85,6 @@ brew_packages:
     - packer
 
     - docker-completion
-    - docker-compose-completion
 
     - ansible
     - nvm
