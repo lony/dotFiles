@@ -106,11 +106,11 @@ brew_packages:
     #- mongodb
 
 brew_cask_packages:
+    - avast-security
     - keepassx
     - osxfuse
     - veracrypt
     #- cryptomator
-    - entropy                                                       # Archiver GUI
     - spectacle                                                     # Resize OS X windows https://www.spectacleapp.com
 
     - google-chrome
@@ -143,7 +143,7 @@ brew_cask_packages:
     #- xmind
     - freemind
     - adobe-acrobat-reader
-    - boostnote
+    #- boostnote
 
     - imageoptim
     - gimp
@@ -158,8 +158,8 @@ brew_cask_packages:
     - anki
     #- gmvault
 
-    - origami-studio
-    - google-web-designer
+    #- origami-studio
+    #- google-web-designer
 
     - java
     #- jce-unlimited-strength-policy8
