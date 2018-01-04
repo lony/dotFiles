@@ -84,7 +84,7 @@ brew_packages:
     #- git-extras
     - packer
 
-    - docker-completion
+    #- docker-completion
 
     - ansible
     - nvm
