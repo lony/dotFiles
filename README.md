@@ -35,7 +35,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 * [x] OSX file associations using [duti](https://github.com/moretension/duti)
 * [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
-* [ ] VSC config setup
+* [x] VSC config setup (through dotfiles role)
 * [x] Testing with Travis CI support
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
 * [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm) and [this](http://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
