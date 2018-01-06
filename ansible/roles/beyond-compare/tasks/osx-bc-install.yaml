@@ -8,6 +8,7 @@
   with_items:
     - beyond-compare
 
+# https://www.scootersoftware.com/v4help/index.html?where_settings_are_stored.html
 - name: Install beyond-compare settings
   copy:
     src: "{{ role_path }}/files/"
