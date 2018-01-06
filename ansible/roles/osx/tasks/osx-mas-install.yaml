@@ -37,6 +37,12 @@
   with_items: "{{ mas_apps }}"
   when: "not mas_account_result_after_login.rc == 1 and '{{ item.id|default(item) }}' not in mas_list.stdout"
 
+- name: Confirm Xcode license
+  shell: xcodebuild -license accept
+  become: true
+  become_user: root
+  become_method: sudo
+
 - name: Upgrade all apps (if configured)
   command: mas upgrade
   when: "not mas_account_result_after_login.rc == 1 and mas_upgrade_all_apps"

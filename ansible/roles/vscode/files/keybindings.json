@@ -1,0 +1,7 @@
+[
+    {
+        "key": "ctrl+k",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+]

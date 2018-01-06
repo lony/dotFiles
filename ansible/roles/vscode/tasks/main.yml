@@ -1,0 +1,6 @@
+---
+
+# Read https://code.visualstudio.com/docs/getstarted/settings
+- name: Execute OSX configuration for Visual Studio Code
+  import_tasks: osx-install.yaml
+  when: ansible_os_family == 'Darwin'
