@@ -1,5 +1,11 @@
 ---
 
+- name: Creates ~/Library/Application Support/Code/User/ directory
+  file:
+    path: ~/Library/Application Support/Code/User/
+    state: directory
+    recurse: yes
+
 - name: Install vscode settings
   copy:
     src: "{{ role_path }}/files/settings.json"
