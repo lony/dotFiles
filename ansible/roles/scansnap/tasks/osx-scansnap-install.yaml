@@ -3,6 +3,7 @@
 - name: Check if scansnap package is already installed
   shell: brew cask list | grep fujitsu-scansnap-manager-ix500
   register: homebrew_scansnap_installed
+  failed_when: homebrew_scansnap_installed.rc > 1
 
 - name: homebrew cask install scansnap packages
   homebrew_cask:
