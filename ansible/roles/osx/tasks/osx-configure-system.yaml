@@ -11,6 +11,53 @@
   become_user: root
   become_method: sudo
 
+- name: Missing manuel stepps [DO THIS MANUALLY]
+  debug:
+    msg:
+      - "System Preferences"
+      - " -> General"
+      - "    [x] Ask to keep changes when closing documents"
+      - " -> Desktop & Screen Saver"
+      - "   -> Desktop"
+      - "     Solid Colors = Blue"
+      - "   -> Screen Saver"
+      - "     Start after = 5 Minute"
+      - "     -> Hot Corners"
+      - "       Left Top = Put Display to Sleep"
+      - " -> Security & Privacy"
+      - "   -> General"
+      - "      [x] Required password immediately"
+      - "   -> FileVault"
+      - "      Turn On"
+      - "   -> Firewall"
+      - "      Turn On"
+      - " -> Displays"
+      - "   -> Night Shift"
+      - "      Schedule: Sunset to Sunrise"
+      - " -> Keyboard"
+      - "   -> Keyboard"
+      - "      [x] Turn keyboard backlight off after 5 secs"
+      - "      [x] Use F1, F2 ...."
+      - " -> Trackpad"
+      - "   -> Point & Click"
+      - "      [ ] Look up & data detectors"
+      - "      [x] Tap to click"
+      - "      [x] Silent clicking"
+      - " -> iCloud"
+      - "    Sign In"
+      - "    [x] ... what you like"
+      - " -> Users & Groups"
+      - "    Select your user"
+      - "     -> Login Items"
+      - "        Add Spectacle"
+      - "    Guest User"
+      - "      [ ] Allow guests to log in to this computer"
+      - " -> Siri"
+      - "    [ ] Enable Ask Siri"
+      - " -> Date & Time"
+      - "   -> Clock"
+      - "      [x] Show date and time in menu bar"
+
 - name: Remove the 'last login' message from the terminal
   file:
     path: "~/.hushlogin"
