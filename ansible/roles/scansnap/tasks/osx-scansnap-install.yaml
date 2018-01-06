@@ -14,6 +14,8 @@
   with_items:
     - caskroom/drivers/fujitsu-scansnap-manager-ix500
   when: '"fujitsu-scansnap-manager-ix500" not in homebrew_scansnap_installed.stdout'
+  tags:
+    - travis-do-not
 
 - name: Stop running scansnap app
   command: osascript -e 'quit app "ScanSnap Manager"'
