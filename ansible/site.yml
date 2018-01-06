@@ -33,4 +33,5 @@
     - python
     - osx
     - beyond-compare
+    - scansnap
     - homebrew_cleanup
