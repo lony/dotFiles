@@ -102,43 +102,6 @@ system_list = {
             "destination": path_target,
         },
     },
-    "python-pip": {
-        "default": {
-            "handler": "copy",
-            "source": os.path.join(path_files, ".pip"),
-            "destination": path_target,
-        },
-    },
-    "vim": {
-        "default": {
-            "handler": "concat",
-            "fileList": [
-                os.path.join(path_files, "vimrc"),
-            ],
-            "comment_char": '"',
-            "outfile": path_target + '/.vimrc',
-        },
-    },
-    "vscode": {
-        "default": {
-            "handler": "concat",
-            "fileList": [
-                os.path.join(path_files, "vscode-settings.json"),
-            ],
-            "comment_char": '"',
-            "outfile": path_target + '/Library/Application Support/Code/User/settings.json',
-        },
-    },
-    "tmux": {
-        "default": {
-            "handler": "concat",
-            "fileList": [
-                os.path.join(path_files, "tmux.conf"),
-            ],
-            "comment_char": '#',
-            "outfile": path_target + '/.tmux.conf',
-        },
-    },
 }
 
 

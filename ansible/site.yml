@@ -12,6 +12,10 @@
       prompt: "Plese enter your git email e.g nobody@foo.bar?"
       default: ""
       private: no
+    - name: "github_token"
+      prompt: "Plese enter your github token e.g dsd123...?"
+      default: ""
+      private: no
     - name: "mas_email"
       prompt: "Plese enter your Apple Store email or leave empty?"
       default: ""
@@ -24,8 +28,10 @@
     - git
     - vim
     - sublime
+    - vscode
     - tmux
     - python
     - osx
     - beyond-compare
+    - scansnap
     - homebrew_cleanup

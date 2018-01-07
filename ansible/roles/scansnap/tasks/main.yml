@@ -1,0 +1,5 @@
+---
+
+- name: Execute OSX hombrew installation for fujitsu scansnap
+  import_tasks: osx-scansnap-install.yaml
+  when: ansible_os_family == 'Darwin'

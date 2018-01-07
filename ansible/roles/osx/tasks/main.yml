@@ -4,18 +4,18 @@
   import_tasks: osx-mas-install.yaml
   when: ansible_os_family == 'Darwin'
 
-- name: Execute OSX Dock configuration
-  import_tasks: osx-configure-dock.yaml
-  when: ansible_os_family == 'Darwin'
-
-- name: Execute OSX file association configuration
-  import_tasks: osx-configure-file-associations.yaml
+- name: Execute OSX iTerm2 install
+  import_tasks: osx-configure-iterm.yaml
   when: ansible_os_family == 'Darwin'
 
 - name: Execute OSX configuration
   import_tasks: osx-configure-system.yaml
   when: ansible_os_family == 'Darwin'
 
-- name: Execute OSX iTerm2 install
-  import_tasks: osx-configure-iterm.yaml
+- name: Execute OSX file association configuration
+  import_tasks: osx-configure-file-associations.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Execute OSX Dock configuration
+  import_tasks: osx-configure-dock.yaml
   when: ansible_os_family == 'Darwin'

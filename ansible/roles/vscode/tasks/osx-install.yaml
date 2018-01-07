@@ -1,0 +1,19 @@
+---
+
+- name: Creates ~/Library/Application Support/Code/User/ directory
+  file:
+    path: ~/Library/Application Support/Code/User/
+    state: directory
+    recurse: yes
+
+- name: Install vscode settings
+  copy:
+    src: "{{ role_path }}/files/settings.json"
+    dest: "~/Library/Application Support/Code/User/settings.json"
+    force: yes
+
+- name: Install vscode keybindings
+  copy:
+    src: "{{ role_path }}/files/keybindings.json"
+    dest: "~/Library/Application Support/Code/User/keybindings.json"
+    force: yes

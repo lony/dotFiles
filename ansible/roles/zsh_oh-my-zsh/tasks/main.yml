@@ -1,8 +1,9 @@
 ---
 
-- name: Install oh-my-zsh (using CURL)
-  shell: 'sh -c "$(curl -fsSL \
-    https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+- name: Install oh-my-zsh (using git clone)
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
 
 - name: Clone zsh plugin zsh-autosuggestions
   git:
@@ -13,3 +14,22 @@
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.zsh_oh-my-zsh/plugins/zsh-syntax-highlighting
+
+- name: Retrive zsh path
+  shell: which zsh
+  register: zsh_path
+
+- name: Add {{ zsh_path.stdout }} to /etc/shells
+  lineinfile:
+    path: /etc/shells
+    line: "{{ zsh_path.stdout }}"
+  become: true
+  become_user: root
+  become_method: sudo
+
+- name: Change shell for {{ lookup('env','USER') }} to zsh as default
+  shell: chsh -s {{ zsh_path.stdout }} {{ lookup('env','USER') }}
+  become: true
+  become_user: root
+  become_method: sudo
+  
