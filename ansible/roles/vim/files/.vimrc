@@ -25,6 +25,10 @@ autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 
+" crontab - No backup
+" https://superuser.com/questions/359580/error-adding-cronjobs-in-mac-os-x-lion
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 " http://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
 set clipboard=unnamed			" Enable clipboard copy and paste
 
