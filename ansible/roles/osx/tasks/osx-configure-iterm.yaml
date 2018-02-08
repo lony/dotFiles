@@ -8,10 +8,10 @@
   with_items:
     - iterm2                                                                                                # A better Terminal https://www.iterm2.com
 
-- name: Download iterm2 shell integration
-  get_url:
-    url: "https://iterm2.com/misc/zsh_startup.in"
-    dest: "~/.iterm2_shell_integration.zsh"
+# - name: Download iterm2 shell integration
+#   get_url:
+#     url: "https://iterm2.com/misc/zsh_startup.in"
+#     dest: "~/.iterm2_shell_integration.zsh"
 
 - name: Link iterm2 to settings folder
   shell: "{{ item }}"

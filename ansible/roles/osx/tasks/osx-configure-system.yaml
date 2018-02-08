@@ -11,6 +11,15 @@
   become_user: root
   become_method: sudo
 
+- name: Copy SMB config /etc/nsmb.conf
+  copy:
+    src: "{{ role_path }}/files/nsmb.conf"
+    dest: "/etc/nsmb.conf"
+    force: no
+  become: true
+  become_user: root
+  become_method: sudo
+
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:
     msg:
