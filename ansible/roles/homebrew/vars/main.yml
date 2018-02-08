@@ -2,7 +2,6 @@
 
 brew_taps:
     - caskroom/cask                                                 # Needed for binary packages
-    - homebrew/science                                              # Needed for OpenCV
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
