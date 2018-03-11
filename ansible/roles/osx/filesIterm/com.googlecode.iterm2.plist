@@ -64,9 +64,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>156 184 1016 512 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 286 1280 491 0 0 1920 1057 </string>
+	<string>2880 0 960 1057 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1920 0 1920 284 1920 0 1920 1057 </string>
+	<string>0 40 585 452 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_12C5B130-457D-4BAD-9B33-71AD9F9D0FDA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_12C5B130-457D-4BAD-9B33-71AD9F9D0FDA_selection</key>
@@ -1964,7 +1964,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-27T12:21:59Z</date>
+	<date>2018-02-20T09:39:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
@@ -1973,6 +1973,8 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
