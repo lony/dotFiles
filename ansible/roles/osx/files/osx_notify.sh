@@ -4,7 +4,7 @@
 # 2 21  * * * ~/dotFiles/ansible/roles/osx/files/osx_notify.sh
 
 TITLE="Sleep Timer"
-MESSAGE="Go to bed! It is already 21 o clock!"
+MESSAGE="Use headspace and then go to bed! It is already 21 o clock!"
 SOUND="Glass"
 
 # https://apple.stackexchange.com/questions/57412/how-can-i-trigger-a-notification-center-notification-from-an-applescript-or-shel
