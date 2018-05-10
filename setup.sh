@@ -20,9 +20,9 @@ case "${unameOut}" in
     Darwin*)
       echo "\n### ENV\nOSX"
       echo "\n### INSTALL pip"
-      sudo command -v pip3 >/dev/null 2>&1 || { sudo easy_install pip3; }
+      sudo command -v pip >/dev/null 2>&1 || { echo "... have to" && sudo easy_install pip; }
       echo "\n### INSTALL ansible"
-      sudo command -v ansible >/dev/null 2>&1 || { sudo pip3 install ansible; }
+      sudo command -v ansible >/dev/null 2>&1 || { echo "... have to" && sudo pip install ansible; }
       eval $CMD_ANSIBLE
       ;;
 
