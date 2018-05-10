@@ -4,10 +4,18 @@
 
 # If test are run on travis avoid space intensive tasks
 if [ "$TRAVIS" == "true" ]; then
-  CMD_ANSIBLE='echo "\n### RUN df" && df -h && echo "\n### RUN ansible" && ansible-playbook -i "localhost," -c local ansible/site.yml --skip-tags "travis-do-not"'
+  CMD_ANSIBLE='\
+  echo "\n### RUN df" && \
+  df -h && \
+  echo "\n### RUN ansible" && \
+  ansible-playbook -i "localhost," -c local ansible/site.yml --skip-tags "travis-do-not"'
 else
-  CMD_ANSIBLE='echo "\n### RUN ansible" && ansible-playbook -i "localhost," -c local ansible/site.yml'
+  CMD_ANSIBLE='\
+  echo "\n### RUN ansible" && \
+  ansible-playbook -i "localhost," -c local ansible/site.yml'
 fi
+
+uname -a
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
