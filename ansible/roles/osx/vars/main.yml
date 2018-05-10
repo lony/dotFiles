@@ -36,13 +36,15 @@ dockutil_persist:
   - { name: "Microsoft Excel",      path: "/Applications/Microsoft Excel.app",            pos: 9}
   - { name: "Microsoft Word",       path: "/Applications/Microsoft Word.app",             pos: 10}
   - { name: "Beyond Compare",       path: "/Applications/Beyond Compare.app",             pos: 11}
-  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                   pos: 12}
-  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",              pos: 13}
-  - { name: "Firefox",              path: "/Applications/Firefox.app",                    pos: 14}
-  - { name: "Safari",               path: "/Applications/Safari.app",                     pos: 15}
-  - { name: "iTerm",                path: "/Applications/iTerm.app",                      pos: 16}
-  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",         pos: 17}
-  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",               pos: 18}
+  - { name: "TogglDesktop",         path: "/Applications/TogglDesktop.app",               pos: 12}
+  - { name: "Wunderlist",           path: "/Applications/Wunderlist.app",                 pos: 13}
+  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                   pos: 14}
+  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",              pos: 15}
+  - { name: "Firefox",              path: "/Applications/Firefox.app",                    pos: 16}
+  - { name: "Safari",               path: "/Applications/Safari.app",                     pos: 17}
+  - { name: "iTerm",                path: "/Applications/iTerm.app",                      pos: 18}
+  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",         pos: 19}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",               pos: 20}
 
 duti_associations:
   # Sublime
@@ -111,3 +113,4 @@ sys_conf_commands_root:
   - "/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop" # Deactivate and Stop the Remote Management Service
   - "defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true" # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
   - "/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on" # Enable Application Firewall
+  #- "networksetup -setdnsservers 'Thunderbolt Ethernet' 9.9.9.9 1.1.1.1" # Change DNS server, to see devices run 'networksetup -listallnetworkservices' https://superuser.com/questions/86184/change-dns-server-from-terminal-or-script-on-mac-os-x

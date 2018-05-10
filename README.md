@@ -36,7 +36,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX file associations using [duti](https://github.com/moretension/duti)
 * [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
 * [x] VSC config setup (through dotfiles role)
-* [x] Testing with Travis CI support
+* [x] [Testing with Travis CI](https://github.com/geerlingguy/mac-dev-playbook/blob/master/.travis.yml) support
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
 * [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm) and [this](http://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
 * [x] Ansible installation for OSX
