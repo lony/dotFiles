@@ -125,6 +125,7 @@ brew_cask_packages:
     #- sequel-pro
     #- mongodb-compass
     - postman
+    - hex-fiend
 
     - wireshark
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
