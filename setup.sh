@@ -15,15 +15,14 @@ else
   ansible-playbook -i "localhost," -c local ansible/site.yml'
 fi
 
-uname -a
-
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
       echo "\n### ENV\nOSX"
-      echo "\n### INSTALL pip + ansible"
-      sudo command -v pip >/dev/null 2>&1 || { sudo easy_install pip; }
-      sudo command -v ansible >/dev/null 2>&1 || { sudo pip install ansible; }
+      echo "\n### INSTALL pip"
+      sudo command -v pip3 >/dev/null 2>&1 || { sudo easy_install pip3; }
+      echo "\n### INSTALL ansible"
+      sudo command -v ansible >/dev/null 2>&1 || { sudo pip3 install ansible; }
       eval $CMD_ANSIBLE
       ;;
 
