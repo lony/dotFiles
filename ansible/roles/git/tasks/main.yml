@@ -10,3 +10,6 @@
     src:  gitconfig.j2
     dest: "~/.gitconfig"
   when: not gitconfig.stat.exists
+
+- name: Set diff-so-fancy as default for git diff https://github.com/so-fancy/diff-so-fancy
+  shell: "git config --global core.pager 'diff-so-fancy | less --tabs=4 -RFX'"
