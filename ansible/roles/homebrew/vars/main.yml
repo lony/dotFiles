@@ -1,7 +1,6 @@
 ---
 
 brew_taps:
-    - caskroom/cask                                                 # Needed for binary packages
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
