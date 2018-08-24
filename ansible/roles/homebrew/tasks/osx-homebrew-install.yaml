@@ -7,6 +7,7 @@
 - name: homebrew add tab's
   homebrew_tap: "tap={{ item }} state=present"
   with_items: "{{ brew_taps }}"
+  when: brew_taps > 0
 
 - name: homebrew install packages
   homebrew:
