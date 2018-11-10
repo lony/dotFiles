@@ -14,6 +14,8 @@ brew_packages:
     #- ag                                                           # Code-search similar to ack
     - less
     - { name: gnu-which, install_options: "--default-names" }
+    - { name: gnu-indent, install_options: "--default-names" }
+    - { name: gnu-getopt, install_options: "--default-names" }
 
     - jq                                                            # Lightweight and flexible command-line JSON processor
     - pv                                                            # Monitor data's progress through a pipe
@@ -52,6 +54,7 @@ brew_packages:
     - lynx                                                          # Text-based web browser
     #- iperf
     - iperf3
+    - bind
 
     - { name: gnutls, install_options: "--default-names" }          # GNU TLS
     - gnupg
