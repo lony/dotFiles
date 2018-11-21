@@ -8,7 +8,7 @@ brew_packages:
     - diffutils                                                     # File comparison utilities
     - { name: findutils, install_options: "--default-names" }       # GNU find, xargs, and locate
     - { name: gnu-sed, install_options: "--default-names" }
-    - gawk
+    - { name: gawk, install_options: "--default-names" }
     - { name: grep, install_options: "--default-names" }
     #- ack                                                          # Search tool like grep, but optimized for programmers
     #- ag                                                           # Code-search similar to ack
