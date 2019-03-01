@@ -6,22 +6,22 @@ brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
     - binutils                                                      # FSF Binutils for native development
     - diffutils                                                     # File comparison utilities
-    - { name: findutils, install_options: "--default-names" }       # GNU find, xargs, and locate
-    - { name: gnu-sed, install_options: "--default-names" }
-    - { name: gawk, install_options: "--default-names" }
-    - { name: grep, install_options: "--default-names" }
+    - findutils                                                     # GNU find, xargs, and locate
+    - gnu-sed
+    - gawk
+    - grep
     #- ack                                                          # Search tool like grep, but optimized for programmers
     #- ag                                                           # Code-search similar to ack
     - less
-    - { name: gnu-which, install_options: "--default-names" }
-    - { name: gnu-indent, install_options: "--default-names" }
-    - { name: gnu-getopt, install_options: "--default-names" }
+    - gnu-which
+    - gnu-indent
+    - gnu-getopt
 
     - jq                                                            # Lightweight and flexible command-line JSON processor
     - pv                                                            # Monitor data's progress through a pipe
     - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
 
-    - { name: gnu-tar, install_options: "--default-names" }
+    - gnu-tar
     - unrar
     - unzip
     - gzip
@@ -56,7 +56,7 @@ brew_packages:
     - iperf3
     - bind
 
-    - { name: gnutls, install_options: "--default-names" }          # GNU TLS
+    - gnutls                                                        # GNU TLS
     - gnupg
     - gpg-agent
     - openssl                                                       # SSL/TLS cryptography library
