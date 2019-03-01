@@ -1,6 +1,6 @@
 ---
 
-brew_taps:
+brew_taps: []
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
@@ -118,20 +118,17 @@ brew_cask_packages:
     - firefox
 
     - visual-studio-code
-    #- netbeans
     - sourcetree
     - meld
-    #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
-    #- mysqlworkbench
-    #- postico
-    #- sequel-pro
-    #- mongodb-compass
     - postman
     - hex-fiend
+    - jetbrains-toolbox
+    #- folx
+    #- unetbootin
 
     - wireshark
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
-    #- mono-mdk                                                      # Needed by fiddler
+    #- mono-mdk                                                     # Needed by fiddler
     #- fiddler
     #- filezilla
     #- cyberduck
@@ -139,26 +136,30 @@ brew_cask_packages:
 
     - dropbox
     - google-backup-and-sync
-    - rescuetime
+    #- rescuetime
     - tomighty
     - teamviewer
-    - skype
+
+    - rambox
+    - signal
 
     #- xmind
     - freemind
-    - adobe-acrobat-reader
+    #- adobe-acrobat-reader
     #- boostnote
     - microsoft-office
+    - fujitsu-scansnap-manager-ix500
 
     - imageoptim
     - gimp
     #- krita
-    - pencil
-    - xquartz
-    - inkscape
+    #- pencil
+    #- xquartz
+    #- inkscape
     #- scribus
     #- freecad
     - vlc
+    - handbrake
     - calibre                                                       # E-Book manager https://calibre-ebook.com
     - anki
     #- gmvault
@@ -166,20 +167,35 @@ brew_cask_packages:
     #- origami-studio
     #- google-web-designer
 
-    - java
-    #- jce-unlimited-strength-policy8
-    #- haskell-platform
-    #- unetbootin
-
+    # Virtualisation
     - docker
     #- kitematic
-    - vagrant
-    - vagrant-manager
+    #- vagrant
+    #- vagrant-manager
     #- virtualbox
     #- virtualbox-extension-pack
 
-    - android-file-transfer
+    # Java
+    #- netbeans
+    #- java
+    #- java8
+    #- jce-unlimited-strength-policy8
+
+    # Haskell
+    #- haskell-platform
+
+    # Android
+    #- android-file-transfer
     #- android-sdk
     #- android-studio
 
+    # Database
+    #- dbeaver-community
+    #- mysqlworkbench
+    #- postico
+    #- sequel-pro
+    #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
+    #- mongodb-compass
+
+    # Games
     #- openttd

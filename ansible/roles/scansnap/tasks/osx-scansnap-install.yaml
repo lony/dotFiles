@@ -11,7 +11,7 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
     update_homebrew: no
-  with_items:
+  loop:
     - caskroom/drivers/fujitsu-scansnap-manager-ix500
   when: '"fujitsu-scansnap-manager-ix500" not in homebrew_scansnap_installed.stdout'
   tags:

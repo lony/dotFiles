@@ -36,7 +36,7 @@ dockutil_persist:
   - { name: "Preview",              path: "/Applications/Preview.app",                    pos: 5}
   - { name: "System Preferences",   path: "/Applications/System Preferences.app",         pos: 6}
   - { name: "App Store",            path: "/Applications/App Store.app",                  pos: 7}
-  - { name: "Banking 4X",           path: "/Applications/Banking 4X.app",                 pos: 8}
+  - { name: "Banking4",             path: "/Applications/Banking4.app",                   pos: 8}
   - { name: "VLC",                  path: "/Applications/VLC.app",                        pos: 9}
   - { name: "Microsoft PowerPoint", path: "/Applications/Microsoft PowerPoint.app",       pos: 10}
   - { name: "Microsoft Excel",      path: "/Applications/Microsoft Excel.app",            pos: 11}

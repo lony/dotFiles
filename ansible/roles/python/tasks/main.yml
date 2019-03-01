@@ -10,11 +10,17 @@
     dest: "~"
     force: yes
 
-# - name: Upgrade pip
-#   command: "PIP_REQUIRE_VIRTUALENV=false; pip install --upgrade pip"
+- name: Upgrade pip
+  pip:
+    name: pip
+    state: latest
+  environment:
+        PIP_REQUIRE_VIRTUALENV: false
 
-# - name: Install system python packages
-#   pip:
-#     name: "{{ item }}"
-#     state: latest
-#   with_items: "{{ python_packages }}"
+- name: Install system python packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ python_packages }}"
+  environment:
+        PIP_REQUIRE_VIRTUALENV: false

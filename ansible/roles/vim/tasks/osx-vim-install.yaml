@@ -6,7 +6,7 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
     update_homebrew: yes
-  with_items:
+  loop:
     - vim
     #- vimr
     #- neovim
