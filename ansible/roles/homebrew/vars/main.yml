@@ -58,7 +58,6 @@ brew_packages:
 
     - gnutls                                                        # GNU TLS
     - gnupg
-    - gpg-agent
     - openssl                                                       # SSL/TLS cryptography library
     - ssh-copy-id                                                   # Copy identy to authorized keys of remote maschine
     - pwgen                                                         # Password generator
