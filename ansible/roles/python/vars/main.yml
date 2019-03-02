@@ -2,7 +2,7 @@
 
 brew_packages:
     - python
-    - { name: opencv3, install_options: "--with--contrib --with-python3 --with-ffmpeg --with-tbb" }
+    - opencv
 
 python_packages:
     - pip
