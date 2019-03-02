@@ -1,26 +1,27 @@
 ---
 
-brew_taps:
-    - caskroom/cask                                                 # Needed for binary packages
+brew_taps: []
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
     - binutils                                                      # FSF Binutils for native development
     - diffutils                                                     # File comparison utilities
-    - { name: findutils, install_options: "--default-names" }       # GNU find, xargs, and locate
-    - { name: gnu-sed, install_options: "--default-names" }
+    - findutils                                                     # GNU find, xargs, and locate
+    - gnu-sed
     - gawk
-    - { name: grep, install_options: "--default-names" }
+    - grep
     #- ack                                                          # Search tool like grep, but optimized for programmers
     #- ag                                                           # Code-search similar to ack
     - less
-    - { name: gnu-which, install_options: "--default-names" }
+    - gnu-which
+    - gnu-indent
+    - gnu-getopt
 
     - jq                                                            # Lightweight and flexible command-line JSON processor
     - pv                                                            # Monitor data's progress through a pipe
     - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
 
-    - { name: gnu-tar, install_options: "--default-names" }
+    - gnu-tar
     - unrar
     - unzip
     - gzip
@@ -53,10 +54,10 @@ brew_packages:
     - lynx                                                          # Text-based web browser
     #- iperf
     - iperf3
+    - bind
 
-    - { name: gnutls, install_options: "--default-names" }          # GNU TLS
+    - gnutls                                                        # GNU TLS
     - gnupg
-    - gpg-agent
     - openssl                                                       # SSL/TLS cryptography library
     - ssh-copy-id                                                   # Copy identy to authorized keys of remote maschine
     - pwgen                                                         # Password generator
@@ -116,20 +117,17 @@ brew_cask_packages:
     - firefox
 
     - visual-studio-code
-    #- netbeans
     - sourcetree
     - meld
-    #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
-    #- mysqlworkbench
-    #- postico
-    #- sequel-pro
-    #- mongodb-compass
     - postman
     - hex-fiend
+    - jetbrains-toolbox
+    #- folx
+    #- unetbootin
 
     - wireshark
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
-    #- mono-mdk                                                      # Needed by fiddler
+    #- mono-mdk                                                     # Needed by fiddler
     #- fiddler
     #- filezilla
     #- cyberduck
@@ -137,26 +135,30 @@ brew_cask_packages:
 
     - dropbox
     - google-backup-and-sync
-    - rescuetime
+    #- rescuetime
     - tomighty
     - teamviewer
-    - skype
+
+    - rambox
+    - signal
 
     #- xmind
     - freemind
-    - adobe-acrobat-reader
+    #- adobe-acrobat-reader
     #- boostnote
     - microsoft-office
+    - fujitsu-scansnap-manager-ix500
 
     - imageoptim
     - gimp
     #- krita
-    - pencil
-    - xquartz
-    - inkscape
+    #- pencil
+    #- xquartz
+    #- inkscape
     #- scribus
     #- freecad
     - vlc
+    - handbrake
     - calibre                                                       # E-Book manager https://calibre-ebook.com
     - anki
     #- gmvault
@@ -164,20 +166,35 @@ brew_cask_packages:
     #- origami-studio
     #- google-web-designer
 
-    - java
-    #- jce-unlimited-strength-policy8
-    #- haskell-platform
-    #- unetbootin
-
+    # Virtualisation
     - docker
     #- kitematic
-    - vagrant
-    - vagrant-manager
+    #- vagrant
+    #- vagrant-manager
     #- virtualbox
     #- virtualbox-extension-pack
 
-    - android-file-transfer
+    # Java
+    #- netbeans
+    #- java
+    #- java8
+    #- jce-unlimited-strength-policy8
+
+    # Haskell
+    #- haskell-platform
+
+    # Android
+    #- android-file-transfer
     #- android-sdk
     #- android-studio
 
+    # Database
+    #- dbeaver-community
+    #- mysqlworkbench
+    #- postico
+    #- sequel-pro
+    #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
+    #- mongodb-compass
+
+    # Games
     #- openttd

@@ -5,13 +5,13 @@
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
-  with_items:
+  loop:
     - sublime-text
 
 - name: Ensure sublime-text settings directories exist
   file:
     path: "{{ item }}"
     state: directory
-  with_items:
+  loop:
     - ~/Library/Application Support/Sublime Text 3/Installed Packages
     - ~/Library/Application Support/Sublime Text 3/Packages/User

@@ -2,16 +2,8 @@
 
 brew_packages:
     - python
-    - python3
-    - { name: opencv3, install_options: "--with--contrib --with-python3 --with-ffmpeg --with-tbb" }
+    - opencv
 
 python_packages:
     - pip
     - virtualenv
-    - virtualenvwrapper
-    - boto
-    - awscli
-    - ansible-lint
-    - autopep8
-    - flake8
-    - pylint

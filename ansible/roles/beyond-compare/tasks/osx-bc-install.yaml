@@ -5,7 +5,7 @@
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
-  with_items:
+  loop:
     - beyond-compare
 
 # https://www.scootersoftware.com/v4help/index.html?where_settings_are_stored.html

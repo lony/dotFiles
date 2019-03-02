@@ -3,7 +3,3 @@
 - name: homebrew cleanup
   command: "brew cleanup -s"
   ignore_errors: True
-
-- name: homebrew cask cleanup
-  command: "brew cask cleanup"
-  ignore_errors: True

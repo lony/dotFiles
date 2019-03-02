@@ -6,7 +6,7 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
     update_homebrew: yes
-  with_items:
+  loop:
     - mas
 
 - name: Get MAS account status for login
@@ -34,9 +34,10 @@
 
 - name: Ensure configured MAS apps are installed
   command: mas install "{{ item.id|default(item) }}"
-  with_items: "{{ mas_apps }}"
+  loop: "{{ mas_apps }}"
   when: "not mas_account_result_after_login.rc == 1 and '{{ item.id|default(item) }}' not in mas_list.stdout"
 
+  # If error see: https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786
 - name: Confirm Xcode license
   shell: xcodebuild -license accept
   become: true

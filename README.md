@@ -42,6 +42,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] Ansible installation for OSX
 * [ ] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
+* [ ] Hardening https://blog.bejarano.io/hardening-macos.html
 
 # Architecture
 

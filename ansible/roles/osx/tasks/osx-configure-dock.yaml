@@ -6,18 +6,18 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
     update_homebrew: yes
-  with_items:
+  loop:
     - dockutil
 
 - name: Remove all crap from Dock
   shell: dockutil --remove '{{ item }}'
   ignore_errors: true
-  with_items: "{{ dockutil_remove  }}"
+  loop: "{{ dockutil_remove  }}"
 
 - name: Check if items in dock exist
   shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
-  with_items: "{{ dockutil_persist }}"
+  loop: "{{ dockutil_persist }}"
 
 - name: Fix order
   shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
-  with_items: "{{ dockutil_persist }}"
+  loop: "{{ dockutil_persist }}"

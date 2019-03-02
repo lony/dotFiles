@@ -2,11 +2,11 @@
 
 - name: Run OSX configuration command (#1/2)
   shell: "{{ item }}"
-  with_items: "{{ sys_conf_commands }}"
+  loop: "{{ sys_conf_commands }}"
 
 - name: Run OSX configuration command (#2/2 as root)
   shell: "{{ item }}"
-  with_items: "{{ sys_conf_commands_root }}"
+  loop: "{{ sys_conf_commands_root }}"
   become: true
   become_user: root
   become_method: sudo
