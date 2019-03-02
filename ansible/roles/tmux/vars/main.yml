@@ -4,5 +4,5 @@ tmux_tpm_repo: "https://github.com/tmux-plugins/tpm.git"
 tmux_tpm_dir: "{{ lookup('env','HOME') }}/.tmux/plugins/tpm"
 
 brew_packages:
-    - { name: tmux, install_options: "--with-utf8proc" }
+    - tmux
     - reattach-to-user-namespace                                    # Needed to use pasteboard in tmux
