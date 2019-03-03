@@ -147,7 +147,7 @@ brew_cask_packages:
     #- adobe-acrobat-reader
     #- boostnote
     - microsoft-office
-    - fujitsu-scansnap-manager-ix500
+    - banking-4
 
     - imageoptim
     - gimp

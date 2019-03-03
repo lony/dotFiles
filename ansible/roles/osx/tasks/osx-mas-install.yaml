@@ -39,10 +39,8 @@
 
   # If error see: https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786
 - name: Confirm Xcode license
-  shell: xcodebuild -license accept
-  become: true
-  become_user: root
-  become_method: sudo
+  shell: sudo xcodebuild -license accept
+  become: yes
 
 - name: Upgrade all apps (if configured)
   command: mas upgrade

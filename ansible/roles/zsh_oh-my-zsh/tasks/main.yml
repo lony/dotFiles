@@ -23,13 +23,10 @@
   lineinfile:
     path: /etc/shells
     line: "{{ zsh_path.stdout }}"
-  become: true
-  become_user: root
+  become: yes
   become_method: sudo
 
 - name: Change shell for {{ lookup('env','USER') }} to zsh as default
   shell: chsh -s {{ zsh_path.stdout }} {{ lookup('env','USER') }}
-  become: true
-  become_user: root
-  become_method: sudo
+  become: yes
   

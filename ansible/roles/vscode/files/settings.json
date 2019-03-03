@@ -1,5 +1,7 @@
 {
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false
 }
