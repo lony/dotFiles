@@ -147,6 +147,7 @@ brew_cask_packages:
     #- adobe-acrobat-reader
     #- boostnote
     - microsoft-office
+    - banking-4
 
     - imageoptim
     - gimp
