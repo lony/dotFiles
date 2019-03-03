@@ -11,6 +11,13 @@
     dest: "{{ role_path }}/src/bash_zsh/all_secret.sh"
   when: not all_secret.stat.exists
 
+- name: Replace HOMEBREW_GITHUB_API_TOKEN
+  lineinfile:
+    path: "{{ role_path }}/src/bash_zsh/all_secret.sh"
+    regexp: '^#export HOMEBREW_GITHUB_API_TOKEN'
+    line: "export HOMEBREW_GITHUB_API_TOKEN=\"{{ github_token }}\""
+  when: not all_secret.stat.exists
+
 - name: Install dotfiles using bootstrap.py script
   command: "{{ role_path }}/bin/bootstrap.py"
   register: bootstrap

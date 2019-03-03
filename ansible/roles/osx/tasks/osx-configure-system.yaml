@@ -7,18 +7,14 @@
 - name: Run OSX configuration command (#2/2 as root)
   shell: "{{ item }}"
   loop: "{{ sys_conf_commands_root }}"
-  become: true
-  become_user: root
-  become_method: sudo
+  become: yes
 
 - name: Copy SMB config /etc/nsmb.conf
   copy:
     src: "{{ role_path }}/files/nsmb.conf"
     dest: "/etc/nsmb.conf"
     force: no
-  become: true
-  become_user: root
-  become_method: sudo
+  become: yes
 
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:

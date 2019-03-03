@@ -28,6 +28,8 @@ dockutil_remove:
   - "iBooks"
   - "Downloads"
   - "Terminal"
+  - "Safari"
+
 dockutil_persist:
   - { name: "Activity Monitor",     path: "/Applications/Utilities/Activity Monitor.app", pos: 1}
   - { name: "ScanSnap Manager",     path: "/Applications/ScanSnap/ScanSnap Manager.app",  pos: 2}

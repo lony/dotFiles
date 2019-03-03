@@ -5,14 +5,13 @@
   register: homebrew_scansnap_installed
   failed_when: homebrew_scansnap_installed.rc > 1
 
-- name: homebrew install scansnap packages
-  homebrew:
+- name: homebrew cask install scansnap packages
+  homebrew_cask:
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
-    update_homebrew: no
   loop:
-    - caskroom/drivers/fujitsu-scansnap-manager-ix500
+    - fujitsu-scansnap-manager-ix500
   when: '"fujitsu-scansnap-manager-ix500" not in homebrew_scansnap_installed.stdout'
   tags:
     - travis-do-not
