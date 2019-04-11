@@ -3,5 +3,8 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false
+  "telemetry.enableCrashReporter": false,
+  "explorer.autoReveal": false,
+  "problems.autoReveal": false,
+  "breadcrumbs.enabled": true
 }
