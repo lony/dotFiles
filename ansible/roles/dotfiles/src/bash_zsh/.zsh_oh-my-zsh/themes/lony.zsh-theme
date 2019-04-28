@@ -1,3 +1,6 @@
+# foundation of this style is steeef's theme
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
+#
 # prompt style and colors based on Steve Losh's Prose theme:
 # http://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
@@ -9,17 +12,28 @@
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-function virtualenv_info {
+function func_virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '| '%F{yellow}`basename $VIRTUAL_ENV`%f' '
 }
-PR_GIT_UPDATE=1
+
+function func_precmd {
+    # check for untracked files or updated submodules, since vcs_info doesn't
+    if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
+        FMT_BRANCH="| %{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST}"
+    else
+        FMT_BRANCH="| %{$turquoise%}%b%u%c${PR_RST}"
+    fi
+    zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
+
+    vcs_info 'prompt'
+}
 
 setopt prompt_subst
 
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-#use extended color palette if available
+# use extended color palette if available
 if [[ $terminfo[colors] -ge 256 ]]; then
     turquoise="%F{81}"
     orange="%F{166}"
@@ -37,7 +51,7 @@ else
 fi
 
 # enable VCS systems you use
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 
 # check-for-changes can be really slow.
 # you should disable it, if you work with large repositories
@@ -62,41 +76,10 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-
-function steeef_preexec {
-    case "$(history $HISTCMD)" in
-        *git*)
-            PR_GIT_UPDATE=1
-            ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
-    esac
-}
-add-zsh-hook preexec steeef_preexec
-
-function steeef_chpwd {
-    PR_GIT_UPDATE=1
-}
-add-zsh-hook chpwd steeef_chpwd
-
-function steeef_precmd {
-    if [[ -n "$PR_GIT_UPDATE" ]] ; then
-        # check for untracked files or updated submodules, since vcs_info doesn't
-        if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
-            PR_GIT_UPDATE=1
-            FMT_BRANCH="| %{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST}"
-        else
-            FMT_BRANCH="| %{$turquoise%}%b%u%c${PR_RST}"
-        fi
-        zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
-
-        vcs_info 'prompt'
-        PR_GIT_UPDATE=
-    fi
-}
-add-zsh-hook precmd steeef_precmd
+# Hook information can be found here
+# http://zsh.sourceforge.net/Doc/Release/Functions.html
+add-zsh-hook precmd func_precmd
 
 PROMPT=$'
-[ %? %{$grey%}| %D{%y-%m-%d %H:%M:%S} | %{$purple%}%n%f@%{$orange%}%m%f%{$grey%} $vcs_info_msg_0_$(virtualenv_info)] %{$limegreen%}%~${PR_RST}
+[ %? %{$grey%}| %D{%y-%m-%d %H:%M:%S} | %{$purple%}%n%f@%{$orange%}%m%f%{$grey%} $vcs_info_msg_0_$(func_virtualenv_info)] %{$limegreen%}%~${PR_RST}
 ❯ '
