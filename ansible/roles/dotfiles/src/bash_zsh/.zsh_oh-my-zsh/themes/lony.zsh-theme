@@ -1,3 +1,6 @@
+# foundation of this style is steeef's theme
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
+#
 # prompt style and colors based on Steve Losh's Prose theme:
 # http://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
@@ -37,7 +40,7 @@ else
 fi
 
 # enable VCS systems you use
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 
 # check-for-changes can be really slow.
 # you should disable it, if you work with large repositories
@@ -68,11 +71,10 @@ function steeef_preexec {
         *git*)
             PR_GIT_UPDATE=1
             ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
     esac
 }
+# Hook information can be found here
+# http://zsh.sourceforge.net/Doc/Release/Functions.html
 add-zsh-hook preexec steeef_preexec
 
 function steeef_chpwd {
