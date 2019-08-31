@@ -53,8 +53,15 @@ alias gp='git pull && git fetch --prune --tags'
 alias gpu='git push && git push origin --tags'
 alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log
-alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias gll='gl -p'
+# https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+# https://git-scm.com/docs/git-log/2.9.1
+# https://git-scm.com/docs/pretty-formats
+# https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+# https://stackoverflow.com/questions/24604052/truncating-commit-messages
+alias gl='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(auto)%d%Creset %<(45,trunc)%s" --abbrev-commit'
+alias gll='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(auto)%d%Creset %<(45,trunc)%s %C(cyan)(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias glll='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(auto)%d%Creset %C(cyan)(%cr) %C(bold blue)<%an>%Creset %n %B" --abbrev-commit'
+alias gllll='gl -p'
 # http://stackoverflow.com/questions/673407/how-do-i-clear-my-local-working-directory-in-git
 # http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git
 # https://git-scm.com/docs/git-clean

@@ -9,11 +9,6 @@
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '| '%F{yellow}`basename $VIRTUAL_ENV`%f' '
-}
-PR_GIT_UPDATE=1
-
 setopt prompt_subst
 
 autoload -U add-zsh-hook
@@ -37,7 +32,7 @@ else
 fi
 
 # enable VCS systems you use
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 
 # check-for-changes can be really slow.
 # you should disable it, if you work with large repositories
@@ -62,38 +57,20 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-
-function steeef_preexec {
-    case "$(history $HISTCMD)" in
-        *git*)
-            PR_GIT_UPDATE=1
-            ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
-    esac
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '| '%F{yellow}`basename $VIRTUAL_ENV`%f' '
 }
-add-zsh-hook preexec steeef_preexec
-
-function steeef_chpwd {
-    PR_GIT_UPDATE=1
-}
-add-zsh-hook chpwd steeef_chpwd
 
 function steeef_precmd {
-    if [[ -n "$PR_GIT_UPDATE" ]] ; then
-        # check for untracked files or updated submodules, since vcs_info doesn't
-        if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
-            PR_GIT_UPDATE=1
-            FMT_BRANCH="| %{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST}"
-        else
-            FMT_BRANCH="| %{$turquoise%}%b%u%c${PR_RST}"
-        fi
-        zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
+      # check for untracked files or updated submodules, since vcs_info doesn't
+      if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
+          FMT_BRANCH="| %{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST}"
+      else
+          FMT_BRANCH="| %{$turquoise%}%b%u%c${PR_RST}"
+      fi
+      zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
 
-        vcs_info 'prompt'
-        PR_GIT_UPDATE=
-    fi
+      vcs_info 'prompt'
 }
 add-zsh-hook precmd steeef_precmd
 
