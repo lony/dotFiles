@@ -82,9 +82,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 129 224 275 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 375 620 392 0 0 1440 877 </string>
+	<string>970 780 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1280 425 585 452 0 0 1920 1057 </string>
+	<string>0 605 585 452 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 325 585 452 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_12C5B130-457D-4BAD-9B33-71AD9F9D0FDA</key>
@@ -1911,7 +1911,9 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.2</string>
 		<string>3.2.9</string>
+		<string>3.3.1</string>
 		<string>3.3.0</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -1928,7 +1930,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0847B6EB-C5ED-4151-A8EE-07F1CADC6286</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>1</integer>
+	<integer>11</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586766571.34754503</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2277,6 +2279,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.termid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2350,6 +2360,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2619,6 +2637,19 @@
 	</dict>
 	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
 	<true/>
+	<key>NoSyncSearchHistory</key>
+	<array>
+		<string>authA</string>
+		<string>LU0392495023</string>
+		<string>IE00B1FZS350</string>
+		<string> IE00B1FZS350 </string>
+		<string>IE00BKM4GZ66 </string>
+		<string>LU0322253906</string>
+	</array>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>commen</string>
+	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>573311775.77575505</real>
 	<key>OpenArrangementAtStartup</key>
@@ -2664,6 +2695,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/lony/dotFiles/ansible/roles/osx/filesIterm</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2675,8 +2708,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-07T15:41:34Z</date>
+	<date>2019-08-31T00:22:47Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -2691,7 +2726,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.0</string>
+	<string>3.3.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

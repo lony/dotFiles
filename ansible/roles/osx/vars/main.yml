@@ -77,20 +77,21 @@ duti_associations:
 sys_conf_commands:
   - "defaults write -g QLPanelAnimationDuration -float 0" # Disable animations when opening a Quick Look window
   - "defaults write -g NSWindowResizeTime -float 0.001" # Disable full screen animation of OS X
-  - "defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false" # Disable animations when opening and closing windows
-  - "defaults write NSGlobalDomain NSWindowResizeTime -float .001" # Accelerated playback when adjusting the window size (Cocoa applications)
-  - "defaults write NSGlobalDomain KeyRepeat -int 0" # The keyboard react faster to keystrokes
-  - "defaults write NSGlobalDomain InitialKeyRepeat -int 10" # -"-
-  - "defaults write NSGlobalDomain AppleShowAllExtensions -bool true" # Display file extensions in Finder
-  - "defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true" # Enable the expand save panel by default
-  - "defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true" # -"-
-  - "defaults write NSGlobalDomain AppleShowScrollBars -string 'Always'" # Always show scrollbars ( Possible values: `WhenScrolling`, `Automatic` and `Always`)
-  - "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true" # Expand print panel by default
-  - "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true" # -"-
-  - "defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false" # Disable auto capitalize
-  - "defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false" # Disable auto period insert
-  - "defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false" # Double-click a window's title bar to minimize
-  - "defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false" # Set scroll direction
+  - "defaults write -g NSAutomaticWindowAnimationsEnabled -bool false" # Disable animations when opening and closing windows
+  - "defaults write -g NSWindowResizeTime -float .001" # Accelerated playback when adjusting the window size (Cocoa applications)
+  - "defaults write -g ApplePressAndHoldEnabled -bool false" # Disable accent popup https://apple.stackexchange.com/questions/105098/how-do-i-re-enable-the-press-and-hold-character-picker-on-os-x-lion
+  - "defaults write -g KeyRepeat -int 1" # The keyboard react faster to keystrokes https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
+  - "defaults write -g InitialKeyRepeat -int 10" # -"-
+  - "defaults write -g AppleShowAllExtensions -bool true" # Display file extensions in Finder
+  - "defaults write -g NSNavPanelExpandedStateForSaveMode -bool true" # Enable the expand save panel by default
+  - "defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true" # -"-
+  - "defaults write -g AppleShowScrollBars -string 'Always'" # Always show scrollbars ( Possible values: `WhenScrolling`, `Automatic` and `Always`)
+  - "defaults write -g PMPrintingExpandedStateForPrint -bool true" # Expand print panel by default
+  - "defaults write -g PMPrintingExpandedStateForPrint2 -bool true" # -"-
+  - "defaults write -g NSAutomaticCapitalizationEnabled -bool false" # Disable auto capitalize
+  - "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" # Disable auto period insert
+  - "defaults write -g AppleMiniaturizeOnDoubleClick -bool false" # Double-click a window's title bar to minimize
+  - "defaults write -g com.apple.swipescrolldirection -bool false" # Set scroll direction
   - "defaults write com.apple.finder AppleShowAllFiles YES" # Allowing Finder to show hidden files
   - "defaults write com.apple.finder DisableAllAnimations -bool true" # Disable animation when opening the Info window in OS X Finder (cmd⌘ + i)
   - "defaults write com.apple.finder _FXShowPosixPathInTitle -bool true" # Display full posix path in OS X Finder title Bar
