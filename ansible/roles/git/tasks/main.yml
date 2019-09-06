@@ -18,3 +18,7 @@
 # https://stackoverflow.com/questions/16164624/vim-syntax-highlighting-for-git-commit-messages-custom-commentchar
 - name: Switch git comment char to $ instead of \#
   shell: "git config --global core.commentchar '$'"
+
+# https://stackoverflow.com/questions/30542491/push-force-with-lease-by-default
+- name: Enable force with lease as default for git push
+  shell: "git config --global alias.pushf 'push --force-with-lease'"
