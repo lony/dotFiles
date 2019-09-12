@@ -9,6 +9,20 @@
 # EXPORTS     #
 # --------------
 
+# Locale
+# List all: locale -a
+# https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html
+# https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all
+# en
+export LANG="en_GB:en"
+export LC_CTYPE="en_GB.UTF-8"
+export LC_MESSAGES="en_GB.UTF-8"
+# de
+export LC_COLLATE="de_DE.UTF-8"
+export LC_MONETARY="de_DE.UTF-8"
+export LC_NUMERIC="de_DE.UTF-8"
+export LC_TIME="de_DE.UTF-8"
+
 # Prompt
 export SUDO_PS1='\[\033[01m\][ \[\033[01;31m\]\u@\h \[\033[00m\]\[\033[01m\]] \[\033[01;32m\]\w\[\033[00m\]\n\[\033[01;31m\]$\[\033[00m\]> '
 
