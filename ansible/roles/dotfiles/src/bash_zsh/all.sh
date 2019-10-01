@@ -64,7 +64,7 @@ alias gss='git status -s'
 # http://stackoverflow.com/questions/19298600/tag-already-exists-in-the-remote-error-after-recreating-the-git-tag
 # http://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull
 alias gp='git pull && git fetch --prune --tags'
-alias gpu='git push && git push origin --tags'
+alias gpu='git push -u && git push origin --tags'
 alias gd='git diff'
 # https://coderwall.com/p/euwpig/a-better-git-log
 # https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History

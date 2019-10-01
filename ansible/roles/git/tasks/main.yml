@@ -1,5 +1,4 @@
 ---
-
 - name: Check if ~/.gitconfig exists
   stat:
     path: ~/.gitconfig
@@ -7,7 +6,7 @@
 
 - name: Create ~/.gitconfig
   template:
-    src:  gitconfig.j2
+    src: gitconfig.j2
     dest: "~/.gitconfig"
   when: not gitconfig.stat.exists
 
@@ -22,3 +21,8 @@
 # https://stackoverflow.com/questions/30542491/push-force-with-lease-by-default
 - name: Enable force with lease as default for git push
   shell: "git config --global alias.pushf 'push --force-with-lease'"
+
+# https://stackoverflow.com/questions/6089294/why-do-i-need-to-do-set-upstream-all-the-time
+# https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
+- name: Set upstream for local branch push
+  shell: "git config --global push.default current"
