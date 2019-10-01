@@ -21,6 +21,7 @@
   pip:
     name: "{{ item }}"
     state: latest
+    extra_args: --user
   loop: "{{ python_packages }}"
   environment:
         PIP_REQUIRE_VIRTUALENV: false
