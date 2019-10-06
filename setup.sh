@@ -3,25 +3,27 @@
 # Script setup Ansible depending on OS
 
 ## Config
+PIP_CMD="pip"
+ANSIBLE_CMD="ansible"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
-ANSIBLE_CMD="ansible-playbook -i \"localhost,\" -c local ${ANSIBLE_PLAYBOOK_PATH}"
+ANSIBLE_PLAYBOOK_CMD="ansible-playbook -i \"localhost,\" -c local ${ANSIBLE_PLAYBOOK_PATH}"
 
 # If test are run on travis avoid space intensive tasks
 if [ "$TRAVIS" == "true" ]; then
 
   CMD_ANSIBLE=$(cat <<EOF
-echo "\n### RUN df" &&
+printf "\n### RUN df\n" &&
 df -h &&
-echo "\n### RUN ansible - install" &&
-${ANSIBLE_CMD} --skip-tags "travis-do-not"
+printf "\n### RUN ansible-playbook - install\n" &&
+${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
 EOF
 )
 
 else
 
   CMD_ANSIBLE=$(cat <<EOF
-echo "\n### RUN ansible - install" &&
-${ANSIBLE_CMD}
+printf "\n### RUN ansible-playbook - install\n" &&
+${ANSIBLE_PLAYBOOK_CMD}
 EOF
 )
 
@@ -30,18 +32,20 @@ fi
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
-      echo "\n### ENV\nOSX"
-      echo "\n### INSTALL pip"
-      sudo command -v pip >/dev/null 2>&1 || { echo "... have to" && sudo easy_install pip; }
-      echo "\n### INSTALL ansible"
-      sudo command -v ansible >/dev/null 2>&1 || { echo "... have to" && sudo pip install ansible; }
-      echo "\n### RUN ansible - check syntax"
-      ${ANSIBLE_CMD} --syntax-check
+      printf "\n### ENV\nOSX\n"
+      printf "\n### INSTALL ${PIP_CMD}\n"
+      sudo command -v $PIP_CMD >/dev/null 2>&1 || { printf "... have to\n" && sudo easy_install $PIP_CMD; }
+      $PIP_CMD --version
+      printf "\n### INSTALL ${ANSIBLE_CMD}\n"
+      sudo command -v $ANSIBLE_CMD >/dev/null 2>&1 || { printf "... have to\n" && sudo $PIP_CMD install $ANSIBLE_CMD --upgrade; }
+      $ANSIBLE_CMD --version
+      printf "\n### RUN ansible-playbook - check syntax\n"
+      ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
       eval $CMD_ANSIBLE
       ;;
 
     *)
-      echo "UNKNOWN OS: ${unameOut}"
-      echo "Please enhance script!"
+      printf "UNKNOWN OS: ${unameOut}\n"
+      printf "Please enhance script!\n"
       ;;
 esac

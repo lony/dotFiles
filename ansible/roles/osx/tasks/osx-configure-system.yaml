@@ -29,6 +29,8 @@
       - "     Start after = 5 Minute"
       - "     -> Hot Corners"
       - "       Left Top = Put Display to Sleep"
+      - " -> Mission Control"
+      - "    [ ] Automatically rearrange Spaces based on most recent use"
       - " -> Security & Privacy"
       - "   -> General"
       - "      [x] Required password immediately"

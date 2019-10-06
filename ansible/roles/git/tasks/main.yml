@@ -1,5 +1,4 @@
 ---
-
 - name: Check if ~/.gitconfig exists
   stat:
     path: ~/.gitconfig
@@ -7,7 +6,7 @@
 
 - name: Create ~/.gitconfig
   template:
-    src:  gitconfig.j2
+    src: gitconfig.j2
     dest: "~/.gitconfig"
   when: not gitconfig.stat.exists
 
@@ -19,6 +18,16 @@
 - name: Switch git comment char to $ instead of \#
   shell: "git config --global core.commentchar '$'"
 
+# https://stackoverflow.com/questions/25430600/difference-between-git-pull-rebase-and-git-pull-ff-only
+# https://stackoverflow.com/questions/13846300/how-to-make-git-pull-use-rebase-by-default-for-all-my-repositories
+- name: Enable rebase as default for git pull
+  shell: "git config --global pull.rebase true"
+
 # https://stackoverflow.com/questions/30542491/push-force-with-lease-by-default
 - name: Enable force with lease as default for git push
   shell: "git config --global alias.pushf 'push --force-with-lease'"
+
+# https://stackoverflow.com/questions/6089294/why-do-i-need-to-do-set-upstream-all-the-time
+# https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
+- name: Set upstream for local branch push
+  shell: "git config --global push.default current"

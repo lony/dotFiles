@@ -3,6 +3,7 @@
 brew_packages:
     - python
     - opencv
+    - pipenv
 
 python_packages:
     - pip
