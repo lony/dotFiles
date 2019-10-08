@@ -88,7 +88,10 @@ alias git_clean_branch='git for-each-ref --format '"'"'%(refname:short)'"'"' ref
 alias vgu='vagrant destroy -f && vagrant up'
 
 # IntelliJ
-alias idea="/usr/local/bin/idea"
+alias idea='/usr/local/bin/idea'
+
+# Kubernetes
+alias k='kubectl'
 
 # --------------
 # EDITOR       #
