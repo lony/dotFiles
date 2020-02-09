@@ -70,11 +70,11 @@ plugins=(
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  kubectl
 )
 
 	# aws
 	# brew
-  # kubectl
 	# common-aliases
 	# compleat
 	# dirhistory
