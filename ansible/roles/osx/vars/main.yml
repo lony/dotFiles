@@ -110,6 +110,6 @@ sys_conf_commands:
   - "defaults write com.apple.screensaver askForPasswordDelay -int 0" # -"-
 sys_conf_commands_root:
   - "/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop" # Deactivate and Stop the Remote Management Service
-  - "defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true" # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
+  - "defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true" # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
   - "/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on" # Enable Application Firewall
   #- "networksetup -setdnsservers 'Thunderbolt Ethernet' 9.9.9.9 1.1.1.1" # Change DNS server, to see devices run 'networksetup -listallnetworkservices' https://superuser.com/questions/86184/change-dns-server-from-terminal-or-script-on-mac-os-x

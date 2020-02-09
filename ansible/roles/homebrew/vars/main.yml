@@ -90,7 +90,7 @@ brew_packages:
     - nvm
     - node
     - yarn
-    #- go
+    - go
     #- rbenv
     #- ruby
     #- ruby-build
@@ -139,16 +139,18 @@ brew_cask_packages:
     - tomighty
     - teamviewer
 
-    - rambox
+    #- rambox
     - signal
 
     #- xmind
     - freemind
     #- adobe-acrobat-reader
     #- boostnote
+    - joplin
     - microsoft-office
     - banking-4
 
+    - balsamiq-mockups
     - imageoptim
     - gimp
     #- krita
@@ -195,6 +197,9 @@ brew_cask_packages:
     #- sequel-pro
     #- apache-directory-studio                                       # LDAP GUI http://directory.apache.org/studio
     #- mongodb-compass
+
+    # GIS
+    #- qgis
 
     # Games
     #- openttd
