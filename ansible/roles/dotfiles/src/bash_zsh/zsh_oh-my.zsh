@@ -74,6 +74,7 @@ plugins=(
 
 	# aws
 	# brew
+  # kubectl
 	# common-aliases
 	# compleat
 	# dirhistory
