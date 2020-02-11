@@ -3,16 +3,16 @@
 mas_email: ""
 mas_upgrade_all_apps: yes
 mas_apps:
-  #- { id: 1013897218, name: "App Cleaner (6.0)" }
-  #- { id: 926711151,  name: "Banking 4X (6.10.9)" }
   - { id: 408981434,  name: "iMovie (10.1.10)" }
   - { id: 1032755628,  name: "Duplicate File Finder (5.6)" }
   - { id: 497799835,  name: "Xcode (10.1)" }
-  - { id: 909760813,  name: "Who's On My WiFi (1.1.2)" }
   - { id: 425424353,  name: "The Unarchiver (4.1.0)" }
   - { id: 410628904,  name: "Wunderlist (3.4.10)" }
 
 dockutil_remove:
+  - "TV"
+  - "Podcasts"
+  - "Music"
   - "Siri"
   - "Launchpad"
   - "Mail"
@@ -31,18 +31,18 @@ dockutil_remove:
   - "Safari"
 
 dockutil_persist:
-  - { name: "Activity Monitor",     path: "/Applications/Utilities/Activity Monitor.app", pos: 1}
-  - { name: "ScanSnap Manager",     path: "/Applications/ScanSnap/ScanSnap Manager.app",  pos: 2}
-  - { name: "Preview",              path: "/Applications/Preview.app",                    pos: 3}
-  - { name: "System Preferences",   path: "/Applications/System Preferences.app",         pos: 4}
-  - { name: "App Store",            path: "/Applications/App Store.app",                  pos: 5}
-  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                   pos: 6}
-  - { name: "iTerm",                path: "/Applications/iTerm.app",                      pos: 7}
-  - { name: "Wunderlist",           path: "/Applications/Wunderlist.app",                 pos: 8}
-  - { name: "Joplin",               path: "/Applications/Joplin.app",                     pos: 9}
-  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",         pos: 10}
-  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",               pos: 11}
-  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",              pos: 12}
+  # List all existing: dockutil --list
+  - { name: "Activity Monitor",     path: "/System/Applications/Utilities/Activity Monitor.app",  pos: 1}
+  - { name: "Preview",              path: "/System/Applications/Preview.app",                     pos: 2}
+  - { name: "System Preferences",   path: "/Applications/System Preferences.app",                 pos: 3}
+  - { name: "App Store",            path: "/Applications/App Store.app",                          pos: 4}
+  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                           pos: 5}
+  - { name: "iTerm",                path: "/Applications/iTerm.app",                              pos: 6}
+  - { name: "Wunderlist",           path: "/Applications/Wunderlist.app",                         pos: 7}
+  - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 8}
+  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 9}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 10}
+  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 11}
 
 duti_associations:
   # Sublime
@@ -98,7 +98,7 @@ sys_conf_commands:
   - "defaults write com.apple.dock launchanim -bool false" # Disable animations when you open an application from the Dock
   - "defaults write com.apple.dock expose-animation-duration -float 0.1" # Make all animations faster that are used by Mission Control
   - "defaults write com.apple.dock autohide-delay -float 0" # Disable the delay when you hide the Dock
-  - "defaults write com.apple.dock tilesize -int 25" # Set size of dock menu
+  - "defaults write com.apple.dock tilesize -int 30" # Set size of dock menu
   - "defaults write com.apple.dock mineffect -string 'scale'" # Change minimize/maximize window effect
   - "defaults write com.apple.dock minimize-to-application -bool true" # Minimize windows into their application’s icon
   - "defaults write com.apple.desktopservices DSDontWriteNetworkStores true" # Prevent .DS_Store file creation over network connections

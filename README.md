@@ -9,10 +9,10 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 
 # Usage
 
-1. Clone repo `git clone git@github.com:lony/dotFiles.git`
+1. Clone repo `git clone https://github.com/lony/dotFiles.git` to home
 2. Execute `./setup.sh`
-3. Customize [all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
-2. Execute again `./setup.sh`
+3. Customize [ansible/roles/dotfiles/src/bash_zsh/all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
+4. Execute again `./setup.sh`
 
 # Feature
 
