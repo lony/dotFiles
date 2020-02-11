@@ -1,6 +1,7 @@
 ---
 
-brew_taps: []
+brew_taps: 
+    - homebrew/cask-drivers
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
