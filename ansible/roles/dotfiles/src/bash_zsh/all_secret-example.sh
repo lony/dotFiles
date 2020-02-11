@@ -9,6 +9,8 @@
 #PRODUCTION_HOST_PATTERN=""
 
 # Github
+# see https://github.com/settings/tokens
+# token needs no scopes
 #export HOMEBREW_GITHUB_API_TOKEN=""
 
 # Go
