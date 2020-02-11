@@ -13,6 +13,9 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 2. Execute `./setup.sh`
 3. Customize [ansible/roles/dotfiles/src/bash_zsh/all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
 4. Execute again `./setup.sh`
+5. Switch repo back `git remote set-url origin git@github.com:lony/dotFiles.git`
+6. Generate SSH key in `/Users/<home>/.ssh` using `ssh-keygen -t rsa -b 4096 -C "<YOUR@EMAIL.COM>" -N ""`
+7. Add public SSH key to Github [https://github.com/settings/keys](https://github.com/settings/keys)
 
 # Feature
 
