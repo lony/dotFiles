@@ -70,9 +70,11 @@ duti_associations:
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
   - "defaults write -g QLPanelAnimationDuration -float 0" # Disable animations when opening a Quick Look window
-  - "defaults write -g NSWindowResizeTime -float 0.001" # Disable full screen animation of OS X
+  - "defaults write -g NSWindowResizeTime -float 0.001" # Disable screen resizing animation of OS X
   - "defaults write -g NSAutomaticWindowAnimationsEnabled -bool false" # Disable animations when opening and closing windows
-  - "defaults write -g NSWindowResizeTime -float .001" # Accelerated playback when adjusting the window size (Cocoa applications)
+  - "defaults write -g NSToolbarFullScreenAnimationDuration -float 0" # Showing a toolbar or menu bar in full screen
+  - "defaults write -g NSScrollViewRubberbanding -bool false" # Disable rubberband scrolling
+  - "defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0" # Disable scrolling column views
   - "defaults write -g ApplePressAndHoldEnabled -bool false" # Disable accent popup https://apple.stackexchange.com/questions/105098/how-do-i-re-enable-the-press-and-hold-character-picker-on-os-x-lion
   - "defaults write -g KeyRepeat -int 1" # The keyboard react faster to keystrokes https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
   - "defaults write -g InitialKeyRepeat -int 10" # -"-
@@ -96,11 +98,15 @@ sys_conf_commands:
   - "defaults write com.apple.finder NewWindowTarget -string 'PfHm'" # New window points to home
   - "defaults write com.apple.finder ShowStatusBar -bool true" # Show status bar in finder
   - "defaults write com.apple.dock launchanim -bool false" # Disable animations when you open an application from the Dock
-  - "defaults write com.apple.dock expose-animation-duration -float 0.1" # Make all animations faster that are used by Mission Control
+  - "defaults write com.apple.dock expose-animation-duration -float 0" # Make all animations faster that are used by Mission Control
   - "defaults write com.apple.dock autohide-delay -float 0" # Disable the delay when you hide the Dock
+  - "defaults write com.apple.dock autohide-time-modifier -float 0" # -"-
   - "defaults write com.apple.dock tilesize -int 30" # Set size of dock menu
   - "defaults write com.apple.dock mineffect -string 'scale'" # Change minimize/maximize window effect
   - "defaults write com.apple.dock minimize-to-application -bool true" # Minimize windows into their application’s icon
+  - "defaults write com.apple.dock springboard-show-duration -float 0" # Disable delay showing and hiding Launchpad
+  - "defaults write com.apple.dock springboard-hide-duration -float 0" # -"-
+  - "defaults write com.apple.dock springboard-page-duration -float 0" # Disable delay changing pages in Launchpad
   - "defaults write com.apple.desktopservices DSDontWriteNetworkStores true" # Prevent .DS_Store file creation over network connections
   - "defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" # Prevent .DS_Store file creation on USB devices
   - "defaults write com.apple.screencapture disable-shadow -bool true" # Screenshots without window shadows
