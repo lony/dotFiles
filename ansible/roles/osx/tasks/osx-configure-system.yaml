@@ -114,6 +114,10 @@
       - "    Enter Licence"
       - " -> JetBrains Toolbox"
       - "    Login"
+      - " -> Adobe Acrobat Reader DC"
+      - "   -> Preferences"
+      - "     -> Documents"
+      - "        [x] Remember current state of Tools Pane"
 
 - name: Remove the 'last login' message from the terminal
   file:
