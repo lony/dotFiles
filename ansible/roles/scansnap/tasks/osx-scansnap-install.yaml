@@ -1,7 +1,7 @@
 ---
 
 - name: Check if scansnap package is already installed
-  shell: brew cask list | grep fujitsu-scansnap-manager-ix500
+  shell: brew cask list | grep fujitsu-scansnap-home
   register: homebrew_scansnap_installed
   failed_when: homebrew_scansnap_installed.rc > 1
 
@@ -11,17 +11,19 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
   loop:
-    - fujitsu-scansnap-manager-ix500
-  when: '"fujitsu-scansnap-manager-ix500" not in homebrew_scansnap_installed.stdout'
+    - fujitsu-scansnap-home
+  when: '"fujitsu-scansnap-home" not in homebrew_scansnap_installed.stdout'
   tags:
     - travis-do-not
 
 - name: Stop running scansnap app
-  command: osascript -e 'quit app "ScanSnap Manager"'
+  command: osascript -e 'quit app "ScanSnap Home"'
 
+# This worked for fujitsu-scansnap-manager-ix500 but is not ported now
+# File jp.co... is a left over for it
 # http://www.documentsnap.com/how-to-backup-your-scansnap-profile-settings-on-the-mac/
-- name: Install scansnap settings
-  copy:
-    src: "{{ role_path }}/files/"
-    dest: "~/Library/Preferences/"
-    force: yes
+# - name: Install scansnap settings
+#   copy:
+#     src: "{{ role_path }}/files/"
+#     dest: "~/Library/Preferences/"
+#     force: yes
