@@ -44,29 +44,6 @@ dockutil_persist:
   - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 10}
   - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 11}
 
-duti_associations:
-  # Sublime
-  - bundle_id: com.sublimetext.3
-    utis:
-      - public.plain-text
-      - md
-      - .md
-
-  # VLC
-  - bundle_id: org.videolan.vlc
-    utis:
-      - avi
-      - flac
-      - flv
-      - m4a
-      - mkv
-      - mov
-      - mp3
-      - mp4
-      - mpg
-      - wav
-      - wmv
-
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
   - "defaults write -g QLPanelAnimationDuration -float 0" # Disable animations when opening a Quick Look window

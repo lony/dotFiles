@@ -1,6 +1,6 @@
 ---
 
-brew_taps: 
+brew_taps:
     - homebrew/cask-drivers
 
 brew_packages:
@@ -160,7 +160,7 @@ brew_cask_packages:
     #- inkscape
     #- scribus
     #- freecad
-    - vlc
+    #- vlc                                                          Installed via seperate role
     - handbrake
     - calibre                                                       # E-Book manager https://calibre-ebook.com
     - anki
