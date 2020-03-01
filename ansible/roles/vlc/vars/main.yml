@@ -1,0 +1,17 @@
+---
+
+duti_associations:
+  # VLC
+  - bundle_id: org.videolan.vlc
+    utis:
+      - avi
+      - flac
+      - flv
+      - m4a
+      - mkv
+      - mov
+      - mp3
+      - mp4
+      - mpg
+      - wav
+      - wmv
