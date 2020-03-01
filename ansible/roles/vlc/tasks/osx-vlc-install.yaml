@@ -1,0 +1,23 @@
+---
+
+- name: Check if vlc package is already installed
+  shell: brew cask list | grep vlc
+  register: homebrew_vlc_installed
+  failed_when: homebrew_vlc_installed.rc > 1
+
+- name: homebrew cask install vlc packages
+  homebrew_cask:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop:
+    - vlc
+  when: '"vlc" not in homebrew_vlc_installed.stdout'
+  tags:
+    - travis-do-not
+
+- name: Install vlc settings
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "~/Library/Preferences/org.videolan.vlc/"
+    force: no

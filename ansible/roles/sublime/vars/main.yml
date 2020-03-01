@@ -1,0 +1,9 @@
+---
+
+duti_associations:
+  # Sublime
+  - bundle_id: com.sublimetext.3
+    utis:
+      - public.plain-text
+      - md
+      - .md

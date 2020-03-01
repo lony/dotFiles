@@ -4,6 +4,10 @@
   import_tasks: osx-sublime-install.yaml
   when: ansible_os_family == 'Darwin'
 
+- name: Execute OSX file association configuration
+  import_tasks: osx-configure-file-associations.yaml
+  when: ansible_os_family == 'Darwin'
+
 - name: Install sublime text package control
   get_url:
     url: "http://packagecontrol.io/Package Control.sublime-package"
