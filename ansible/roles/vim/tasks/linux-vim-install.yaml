@@ -1,0 +1,8 @@
+---
+
+- name: install vim packages
+  package:
+    name: "{{ item.name | default(item) }}"
+    state: present
+  loop:
+    - vim

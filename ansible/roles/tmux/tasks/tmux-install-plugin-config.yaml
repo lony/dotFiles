@@ -1,0 +1,23 @@
+---
+
+- name: Install tmux plugin manager
+  git:
+    repo: "{{ tmux_tpm_repo }}"
+    dest: "{{ tmux_tpm_dir }}"
+    clone: yes
+    update: yes
+
+- name: Copy tmux config
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "~"
+    force: yes
+
+- name: Install tmux plugins
+  shell: '~/.tmux/plugins/tpm/bin/install_plugins'
+
+- name: Update tmux plugins
+  shell: '~/.tmux/plugins/tpm/bin/update_plugins all'
+
+- name: Remove unused tmux plugins
+  shell: '~/.tmux/plugins/tpm/bin/clean_plugins'

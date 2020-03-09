@@ -1,5 +1,14 @@
 ---
 
+- name: Execute OSX hombrew installation for zsh
+  import_tasks: osx-zsh-install.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Execute Linux package installation for zsh
+  import_tasks: linux-zsh-install.yaml
+  when: ansible_os_family == 'RedHat' or
+    ansible_os_family == 'Debian'
+
 - name: Install oh-my-zsh (using git clone)
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh
@@ -16,7 +25,7 @@
     dest: ~/.zsh_oh-my-zsh/plugins/zsh-syntax-highlighting
 
 - name: Retrive zsh path
-  shell: which zsh
+  shell: command -v zsh
   register: zsh_path
 
 - name: Add {{ zsh_path.stdout }} to /etc/shells
@@ -29,4 +38,3 @@
 - name: Change shell for {{ lookup('env','USER') }} to zsh as default
   shell: chsh -s {{ zsh_path.stdout }} {{ lookup('env','USER') }}
   become: yes
-  

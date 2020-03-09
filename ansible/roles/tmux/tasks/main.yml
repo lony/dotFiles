@@ -1,27 +1,18 @@
 ---
 
-- name: Execute OSX hombrew installation for tmux
+- name: Install tmux package on OSX using hombrew
   import_tasks: osx-tmux-install.yaml
   when: ansible_os_family == 'Darwin'
 
-- name: Install tmux plugin manager
-  git:
-    repo: "{{ tmux_tpm_repo }}"
-    dest: "{{ tmux_tpm_dir }}"
-    clone: yes
-    update: yes
+- name: Install tmux package on Linux
+  import_tasks: linux-tmux-install.yaml
+  when: ansible_os_family == 'RedHat' or
+    ansible_os_family == 'Debian'
 
-- name: Copy tmux config
-  copy:
-    src: "{{ role_path }}/files/"
-    dest: "~"
-    force: yes
+- name: Fetch tmux version
+  command: "tmux -V"
+  register: bootstrap
 
-- name: Install tmux plugins
-  shell: '~/.tmux/plugins/tpm/bin/install_plugins'
-
-- name: Update tmux plugins
-  shell: '~/.tmux/plugins/tpm/bin/update_plugins all'
-
-- name: Remove unused tmux plugins
-  shell: '~/.tmux/plugins/tpm/bin/clean_plugins'
+- name: Install tmux plugin manager and config
+  import_tasks: tmux-install-plugin-config.yaml
+  when:  bootstrap.stdout.split(' ')[1] is version('2.8', '>=')

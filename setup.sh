@@ -1,51 +1,132 @@
 #!/usr/bin/env sh
 #
-# Script setup Ansible depending on OS
+# Script to prepare everything depending on operating system
+# so that Ansible can run independently
+
+set -e
+
 
 ## Config
+#
+
+GIT_CMD="git"
+GIT_REPO_URL="https://github.com/lony/dotFiles.git"
+GIT_CLONE_FOLDER="$HOME/dotFiles"
 PIP_CMD="pip"
+PIP_PACKAGE="python-pip"
 ANSIBLE_CMD="ansible"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
 ANSIBLE_PLAYBOOK_CMD="ansible-playbook -i \"localhost,\" -c local ${ANSIBLE_PLAYBOOK_PATH}"
+SYSTEM_OS="Unknown"
+SYSTEM_OS_VERSION="Unknown"
+PACKAGE_MANAGER="Unknown"
+ROOT_RUN=""
 
-# If test are run on travis avoid space intensive tasks
-if [ "$TRAVIS" == "true" ]; then
 
-  CMD_ANSIBLE=$(cat <<EOF
-printf "\n### RUN df\n" &&
-df -h &&
-printf "\n### RUN ansible-playbook - install\n" &&
-${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
-EOF
-)
+## Func
+#
 
-else
+# Print error message
+error_print() {
+	echo ${RED}"Error: $@"${RESET} >&2
+}
 
-  CMD_ANSIBLE=$(cat <<EOF
-printf "\n### RUN ansible-playbook - install\n" &&
-${ANSIBLE_PLAYBOOK_CMD}
-EOF
-)
+# Detects if script is run as root
+root_detect() {
+  if ! [ $(id -u) -eq 0 ]; then
+    ROOT_RUN="sudo "
+  fi
+}
 
-fi
+# Detects if command exists, first for sudo then for normal user
+command_exists() {
+  $ROOT_RUN command -v "$@" >/dev/null 2>&1
+}
 
+# Detects if command exists else runs install command
+command_install() {
+      if ! command_exists $1; then
+        printf "\n### INSTALL $1\n"
+        printf "  ... have to\n"
+        $ROOT_RUN$2
+      fi
+}
+
+# Clone git repository if not existing
+git_clone() {
+  if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
+      printf "\n### RUN ${GIT_CMD} clone\n"
+      git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
+  fi
+}
+
+# Run ansible after showing debug information
+ansible_install_run() {
+  command_install $ANSIBLE_CMD "$PIP_CMD install $ANSIBLE_CMD --upgrade"
+
+  git_clone
+  cd "$GIT_CLONE_FOLDER"
+
+  printf "\n"
+  printf "### INFORMATION\n"
+  printf "SYSTEM_OS=$SYSTEM_OS\n"
+  printf "SYSTEM_OS_VERSION=$SYSTEM_OS_VERSION\n"
+  printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
+  printf "ROOT_RUN=$ROOT_RUN\n"
+  printf "\n"
+  $PIP_CMD --version
+  $ANSIBLE_CMD --version
+
+  if [ "$TRAVIS" == "true" ]; then
+    printf "\n"
+    printf "SPACE\n"
+    df -h
+  fi
+
+  printf "\n### RUN ansible-playbook - check syntax\n"
+  ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
+
+  printf "\n### RUN ansible-playbook - install\n"
+  if [ "$TRAVIS" == "true" ]; then
+    ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
+  else
+    ${ANSIBLE_PLAYBOOK_CMD}
+  fi
+}
+
+
+## Main
+#
+
+root_detect
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
-      printf "\n### ENV\nOSX\n"
-      printf "\n### INSTALL ${PIP_CMD}\n"
-      sudo command -v $PIP_CMD >/dev/null 2>&1 || { printf "... have to\n" && sudo easy_install $PIP_CMD; }
-      $PIP_CMD --version
-      printf "\n### INSTALL ${ANSIBLE_CMD}\n"
-      sudo command -v $ANSIBLE_CMD >/dev/null 2>&1 || { printf "... have to\n" && sudo $PIP_CMD install $ANSIBLE_CMD --upgrade; }
-      $ANSIBLE_CMD --version
-      printf "\n### RUN ansible-playbook - check syntax\n"
-      ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
-      eval $CMD_ANSIBLE
+      SYSTEM_OS="OSX"
+      SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
+
+      command_install $PIP_CMD "easy_install $PIP_CMD"
+      ansible_install_run
+      ;;
+
+    Linux*)
+      SYSTEM_OS="Linux"
+      SYSTEM_OS_VERSION="\n\n$(cat /etc/os-release)\n"
+
+      if [ -x $(command_exists yum) ]; then
+        PACKAGE_MANAGER="yum install -y"
+      elif  [ -x $(command_exists apt-get) ]; then
+        PACKAGE_MANAGER="apt-get -y install"
+      else
+        error_print "UNKNOWN Package manager\nPlease add support in script!\n"
+      fi
+
+      command_install $GIT_CMD "$PACKAGE_MANAGER $GIT_CMD"
+      command_install $PIP_CMD "$PACKAGE_MANAGER $PIP_PACKAGE"
+      ansible_install_run
       ;;
 
     *)
-      printf "UNKNOWN OS: ${unameOut}\n"
-      printf "Please enhance script!\n"
+      error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
       ;;
 esac

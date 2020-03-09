@@ -9,13 +9,16 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 
 # Usage
 
-1. Clone repo `git clone https://github.com/lony/dotFiles.git` to home
-2. Execute `./setup.sh`
-3. Customize [ansible/roles/dotfiles/src/bash_zsh/all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
-4. Execute again `./setup.sh`
-5. Switch repo back `git remote set-url origin git@github.com:lony/dotFiles.git`
-6. Generate SSH key in `/Users/<home>/.ssh` using `ssh-keygen -t rsa -b 4096 -C "<YOUR@EMAIL.COM>" -N ""`
-7. Add public SSH key to Github [https://github.com/settings/keys](https://github.com/settings/keys)
+1. Run `sh -c "$(curl -sSL https://raw.githubusercontent.com/lony/dotFiles/master/setup.sh)"`
+  * Executes setup script
+  * Download repository to home folder
+  * Install ansible prerequisites
+  * Run Ansible
+2. Customize [ansible/roles/dotfiles/src/bash_zsh/all_secret.sh](ansible/roles/dotfiles/src/bash_zsh/all_secret-example.sh) and maybe [.ssh/config](ansible/roles/dotfiles/src/.ssh/config) (see [SSH guide](https://lony.github.io/post/2017/cli-commands/#secure-shell-command-ssh))
+3. Execute `./setup.sh` again
+4. Switch repo back `git remote set-url origin git@github.com:lony/dotFiles.git`
+5. Generate SSH key in `/Users/<home>/.ssh` using `ssh-keygen -t rsa -b 4096 -C "<YOUR@EMAIL.COM>" -N ""`
+6. Add public SSH key to Github [https://github.com/settings/keys](https://github.com/settings/keys)
 
 # Feature
 
@@ -43,7 +46,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [ ] Testing using Packer to build image see [this](https://nickcharlton.net/posts/automating-macos-using-ansible.html)
 * [ ] Testing with local VirtualBox see [this](https://github.com/geerlingguy/macos-virtualbox-vm) and [this](http://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
 * [x] Ansible installation for OSX
-* [ ] Ansible installation for Linux
+* [x] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
 * [ ] Hardening https://blog.bejarano.io/hardening-macos.html
 
