@@ -1,0 +1,12 @@
+---
+
+- name: homebrew install zsh packages
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+    update_homebrew: yes
+  loop:
+    - zsh
+    #- zsh-syntax-highlighting                                      # Red/Green command checker - Now cloned in zsh_oh-my-zsh
+    #- zsh-autosuggestions                                          # History of commands - Now cloned in zsh_oh-my-zsh

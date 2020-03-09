@@ -1,0 +1,21 @@
+---
+
+# https://docs.ansible.com/ansible/latest/modules/apt_module.html
+- name: Update all packages for Debian
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600  # Every hour
+    autoclean: yes
+    autoremove: yes
+  when: ansible_os_family == 'Debian'
+
+# https://stackoverflow.com/questions/29986794/ansible-how-can-i-update-the-system-centos-with-ansible
+# https://docs.ansible.com/ansible/latest/modules/yum_module.html
+- name: Update all packages for Redhat
+  yum:
+    name: "*"
+    state: latest
+    update_cache: yes
+  when: ansible_os_family == 'RedHat'

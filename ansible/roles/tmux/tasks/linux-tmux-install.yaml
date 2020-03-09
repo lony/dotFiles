@@ -1,0 +1,8 @@
+---
+
+- name: install tmux packages
+  package:
+    name: "{{ item.name | default(item) }}"
+    state: present
+  loop:
+    - tmux

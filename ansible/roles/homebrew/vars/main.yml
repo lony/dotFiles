@@ -31,9 +31,7 @@ brew_packages:
     - p7zip                                                         # 7-Zip (high compression file archiver) implementation
 
     - bash
-    - zsh
-    #- zsh-syntax-highlighting                                      # Red/Green command checker - Now cloned in zsh_oh-my-zsh
-    #- zsh-autosuggestions                                          # History of commands - Now cloned in zsh_oh-my-zsh
+    #- zsh                                                          Installed via seperate role
     - fish
 
     - screen

@@ -1,22 +1,13 @@
 ---
 
-- name: Execute OSX hombrew installation for sublime-text
+- name: OSX hombrew installation for sublime-text
   import_tasks: osx-sublime-install.yaml
   when: ansible_os_family == 'Darwin'
 
-- name: Execute OSX file association configuration
+- name: OSX file association configuration
   import_tasks: osx-configure-file-associations.yaml
   when: ansible_os_family == 'Darwin'
 
-- name: Install sublime text package control
-  get_url:
-    url: "http://packagecontrol.io/Package Control.sublime-package"
-  args:
-    dest: ~/Library/Application Support/Sublime Text 3/Installed Packages
-    mode: 0644
-
-- name: Install sublime-text settings
-  copy:
-    src: "{{ role_path }}/files/"
-    dest: "~/Library/Application Support/Sublime Text 3/Packages/User/"
-    force: yes
+- name: OSX install package manager and config for sublime
+  import_tasks: osx-install-pkg-manager-and-config.yaml
+  when: ansible_os_family == 'Darwin'

@@ -4,6 +4,11 @@
   import_tasks: osx-vim-install.yaml
   when: ansible_os_family == 'Darwin'
 
+- name: Execute Linux package installation for vim
+  import_tasks: linux-vim-install.yaml
+  when: ansible_os_family == 'RedHat' or
+    ansible_os_family == 'Debian'
+
 - name: Install vim plugin manager (using CURL)
   shell: 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

@@ -6,4 +6,6 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
     update_homebrew: yes
-  loop: "{{ brew_packages }}"
+  loop:
+    - tmux
+    - reattach-to-user-namespace                                    # Needed to use pasteboard in tmux

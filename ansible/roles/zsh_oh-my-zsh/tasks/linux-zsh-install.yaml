@@ -1,0 +1,17 @@
+---
+
+- name: install zsh packages
+  package:
+    name: "{{ item.name | default(item) }}"
+    state: present
+  loop:
+    - zsh
+
+# https://superuser.com/questions/231735/how-do-i-change-my-default-shell-on-a-aws-instance
+- name: install chsh (change shell util) for Redhat
+  package:
+    name: "{{ item.name | default(item) }}"
+    state: present
+  loop:
+    - util-linux-user
+  when: ansible_os_family == 'RedHat'
