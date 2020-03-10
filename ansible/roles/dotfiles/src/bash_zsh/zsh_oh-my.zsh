@@ -70,7 +70,6 @@ plugins=(
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-  kubectl
 )
 
 	# aws
@@ -83,6 +82,7 @@ plugins=(
 	# git
 	# httpie
 	# history
+  # kubectl
 	# mvn
 	# node
 	# npm

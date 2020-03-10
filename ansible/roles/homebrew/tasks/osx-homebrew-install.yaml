@@ -16,7 +16,7 @@
     upgrade_all: yes
   when: homebrew_check.stat.exists
 
-- name: homebrew add tab's
+- name: homebrew add tap's
   homebrew_tap: "tap={{ item }} state=present"
   loop: "{{ brew_taps }}"
 
