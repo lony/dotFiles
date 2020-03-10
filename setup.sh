@@ -98,7 +98,10 @@ ansible_install_run() {
 ## Main
 #
 
+printf "Start installing Ansible prerequisites (git, etc.).\n"
+printf "After this is finished there is a prompt coming - be prepared!\n"
 root_detect
+
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
@@ -108,7 +111,6 @@ case "${unameOut}" in
       command_install $PIP_CMD "easy_install $PIP_CMD"
       ansible_install_run
       ;;
-
     Linux*)
       SYSTEM_OS="Linux"
       SYSTEM_OS_VERSION="\n\n$(cat /etc/os-release)\n"
@@ -125,7 +127,6 @@ case "${unameOut}" in
       command_install $PIP_CMD "$PACKAGE_MANAGER $PIP_PACKAGE"
       ansible_install_run
       ;;
-
     *)
       error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
       ;;
