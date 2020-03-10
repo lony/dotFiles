@@ -16,7 +16,7 @@ PIP_CMD="pip"
 PIP_PACKAGE="python-pip"
 ANSIBLE_CMD="ansible"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
-ANSIBLE_PLAYBOOK_CMD="ansible-playbook --inventory \"localhost,\" ${ANSIBLE_PLAYBOOK_PATH}"
+ANSIBLE_PLAYBOOK_CMD="ansible-playbook --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
 SYSTEM_OS="Unknown"
 SYSTEM_OS_VERSION="Unknown"
 PACKAGE_MANAGER="Unknown"
@@ -74,6 +74,7 @@ ansible_install_run() {
   printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
   printf "ROOT_RUN=$ROOT_RUN\n"
   printf "\n"
+  python --version
   $PIP_CMD --version
   $ANSIBLE_CMD --version
 
