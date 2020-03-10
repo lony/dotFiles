@@ -84,6 +84,13 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 └── setup.sh                      - Script to prepare OS for Ansible
 ```
 
+# Testing
+
+* Amazon Linux
+  * Go into `~/dotFiles`
+  * `docker pull amazonlinux`
+  * `DIR=/root/dotFiles; docker run -it --mount src="$(pwd)",target=$DIR,type=bind --rm amazonlinux bash -c "cd $DIR; ./setup.sh; exec \"\$0\""`
+
 # Thanks
 
 This is heavily inspired by the work of the following people:
