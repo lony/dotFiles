@@ -2,7 +2,7 @@
 
 - name: Install sublime text package control
   get_url:
-    url: "http://packagecontrol.io/Package Control.sublime-package"
+    url: "https://packagecontrol.io/Package Control.sublime-package"
   args:
     dest: ~/Library/Application Support/Sublime Text 3/Installed Packages
     mode: 0644
