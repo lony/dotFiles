@@ -19,11 +19,16 @@
 - name: Stop running scansnap app
   command: osascript -e 'quit app "ScanSnap Home"'
 
-# This worked for fujitsu-scansnap-manager-ix500 but is not ported now
-# File jp.co... is a left over for it
 # http://www.documentsnap.com/how-to-backup-your-scansnap-profile-settings-on-the-mac/
-# - name: Install scansnap settings
-#   copy:
-#     src: "{{ role_path }}/files/"
-#     dest: "~/Library/Preferences/"
-#     force: yes
+#
+# ScanSnap Manager (for fujitsu-scansnap-manager-ix500) [OLD]:
+# jp.co.pfu.ScanSnap.V10L10.plist
+#
+# ScanSnap Home (for fujitsu-scansnap-home):
+# com.fujitsu.pfu.ScanSnapHome.plist
+# com.fujitsu.pfu.ScanSnapHomeSetting.plist
+- name: Install scansnap settings
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "~/Library/Preferences/"
+    force: yes
