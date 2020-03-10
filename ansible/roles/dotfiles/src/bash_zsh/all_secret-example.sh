@@ -14,7 +14,7 @@
 #export HOMEBREW_GITHUB_API_TOKEN=""
 
 # Go
-#export GOPATH="~/Go"
+#export GOPATH="$HOME/Go"
 
 # NVM
 #export NVM_DIR="$HOME/.nvm"
