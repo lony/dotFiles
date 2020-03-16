@@ -110,7 +110,7 @@ brew_cask_packages:
     - osxfuse
     - veracrypt
     #- cryptomator
-    - spectacle                                                     # Resize OS X windows https://www.spectacleapp.com
+    - rectangle                                                     # Resize OS X windows https://github.com/rxhanson/Rectangle replaces spectacle
 
     - google-chrome
     - firefox
