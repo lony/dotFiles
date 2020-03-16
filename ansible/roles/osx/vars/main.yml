@@ -7,7 +7,7 @@ mas_apps:
   - { id: 1032755628,  name: "Duplicate File Finder (5.6)" }
   - { id: 497799835,  name: "Xcode (10.1)" }
   - { id: 425424353,  name: "The Unarchiver (4.1.0)" }
-  - { id: 410628904,  name: "Wunderlist (3.4.10)" }
+  - { id: 1274495053,  name: "Microsoft To Do (2.13)" }
 
 dockutil_remove:
   - "TV"
