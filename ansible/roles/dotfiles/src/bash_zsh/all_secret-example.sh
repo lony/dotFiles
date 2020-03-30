@@ -14,7 +14,9 @@
 #export HOMEBREW_GITHUB_API_TOKEN=""
 
 # Go
-#export GOPATH="$HOME/Go"
+export GOPATH="$HOME/Go"
+# https://stackoverflow.com/questions/36650052/golang-equivalent-of-npm-install-g
+export PATH="$PATH:$GOPATH/bin"
 
 # NVM
 #export NVM_DIR="$HOME/.nvm"
