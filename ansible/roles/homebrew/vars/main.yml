@@ -163,8 +163,7 @@ brew_cask_packages:
     #- vlc                                                          Installed via seperate role
     #- spotify
     #- handbrake
-    - obs                                                           # Screen capturing https://obsproject.com/
-    - ishowu                                                        #      driver need https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
+    - obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
     - calibre                                                       # E-Book manager https://calibre-ebook.com
     - anki
     #- gmvault
