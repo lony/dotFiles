@@ -6,5 +6,9 @@
   "telemetry.enableCrashReporter": false,
   "explorer.autoReveal": false,
   "problems.autoReveal": false,
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
+  "editor.fontLigatures": true
 }

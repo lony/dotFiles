@@ -17,3 +17,30 @@
     src: "{{ role_path }}/files/keybindings.json"
     dest: "~/Library/Application Support/Code/User/keybindings.json"
     force: yes
+
+- name: Check if vscode is installed
+  command: command -v code >/dev/null 2>&1
+  register: vscode_installed
+  ignore_errors: yes
+
+# https://stackoverflow.com/questions/34286515/how-to-install-visual-studio-code-extensions-from-command-line
+- name: List vscode extensions
+  command: code --list-extensions
+  register: vscode_extensions_installed
+  when: vscode_installed.rc == 0
+
+- debug: var=vscode_extensions_installed
+
+- name: Install vscode extensions
+  command: "code --install-extension {{ item.name | default(item) }}"
+  when:
+    - vscode_installed.rc == 0
+    - item not in vscode_extensions_installed.stdout_lines
+  loop: "{{ vscode_extensions }}"
+
+- name: Uninstall vscode extensions not listed
+  command: "code --uninstall-extension {{ item.name | default(item) }}"
+  when:
+    - vscode_installed.rc == 0
+    - item not in vscode_extensions
+  loop: "{{ vscode_extensions_installed.stdout_lines }}"
