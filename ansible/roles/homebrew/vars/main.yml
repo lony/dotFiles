@@ -2,6 +2,7 @@
 
 brew_taps:
     - homebrew/cask-drivers
+    - homebrew/cask-fonts
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
@@ -115,7 +116,8 @@ brew_cask_packages:
     - google-chrome
     - firefox
 
-    - visual-studio-code
+    - font-fira-code                                                # Fira Code enables font ligatures for example !=
+    - visual-studio-code                                            # Configured in separate role
     - sourcetree
     - meld
     - postman

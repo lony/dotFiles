@@ -1,0 +1,22 @@
+---
+
+vscode_extensions:
+  - CoenraadS.bracket-pair-colorizer-2
+  - DavidWang.ini-for-vscode
+  - dbaeumer.vscode-eslint
+  - donjayamanne.githistory
+  - dzannotti.vscode-babel-coloring
+  - eamodio.gitlens
+  - EditorConfig.EditorConfig
+  - formulahendry.auto-close-tag
+  - formulahendry.auto-rename-tag
+  - mauve.terraform
+  - mblode.pretty-formatter
+  - ms-azuretools.vscode-docker
+  - ms-python.python
+  - ms-vscode.Go
+  - ms-vscode.vscode-typescript-tslint-plugin
+  - oderwat.indent-rainbow
+  - PKief.material-icon-theme
+  - rbbit.typescript-hero
+  - vscoss.vscode-ansible
