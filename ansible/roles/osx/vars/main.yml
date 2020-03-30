@@ -36,13 +36,14 @@ dockutil_persist:
   - { name: "Preview",              path: "/System/Applications/Preview.app",                     pos: 2}
   - { name: "System Preferences",   path: "/Applications/System Preferences.app",                 pos: 3}
   - { name: "App Store",            path: "/Applications/App Store.app",                          pos: 4}
-  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                           pos: 5}
-  - { name: "iTerm",                path: "/Applications/iTerm.app",                              pos: 6}
-  - { name: "Wunderlist",           path: "/Applications/Wunderlist.app",                         pos: 7}
-  - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 8}
-  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 9}
-  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 10}
-  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 11}
+  - { name: "Spotify",              path: "/Applications/Spotify.app",                            pos: 5}
+  - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 6}
+  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                           pos: 7}
+  - { name: "iTerm",                path: "/Applications/iTerm.app",                              pos: 8}
+  - { name: "Microsoft To Do",      path: "/Applications/Microsoft To Do.app",                    pos: 9}
+  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 10}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 11}
+  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 12}
 
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
@@ -78,7 +79,7 @@ sys_conf_commands:
   - "defaults write com.apple.dock expose-animation-duration -float 0" # Make all animations faster that are used by Mission Control
   - "defaults write com.apple.dock autohide-delay -float 0" # Disable the delay when you hide the Dock
   - "defaults write com.apple.dock autohide-time-modifier -float 0" # -"-
-  - "defaults write com.apple.dock tilesize -int 30" # Set size of dock menu
+  - "defaults write com.apple.dock tilesize -int 50" # Set size of dock menu
   - "defaults write com.apple.dock mineffect -string 'scale'" # Change minimize/maximize window effect
   - "defaults write com.apple.dock minimize-to-application -bool true" # Minimize windows into their application’s icon
   - "defaults write com.apple.dock springboard-show-duration -float 0" # Disable delay showing and hiding Launchpad
