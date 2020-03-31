@@ -116,7 +116,8 @@ brew_cask_packages:
     - google-chrome
     - firefox
 
-    - font-fira-code                                                # Fira Code enables font ligatures for example !=
+    - font-fira-code                                                # Fira Code enables font ligatures for example != https://github.com/tonsky/FiraCode
+    - font-iosevka                                                  # Possible replacement for Fira https://github.com/be5invis/Iosevka
     - visual-studio-code                                            # Configured in separate role
     - sourcetree
     - meld

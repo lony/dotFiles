@@ -1,6 +1,7 @@
 ---
 
 vscode_extensions:
+  - azemoh.one-monokai
   - CoenraadS.bracket-pair-colorizer-2
   - DavidWang.ini-for-vscode
   - dbaeumer.vscode-eslint
@@ -17,4 +18,5 @@ vscode_extensions:
   - oderwat.indent-rainbow
   - PKief.material-icon-theme
   - rbbit.typescript-hero
+  - usernamehw.errorlens
   - vscoss.vscode-ansible
