@@ -8,8 +8,6 @@ vscode_extensions:
   - dzannotti.vscode-babel-coloring
   - eamodio.gitlens
   - EditorConfig.EditorConfig
-  - formulahendry.auto-close-tag
-  - formulahendry.auto-rename-tag
   - mauve.terraform
   - mblode.pretty-formatter
   - ms-azuretools.vscode-docker

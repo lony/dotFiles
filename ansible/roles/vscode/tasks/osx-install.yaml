@@ -29,8 +29,6 @@
   register: vscode_extensions_installed
   when: vscode_installed.rc == 0
 
-- debug: var=vscode_extensions_installed
-
 - name: Install vscode extensions
   command: "code --install-extension {{ item.name | default(item) }}"
   when:
