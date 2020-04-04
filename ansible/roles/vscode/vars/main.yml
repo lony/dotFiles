@@ -1,6 +1,7 @@
 ---
 
 vscode_extensions:
+  - 4ops.terraform
   - azemoh.one-monokai
   - CoenraadS.bracket-pair-colorizer-2
   - DavidWang.ini-for-vscode
@@ -9,7 +10,6 @@ vscode_extensions:
   - dzannotti.vscode-babel-coloring
   - eamodio.gitlens
   - EditorConfig.EditorConfig
-  - mauve.terraform
   - mblode.pretty-formatter
   - ms-azuretools.vscode-docker
   - ms-python.python
@@ -18,5 +18,7 @@ vscode_extensions:
   - oderwat.indent-rainbow
   - PKief.material-icon-theme
   - rbbit.typescript-hero
+  - streetsidesoftware.code-spell-checker
   - usernamehw.errorlens
+  - vscode-snippet.snippet
   - vscoss.vscode-ansible
