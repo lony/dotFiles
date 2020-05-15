@@ -39,6 +39,7 @@ set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
+set smartindent                 " reacts to syntax of code https://vi.stackexchange.com/questions/5818/what-is-the-difference-between-autoindent-and-smartindent-in-vimrc
 set copyindent                  " copy the previous indentation on autoindenting
 set number                      " always show line numbers
 set shiftwidth=4                " number of spaces to use for autoindenting
@@ -51,6 +52,7 @@ set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set cursorline                  " highlight current line
 set wildmenu                    " visual autocomplete for command menu
+set wildmode=longest:full,full  " show long list https://stackoverflow.com/questions/9511253/how-to-effectively-use-vim-wildmenu
 "set ruler
 
 set history=1000                " remember more commands and search history
@@ -68,11 +70,33 @@ set foldenable                  " enable folding
 set foldlevelstart=10           " open most folds by default
 set foldnestmax=10              " 10 nested fold max
 
+set path+=**                    " Enable better search see https://www.youtube.com/watch?v=XA2WjJbmmoM
+
 set encoding=utf-8
 "set t_Co=256
 
-" http://stackoverflow.com/questions/32103591/vim-cant-scroll-in-iterm2
-set mouse=a
+let mapleader=","               " https://stackoverflow.com/questions/1764263/what-is-the-leader-in-a-vimrc-file
+
+let g:netrw_banner=0        " disable banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+" hide gitignore'd files
+let g:netrw_list_hide=netrw_gitignore#Hide()
+" hide dotfiles by default (this is the string toggled by netrw-gh)
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" Enable clipboard if available else use plain
+" https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+" https://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
+" http://vimdoc.sourceforge.net/htmldoc/options.html#'mouse'
+if has("clipboard")
+  set mouse=a
+else
+  set mouse=r
+end
+
+" Enable scrolling in iterm http://stackoverflow.com/questions/32103591/vim-cant-scroll-in-iterm2
 if has("mouse_sgr")
 	set ttymouse=sgr
 else
