@@ -10,9 +10,9 @@
 # --------------
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-PS1="\[\033[01m\][ \[\033[01;34m\]\u@\h \[\033[00m\]\[\033[01m\]] \[\033[01;32m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \n\[\033[01;34m\]$\[\033[00m\]> "
+PS1="\[\033[01m\][ \[\033[01;34m\]\u@\h \[\033[00m\]\[\033[01m\]] \[\033[01;32m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \n\[\033[00m\]> "
 
 # -----------------------------
 # Show ls after every cd      #
@@ -20,7 +20,7 @@ PS1="\[\033[01m\][ \[\033[01;34m\]\u@\h \[\033[00m\]\[\033[01m\]] \[\033[01;32m\
 
 # http://unix.stackexchange.com/questions/20396/make-cd-automatically-ls
 function chpwd() {
-    cd "$@" && ll;
+  cd "$@" && ll;
 }
 alias cd='chpwd'
 
