@@ -28,6 +28,7 @@ vim Configuration
 * leader key - https://stackoverflow.com/questions/1764263/what-is-the-leader-in-a-vimrc-file
 * autoindent vs smartindent - https://vi.stackexchange.com/questions/5818/at-is-the-difference-between-autoindent-and-smartindent-in-vimrc
 * wildmode - https://stackoverflow.com/questions/9511253/how-to-effectively-use-vim-wildmenu
+* clipboard - https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
 
 # Plugins
 

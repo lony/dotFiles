@@ -32,7 +32,7 @@ let g:netrw_liststyle=3                                     " tree view
 let mapleader=","                                           " change leader key
 set autoindent                                              " always set autoindenting on
 set backspace=indent,eol,start                              " allow backspacing over everything in insert mode
-set clipboard=unnamed			                                  " enable clipboard copy and paste
+set clipboard^=unnamed,unnamedplus                          " enable clipboard copy and paste
 set copyindent                                              " copy the previous indentation on autoindenting
 set cursorline                                              " highlight current line
 set encoding=utf-8
