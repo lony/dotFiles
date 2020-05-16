@@ -4,3 +4,8 @@
   import_tasks: linux-update-pkg.yml
   when: ansible_os_family == 'RedHat' or
     ansible_os_family == 'Debian'
+
+- name: Linux install Terminator config
+  import_tasks: terminator-install-config.yml
+  when: ansible_os_family == 'RedHat' or
+    ansible_os_family == 'Debian'
