@@ -16,9 +16,18 @@
     upgrade_all: yes
   when: homebrew_check.stat.exists
 
+- name: hombrew list tap's
+  command: brew tap
+  register: brew_tap_list
+
 - name: homebrew add tap's
   homebrew_tap: "tap={{ item }} state=present"
   loop: "{{ brew_taps }}"
+  when: "item.name | default(item) not in brew_tap_list.stdout"
+
+- name: hombrew list packages
+  command: brew list
+  register: brew_list
 
 - name: homebrew install packages
   homebrew:
@@ -26,6 +35,11 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
   loop: "{{ brew_packages }}"
+  when: "item.name | default(item) not in brew_list.stdout"
+
+- name: hombrew cask list packages
+  command: brew cask list
+  register: brew_cask_list
 
 - name: homebrew cask install packages
   homebrew_cask:
@@ -33,5 +47,6 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
   loop: "{{ brew_cask_packages }}"
+  when: "item.name | default(item) not in brew_cask_list.stdout"
   tags:
     - travis-do-not
