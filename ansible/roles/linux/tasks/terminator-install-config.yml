@@ -1,0 +1,12 @@
+---
+
+- name: Create Terminator config folder
+  file:
+    path: "~/.config/terminator"
+    recurse: yes
+    state: directory
+
+- name: Copy ~/.config/terminator/config from terminator_config
+  copy:
+    src:  "{{ role_path }}/files/terminator_config"
+    dest: "~/.config/terminator/config"
