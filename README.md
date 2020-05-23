@@ -35,12 +35,14 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX [Homebrew Cask](https://caskroom.github.io/) setup
 * [x] OSX Homebrew cleanup
 * [x] OSX cli configuration see [this](https://lony.github.io/post/2016/mac-osx-setup/#user-interface)
-* [ ] OSX system configuration scutil see [here](http://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/)
 * [x] OSX Dock configuration using [dockutil](https://github.com/kcrawford/dockutil)
 * [x] OSX Apple store installation
 * [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 * [x] OSX file associations using [duti](https://github.com/moretension/duti)
 * [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
+* [ ] OSX configure [display arrangement](https://github.com/jakehilborn/displayplacer)
+* [ ] OSX system configuration scutil see [here](http://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/)
+* [ ] OSX Hardening https://blog.bejarano.io/hardening-macos.html
 * [x] VSCode config setup
 * [x] VSCode install extensions
 * [x] [Testing with Travis CI](https://github.com/geerlingguy/mac-dev-playbook/blob/master/.travis.yml) support
@@ -49,7 +51,6 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] Ansible installation for OSX
 * [x] Ansible installation for Linux
 * [ ] Ansible installation for Windows [really?]
-* [ ] Hardening https://blog.bejarano.io/hardening-macos.html
 
 # Architecture
 
