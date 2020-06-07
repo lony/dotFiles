@@ -82,10 +82,10 @@ ansible_install_run() {
     printf "\n"
     printf "SPACE\n"
     df -h
-  fi
 
-  printf "\n### RUN ansible-playbook - check syntax\n"
-  ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
+    printf "\n### RUN ansible-playbook - check syntax\n"
+    ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
+  fi
 
   printf "\n### RUN ansible-playbook - install\n"
   if [ "$TRAVIS" == "true" ]; then
