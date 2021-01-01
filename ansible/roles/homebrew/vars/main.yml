@@ -25,7 +25,6 @@ brew_packages:
     - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
 
     - gnu-tar
-    - unrar
     - unzip
     - gzip
     - pigz                                                          # Parallel gzip
@@ -158,6 +157,7 @@ brew_cask_packages:
     - imageoptim
     - gimp
     #- krita
+    - rar
     #- pencil
     #- xquartz
     #- inkscape
