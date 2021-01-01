@@ -16,6 +16,14 @@
     force: no
   become: yes
 
+- name: Copy user shell scripts to local /usr/local/bin/..
+  copy:
+    src:  "{{ role_path }}/files/{{item}}"
+    dest: "/usr/local/bin/{{item}}"
+  loop:
+    - osx_notify.sh
+    - osx_screen_align.sh
+
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:
     msg:
