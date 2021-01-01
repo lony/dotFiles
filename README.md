@@ -39,8 +39,8 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 * [x] OSX Apple store installation
 * [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 * [x] OSX file associations using [duti](https://github.com/moretension/duti)
+* [x] OSX configure [display arrangement](https://github.com/jakehilborn/displayplacer)
 * [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
-* [ ] OSX configure [display arrangement](https://github.com/jakehilborn/displayplacer)
 * [ ] OSX system configuration scutil see [here](http://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/)
 * [ ] OSX Hardening https://blog.bejarano.io/hardening-macos.html
 * [x] VSCode config setup
