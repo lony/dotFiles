@@ -26,7 +26,7 @@
   when: "item.name | default(item) not in brew_tap_list.stdout"
 
 - name: hombrew list packages
-  command: brew list
+  command: brew list --formula
   register: brew_list
 
 - name: homebrew install packages
@@ -38,11 +38,11 @@
   when: "item.name | default(item) not in brew_list.stdout"
 
 - name: hombrew cask list packages
-  command: brew cask list
+  command: brew list --cask
   register: brew_cask_list
 
 - name: homebrew cask install packages
-  homebrew_cask:
+  homebrew:
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
