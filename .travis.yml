@@ -11,7 +11,7 @@ branches:
 
 before_install:
   # Uninstall existing brew installation
-  - 'yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"'
+  - 'yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"'
 
 script:
   # Run and test
