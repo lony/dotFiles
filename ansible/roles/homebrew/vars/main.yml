@@ -3,6 +3,7 @@
 brew_taps:
     - homebrew/cask-drivers
     - homebrew/cask-fonts
+    - jakehilborn/jakehilborn
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
@@ -24,7 +25,6 @@ brew_packages:
     - utf8proc                                                      # Clean C library for processing UTF-8 Unicode data
 
     - gnu-tar
-    - unrar
     - unzip
     - gzip
     - pigz                                                          # Parallel gzip
@@ -112,6 +112,7 @@ brew_cask_packages:
     - veracrypt
     #- cryptomator
     - rectangle                                                     # Resize OS X windows https://github.com/rxhanson/Rectangle replaces spectacle
+    - displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
 
     - google-chrome
     - firefox
@@ -156,12 +157,14 @@ brew_cask_packages:
     - imageoptim
     - gimp
     #- krita
+    - rar
     #- pencil
     #- xquartz
     #- inkscape
     #- scribus
     #- freecad
     #- vlc                                                          Installed via seperate role
+    #- elmedia-player                                               Better VLC alternative
     #- spotify
     #- handbrake
     - obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
@@ -207,3 +210,4 @@ brew_cask_packages:
 
     # Games
     #- openttd
+    #- openra
