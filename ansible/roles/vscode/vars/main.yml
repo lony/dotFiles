@@ -15,7 +15,8 @@ vscode_extensions:
   - mblode.pretty-formatter
   - ms-azuretools.vscode-docker
   - ms-python.python
-  - ms-vscode.Go
+  - ms-toolsai.jupyter
+  - golang.go
   - oderwat.indent-rainbow
   - PKief.material-icon-theme
   - rbbit.typescript-hero
