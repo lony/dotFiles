@@ -62,8 +62,6 @@ git_clone() {
 
 # Run ansible after showing debug information
 ansible_install_run() {
-  command_install $ANSIBLE_CMD "$PIP_CMD install $ANSIBLE_CMD --upgrade"
-
   git_clone
   cd "$GIT_CLONE_FOLDER"
 
@@ -108,8 +106,12 @@ case "${unameOut}" in
     Darwin*)
       SYSTEM_OS="OSX"
       SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
+      PACKAGE_MANAGER="brew install"
 
-      command_install $PIP_CMD "easy_install $PIP_CMD"
+      # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+      xcode-select --install
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      command_install $ANSIBLE_CMD "$PACKAGE_MANAGER $ANSIBLE_CMD"
       ansible_install_run
       ;;
     Linux*)
@@ -126,6 +128,8 @@ case "${unameOut}" in
 
       command_install $GIT_CMD "$PACKAGE_MANAGER $GIT_CMD"
       command_install $PIP_CMD "$PACKAGE_MANAGER $PIP_PACKAGE"
+      command_install $ANSIBLE_CMD "$PIP_CMD install $ANSIBLE_CMD --upgrade"
+
       ansible_install_run
       ;;
     *)
