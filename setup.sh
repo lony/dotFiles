@@ -109,7 +109,7 @@ case "${unameOut}" in
       PACKAGE_MANAGER="brew install"
 
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-      xcode-select --install
+      #xcode-select --install
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       command_install $ANSIBLE_CMD "$PACKAGE_MANAGER $ANSIBLE_CMD"
       ansible_install_run
