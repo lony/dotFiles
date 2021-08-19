@@ -73,7 +73,7 @@ ansible_install_run() {
   printf "ROOT_RUN=$ROOT_RUN\n"
   printf "\n"
   python --version
-  $PIP_CMD --version
+  # $PIP_CMD --version
   $ANSIBLE_CMD --version
 
   if [ "$TRAVIS" == "true" ]; then
@@ -112,7 +112,6 @@ case "${unameOut}" in
       #xcode-select --install
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-      ROOT_RUN="" command_install python "$PACKAGE_MANAGER python"
       ROOT_RUN="" command_install $ANSIBLE_CMD "$PACKAGE_MANAGER $ANSIBLE_CMD"
 
       ansible_install_run
