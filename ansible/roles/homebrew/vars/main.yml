@@ -26,6 +26,7 @@ brew_packages:
 
     - gnu-tar
     - unzip
+    - rar
     - gzip
     - pigz                                                          # Parallel gzip
     - xz                                                            # General-purpose data compression with high compression ratio
