@@ -1,20 +1,20 @@
 #!/usr/bin/env sh
 #
-# Script to prepare everything depending on operating system
-# so that Ansible can run independently
+# Script prepares operating system with foundation to run Ansible
+# Tools installed depend on operating system and environment
 
-set -e
+if [ "$TRAVIS" == "true" ]; then
+  set -ex
+else
+  set -e
+fi
 
 
 ## Config
 #
 
-GIT_CMD="git"
 GIT_REPO_URL="https://github.com/lony/dotFiles.git"
 GIT_CLONE_FOLDER="$HOME/dotFiles"
-PIP_CMD="pip"
-PIP_PACKAGE="python-pip"
-ANSIBLE_CMD="ansible"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
 ANSIBLE_PLAYBOOK_CMD="ansible-playbook --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
 SYSTEM_OS="Unknown"
@@ -26,45 +26,30 @@ ROOT_RUN=""
 ## Func
 #
 
-# Print error message
+#######################################
+# Helper to print error message
+# Globals:
+#   RED
+#   RESET
+# Arguments:
+#   $@ Error message text
+#######################################
 error_print() {
 	echo ${RED}"Error: $@"${RESET} >&2
 }
 
-# Detects if script is run as root
-root_detect() {
-  if ! [ $(id -u) -eq 0 ]; then
-    ROOT_RUN="sudo "
-  fi
-}
-
-# Detects if command exists, first for sudo then for normal user
-command_exists() {
-  $ROOT_RUN command -v "$@" >/dev/null 2>&1
-}
-
-# Detects if command exists else runs install command
-command_install() {
-      if ! command_exists $1; then
-        printf "\n### INSTALL $1\n"
-        printf "  ... have to\n"
-        $ROOT_RUN$2
-      fi
-}
-
-# Clone git repository if not existing
-git_clone() {
-  if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
-      printf "\n### RUN ${GIT_CMD} clone\n"
-      git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
-  fi
-}
-
-# Run ansible after showing debug information
-ansible_install_run() {
-  git_clone
-  cd "$GIT_CLONE_FOLDER"
-
+#######################################
+# Print status information about run
+# Globals:
+#   SYSTEM_OS
+#   SYSTEM_OS_VERSION
+#   PACKAGE_MANAGER
+#   ROOT_RUN
+#   TRAVIS
+# Arguments:
+#   None
+#######################################
+status_print() {
   printf "\n"
   printf "### INFORMATION\n"
   printf "SYSTEM_OS=$SYSTEM_OS\n"
@@ -72,20 +57,94 @@ ansible_install_run() {
   printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
   printf "ROOT_RUN=$ROOT_RUN\n"
   printf "\n"
-  python --version
-  $PIP_CMD --version
-  $ANSIBLE_CMD --version
 
   if [ "$TRAVIS" == "true" ]; then
     printf "\n"
-    printf "SPACE\n"
+    printf "df -h\n"
     df -h
+  fi
+}
 
-    printf "\n### RUN ansible-playbook - check syntax\n"
+#######################################
+# Detects if script is run as root
+# Globals:
+#   ROOT_RUN
+# Arguments:
+#   None
+#######################################
+root_detect() {
+  if ! [ $(id -u) -eq 0 ]; then
+    ROOT_RUN="sudo "
+  fi
+}
+
+#######################################
+# Detects if command exists, first
+# for sudo then for normal user
+# Globals:
+#   ROOT_RUN
+# Arguments:
+#   $@ Command to test for
+#######################################
+command_exists() {
+  $ROOT_RUN command -v "$@" >/dev/null 2>&1
+}
+
+#######################################
+# Detects if command exists else
+# run install command
+# Globals:
+#   ROOT_RUN
+# Arguments:
+#   $1 Command to test for
+#   $2 Command used to install if missing
+#######################################
+command_install() {
+  if ! command_exists $1; then
+    printf "\n### INSTALL $1 - run '$ROOT_RUN$2'...\n"
+    $ROOT_RUN$2
+
+    if ! command_exists $1; then
+      error_print "Command '$1' could not be installed!\n"
+      exit 1
+    else
+      printf "\n... successful\n$1 --version\n"
+      $1 --version
+    fi
+  fi
+}
+
+#######################################
+# Clone git repository if not existing
+# Globals:
+#   GIT_CLONE_FOLDER
+#   GIT_REPO_URL
+# Arguments:
+#   None
+#######################################
+git_clone() {
+  if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
+      printf "\n### RUN - git clone\n"
+      git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
+  fi
+  cd "$GIT_CLONE_FOLDER"
+}
+
+#######################################
+# Execute ansible with provided recipes
+# Globals:
+#   TRAVIS
+#   ANSIBLE_PLAYBOOK_CMD
+# Arguments:
+#   None
+#######################################
+ansible_install_run() {
+  if [ "$TRAVIS" == "true" ]; then
+    printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD} --syntax-check\n"
     ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
   fi
 
-  printf "\n### RUN ansible-playbook - install\n"
+  printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD}\n"
   if [ "$TRAVIS" == "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
   else
@@ -97,8 +156,8 @@ ansible_install_run() {
 ## Main
 #
 
-printf "Start installing Ansible prerequisites (git, etc.).\n"
-printf "After this is finished there is a prompt coming - be prepared!\n"
+printf "Install prerequisite for Ansible (python, git, etc.).\n"
+printf "Please consider after this is finished there will be a prompt!\n"
 root_detect
 
 unameOut="$(uname -s)"
@@ -107,32 +166,38 @@ case "${unameOut}" in
       SYSTEM_OS="OSX"
       SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
       PACKAGE_MANAGER="brew install"
+      status_print
 
+      # TODO maybe xcode is required as well - verify
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-      xcode-select --install
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      command_install $ANSIBLE_CMD "$PACKAGE_MANAGER $ANSIBLE_CMD"
+      #xcode-select --install
+
+      ROOT_RUN="" command_install brew "/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'"
+      ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
+
+      git_clone
       ansible_install_run
       ;;
     Linux*)
       SYSTEM_OS="Linux"
       SYSTEM_OS_VERSION="\n\n$(cat /etc/os-release)\n"
-
       if [ -x $(command_exists yum) ]; then
         PACKAGE_MANAGER="yum install -y"
       elif  [ -x $(command_exists apt-get) ]; then
         PACKAGE_MANAGER="apt-get -y install"
       else
-        error_print "UNKNOWN Package manager\nPlease add support in script!\n"
+        error_print "Unknown package manager. Please add support in script!\n"
       fi
+      status_print
 
-      command_install $GIT_CMD "$PACKAGE_MANAGER $GIT_CMD"
-      command_install $PIP_CMD "$PACKAGE_MANAGER $PIP_PACKAGE"
-      command_install $ANSIBLE_CMD "$PIP_CMD install $ANSIBLE_CMD --upgrade"
+      command_install git "$PACKAGE_MANAGER git"
+      command_install pip "$PACKAGE_MANAGER python-pip"
+      command_install ansible "pip install ansible --upgrade"
 
+      git_clone
       ansible_install_run
       ;;
     *)
-      error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
+      error_print "Unknown operating system: ${unameOut}. Please add support in script!\n"
       ;;
 esac
