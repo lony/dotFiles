@@ -138,7 +138,7 @@ brew_cask_packages:
     - tunnelblick
 
     - dropbox
-    - google-backup-and-sync
+    - google-drive                                                  # Replaces google-backup-and-sync which is no longer supported
     #- rescuetime
     - tomighty
     - teamviewer
