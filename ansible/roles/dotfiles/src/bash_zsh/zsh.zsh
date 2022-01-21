@@ -39,53 +39,6 @@ if [[ -s "${ITERM2_PLUGIN}" ]]; then
   source "${ITERM2_PLUGIN}"
 fi
 
-# ----------------------
-# SSH background color #
-# ----------------------
-
-# https://coderwall.com/p/t7a-tq/change-terminal-color-when-ssh-from-os-x
-PRODUCTION_ITERM2_PROFILE="PROD"
-PRODUCTION_HOST_PATTERN_DEFAULT="foo-bar-(1|2)*|prod-bastion-1"
-
-# Check if default is set for PROD host pattern from secret
-# http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
-if [ -z ${PRODUCTION_HOST_PATTERN+x} ]; then
-	PRODUCTION_HOST_PATTERN=${PRODUCTION_HOST_PATTERN_DEFAULT}
-fi
-
-function tabc() {
-    NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi
-    # if you have trouble with this, change
-    # "Default" to the name of your default theme
-    echo -e "\033]50;SetProfile=$NAME\a"
-}
-
-function tab-reset() {
-    NAME="Default"
-    echo -e "\033]50;SetProfile=$NAME\a"
-}
-
-# Needs a iTerm2 profile Default and PROD setup before.
-# The PROD one with the settings #460400 for the tab color in the color tab.
-function colorssh() {
-    if [ -n ${TERM_PROGRAM+x} ]; then
-        if [[ -n "$ITERM_SESSION_ID" ]]; then
-            trap "tab-reset" INT EXIT
-            if [[ "$*" =~ ${PRODUCTION_HOST_PATTERN} ]]; then
-                tabc ${PRODUCTION_ITERM2_PROFILE}
-            else
-                tabc Other
-            fi
-        fi
-    fi
-    ssh $*
-}
-
-compdef _ssh tabc=ssh
-
-alias ssh="colorssh"
-
-
 # --------------------------
 # AWS CLI auto completion  #
 # --------------------------
