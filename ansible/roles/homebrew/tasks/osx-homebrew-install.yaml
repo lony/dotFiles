@@ -1,18 +1,23 @@
 ---
-- name: Check if homebrew is installed
+- name: Check if homebrew is installed (OSX < 12)
   stat:
     path: "/usr/local/bin/brew"
-  register: "homebrew_check"
+  register: "homebrew_check_11"
+
+- name: Check if homebrew is installed (OSX >= 12 Monterey)
+  stat:
+    path: "/opt/homebrew/bin/brew"
+  register: "homebrew_check_12"
 
 - name: Install homebrew (using CURL)
   shell: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-  when: not homebrew_check.stat.exists
+  when: not homebrew_check_11.stat.exists and not homebrew_check_12.stat.exists
 
 - name: homebrew update itself and packages
   homebrew:
     update_homebrew: yes
     upgrade_all: yes
-  when: homebrew_check.stat.exists
+  when: homebrew_check_11.stat.exists or homebrew_check_12.stat.exists
 
 - name: hombrew list tap's
   command: brew tap
