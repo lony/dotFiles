@@ -3,7 +3,13 @@
 - name: Execute OSX hombrew installation for vlc
   import_tasks: osx-vlc-install.yaml
   when: ansible_os_family == 'Darwin'
+  tags:
+    - travis-do-not
+    - corporate-do-not
 
 - name: Execute OSX file association configuration
   import_tasks: osx-configure-file-associations.yaml
   when: ansible_os_family == 'Darwin'
+  tags:
+    - travis-do-not
+    - corporate-do-not

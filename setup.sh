@@ -5,6 +5,8 @@
 
 if [ "$TRAVIS" == "true" ]; then
   set -ex
+elif [ "$CORPORATE" == "true" ]; then
+  set -x
 else
   set -e
 fi
@@ -147,6 +149,8 @@ ansible_install_run() {
   printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD}\n"
   if [ "$TRAVIS" == "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
+  elif [ "$CORPORATE" == "true" ]; then
+    ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "corporate-do-not"
   else
     ${ANSIBLE_PLAYBOOK_CMD}
   fi
