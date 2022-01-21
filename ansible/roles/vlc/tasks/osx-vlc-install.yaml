@@ -13,8 +13,6 @@
   loop:
     - vlc
   when: '"vlc" not in homebrew_vlc_installed.stdout'
-  tags:
-    - travis-do-not
 
 - name: Install vlc settings
   copy:

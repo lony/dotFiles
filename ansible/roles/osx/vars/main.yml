@@ -92,7 +92,10 @@ sys_conf_commands:
   - "defaults write com.apple.screencapture disable-shadow -bool true" # Screenshots without window shadows
   - "defaults write com.apple.TextEdit RichText -int 0" # Use plain text as default format in TextEdit
   - "defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25" # Disable the standard delay in rendering safari a web page
+
+sys_conf_commands_private:
   - "launchctl stop com.apple.rcd && launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist" # Disable autostart on bluetooth connect https://apple.stackexchange.com/questions/86315/prevent-itunes-from-opening-when-connecting-bluetooth-headset
+
 sys_conf_commands_root:
   - "/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop" # Deactivate and Stop the Remote Management Service
   - "defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true" # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume

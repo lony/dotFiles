@@ -13,8 +13,6 @@
   loop:
     - fujitsu-scansnap-home
   when: '"fujitsu-scansnap-home" not in homebrew_scansnap_installed.stdout'
-  tags:
-    - travis-do-not
 
 - name: Stop running scansnap app
   command: osascript -e 'quit app "ScanSnap Home"'

@@ -1,13 +1,21 @@
 ---
 
-- name: Run OSX configuration command (#1/2)
+- name: Run OSX configuration command (#1/3) - safe for work
   shell: "{{ item }}"
   loop: "{{ sys_conf_commands }}"
 
-- name: Run OSX configuration command (#2/2 as root)
+- name: Run OSX configuration command (#2/3) - as user only for private use
+  shell: "{{ item }}"
+  loop: "{{ sys_conf_commands_private }}"
+  tags:
+    - corporate-do-not
+
+- name: Run OSX configuration command (#3/3) - as root
   shell: "{{ item }}"
   loop: "{{ sys_conf_commands_root }}"
   become: yes
+  tags:
+    - corporate-do-not
 
 - name: Copy SMB config /etc/nsmb.conf
   copy:
@@ -15,6 +23,8 @@
     dest: "/etc/nsmb.conf"
     force: no
   become: yes
+  tags:
+    - corporate-do-not
 
 - name: Copy user shell scripts to local /usr/local/bin/..
   copy:

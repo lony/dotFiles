@@ -26,7 +26,7 @@ brew_packages:
 
     - gnu-tar
     - unzip
-    #- rar
+    #- rar                                                          # Moved to cask package
     - gzip
     - pigz                                                          # Parallel gzip
     - xz                                                            # General-purpose data compression with high compression ratio
@@ -81,7 +81,7 @@ brew_packages:
     #- webp
 
     - git
-    - git-flow
+    #- git-flow
     #- git-extras
     - packer
 
@@ -122,10 +122,10 @@ brew_cask_packages:
     - font-iosevka                                                  # Possible replacement for Fira https://github.com/be5invis/Iosevka
     - visual-studio-code                                            # Configured in separate role
     - sourcetree
-    - meld
+    #- meld
     - postman
     - hex-fiend
-    - jetbrains-toolbox
+    #- jetbrains-toolbox
     #- folx
     #- unetbootin
 
@@ -135,7 +135,7 @@ brew_cask_packages:
     #- fiddler
     #- filezilla
     #- cyberduck
-    - tunnelblick
+    #- tunnelblick
 
     - dropbox
     - google-drive                                                  # Replaces google-backup-and-sync which is no longer supported
@@ -168,7 +168,7 @@ brew_cask_packages:
     #- elmedia-player                                               Better VLC alternative
     #- spotify
     #- handbrake
-    - obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
+    #- obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
     - calibre                                                       # E-Book manager https://calibre-ebook.com
     - anki
     #- gmvault
