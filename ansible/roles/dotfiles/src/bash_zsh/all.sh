@@ -93,6 +93,9 @@ alias idea='/usr/local/bin/idea'
 # Kubernetes
 alias k='kubectl'
 
+# AWS cli
+alias awsume=". awsume"
+
 # --------------
 # EDITOR       #
 # --------------

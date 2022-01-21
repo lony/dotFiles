@@ -82,7 +82,7 @@ plugins=(
 	# git
 	# httpie
 	# history
-  # kubectl
+	# kubectl
 	# mvn
 	# node
 	# npm
