@@ -33,6 +33,8 @@
   loop:
     - osx_notify.sh
     - osx_screen_align.sh
+  tags:
+    - corporate-do-not
 
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:
