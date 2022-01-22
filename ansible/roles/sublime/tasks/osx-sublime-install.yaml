@@ -1,5 +1,9 @@
 ---
 
+- name: hombrew cask list packages
+  command: brew list --cask
+  register: brew_cask_list
+
 - name: homebrew cask install sublime-text packages
   homebrew:
     name: "{{ item.name | default(item) }}"
@@ -7,6 +11,7 @@
     state: present
   loop:
     - sublime-text
+  when: "item.name | default(item) not in brew_cask_list.stdout"
 
 - name: Ensure sublime-text settings directories exist
   file:
