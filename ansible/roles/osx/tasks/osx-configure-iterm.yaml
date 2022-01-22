@@ -1,5 +1,9 @@
 ---
 
+- name: hombrew cask list packages
+  command: brew list --cask
+  register: brew_cask_list
+
 - name: homebrew cask install iterm2 packages
   homebrew:
     name: "{{ item.name | default(item) }}"
@@ -7,6 +11,7 @@
     state: present
   loop:
     - iterm2                                                                                                # A better Terminal https://www.iterm2.com
+  when: "item.name | default(item) not in brew_cask_list.stdout"
 
 # - name: Download iterm2 shell integration
 #   get_url:
