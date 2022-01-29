@@ -169,12 +169,18 @@ brew_cask_packages:
     #- spotify
     #- handbrake
     #- obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
-    - calibre                                                       # E-Book manager https://calibre-ebook.com
+    - calibre                                                        # E-Book manager https://calibre-ebook.com
     - anki
     #- gmvault
 
     #- origami-studio
     #- google-web-designer
+
+    # Kubernetes (K8s)
+    #- kubectl                                                       # CLI for Kubernetes
+    #- kubie                                                         # Manage K8s context, namespaces etc.
+    #- k9s                                                           # Monitor K8s cluster in CLI
+    #- fzf                                                           # Fuzzy finder for CLI
 
     # Virtualisation
     - docker
