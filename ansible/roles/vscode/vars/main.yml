@@ -1,7 +1,7 @@
 ---
 
 vscode_extensions:
-  - 4ops.terraform
+  - hashicorp.terraform
   - azemoh.one-monokai
   - CoenraadS.bracket-pair-colorizer-2
   - DavidWang.ini-for-vscode
