@@ -3,7 +3,6 @@
 vscode_extensions:
   - hashicorp.terraform
   - azemoh.one-monokai
-  - CoenraadS.bracket-pair-colorizer-2
   - DavidWang.ini-for-vscode
   - dbaeumer.vscode-eslint
   - donjayamanne.githistory
