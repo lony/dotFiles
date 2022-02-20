@@ -33,7 +33,6 @@
     path: /etc/shells
     line: "{{ zsh_path.stdout }}"
   become: yes
-  become_method: sudo
   tags:
     - corporate-do-not
 
