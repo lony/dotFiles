@@ -26,7 +26,6 @@ brew_packages:
 
     - gnu-tar
     - unzip
-    #- rar                                                          # Moved to cask package
     - gzip
     - pigz                                                          # Parallel gzip
     - xz                                                            # General-purpose data compression with high compression ratio
@@ -85,19 +84,34 @@ brew_packages:
     #- git-extras
     - packer
 
-    #- docker-completion
-
+    # Automation
     - ansible
+    #- terraform
+    #- terragrunt
+
+    # AWS
+    - awscli
+    - awsume
+
+    # Go
+    - go
+
+    # JavaScript
     - nvm
     - node
     - yarn
-    - go
+
+    # Ruby
     #- rbenv
     #- ruby
     #- ruby-build
+
+    # Java
     #- ant
     #- maven
     #- groovy
+
+    # Scala
     #- sbt
     #- scala
     #- apache-spark
@@ -181,9 +195,13 @@ brew_cask_packages:
     #- kubie                                                         # Manage K8s context, namespaces etc.
     #- k9s                                                           # Monitor K8s cluster in CLI
     #- fzf                                                           # Fuzzy finder for CLI
+    #- mkcert                                                        # Local development TLS helper https://github.com/FiloSottile/mkcert
+    #- testssl                                                       # SSL test tool https://testssl.sh/
 
     # Virtualisation
     - docker
+    #- docker-completion
+    #- kind
     #- kitematic
     #- vagrant
     #- vagrant-manager
