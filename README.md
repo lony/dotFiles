@@ -1,7 +1,5 @@
 # `.`Files
 
-[![Build Status](https://travis-ci.com/lony/dotFiles.svg?branch=master)](https://travis-ci.com/lony/dotFiles)
-
 This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/index.php?oldid=803771758) playbook and a custom Python script for deployment.
 
 ![Sample cli setup](image.png)
