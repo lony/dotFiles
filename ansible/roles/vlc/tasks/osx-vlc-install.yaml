@@ -1,7 +1,7 @@
 ---
 
 - name: Check if vlc package is already installed
-  shell: brew cask list | grep vlc
+  shell: brew list --cask | grep vlc
   register: homebrew_vlc_installed
   failed_when: homebrew_vlc_installed.rc > 1
 

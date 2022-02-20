@@ -1,7 +1,7 @@
 ---
 
 - name: Check if scansnap package is already installed
-  shell: brew cask list | grep fujitsu-scansnap-home
+  shell: brew list --cask | grep fujitsu-scansnap-home
   register: homebrew_scansnap_installed
   failed_when: homebrew_scansnap_installed.rc > 1
 
