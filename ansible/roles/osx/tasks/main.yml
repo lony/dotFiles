@@ -11,6 +11,10 @@
   import_tasks: osx-iterm-configure.yaml
   when: ansible_os_family == 'Darwin'
 
+- name: Execute OSX file limit configuration
+  import_tasks: osx-file-limit.yml
+  when: ansible_os_family == 'Darwin'
+
 - name: Execute OSX configuration
   import_tasks: osx-system-configure.yaml
   when: ansible_os_family == 'Darwin'

@@ -1,0 +1,55 @@
+# Info
+# https://mampsupportforum.com/viewtopic.php?t=155
+# https://apple.stackexchange.com/questions/224358/max-file-limit-conundrum
+# https://apple.stackexchange.com/questions/366187/why-does-setting-the-hard-limit-for-maxfiles-to-unlimited-using-launchctl-lim
+# https://superuser.com/questions/830149/os-x-yosemite-too-many-files-open
+# https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1
+# https://developer.apple.com/forums/thread/651988
+# https://github.com/wilsonmar/mac-setup/tree/master/configs
+# https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
+# https://wilsonmar.github.io/maximum-limits/
+# https://transang.me/everything-about-inotify-in-linux-and-macos/
+#
+# Why
+# https://kind.sigs.k8s.io/docs/user/known-issues/#pod-errors-due-to-too-many-open-files
+#
+# Before (soft and hard limits)
+# ❯ ulimit -aS
+# -t: cpu time (seconds)              unlimited
+# -f: file size (blocks)              unlimited
+# -d: data seg size (kbytes)          unlimited
+# -s: stack size (kbytes)             8192
+# -c: core file size (blocks)         0
+# -v: address space (kbytes)          unlimited
+# -l: locked-in-memory size (kbytes)  unlimited
+# -u: processes                       2784
+# -n: file descriptors                256
+
+# ❯ ulimit -aH
+# -t: cpu time (seconds)              unlimited
+# -f: file size (blocks)              unlimited
+# -d: data seg size (kbytes)          unlimited
+# -s: stack size (kbytes)             65532
+# -c: core file size (blocks)         unlimited
+# -v: address space (kbytes)          unlimited
+# -l: locked-in-memory size (kbytes)  unlimited
+# -u: processes                       2784
+# -n: file descriptors                unlimited
+
+- name: Copy plist files to /Library/LaunchDaemons/..
+  copy:
+    src:  "{{ role_path }}/files/{{item}}"
+    dest: "/Library/LaunchDaemons/{{item}}"
+  loop:
+    - limit.maxfiles.plist
+    - limit.maxproc.plist
+
+- name: Adjust rights and ownership
+  ansible.builtin.file:
+    path: "/Library/LaunchDaemons/{{item}}"
+    owner: root
+    group: wheel
+    mode: '0644'
+  loop:
+    - limit.maxfiles.plist
+    - limit.maxproc.plist
