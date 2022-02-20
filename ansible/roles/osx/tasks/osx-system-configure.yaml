@@ -4,11 +4,12 @@
   shell: "{{ item }}"
   loop: "{{ sys_conf_commands }}"
 
-- name: Run OSX configuration command (#2/3) - as user only for private use
-  shell: "{{ item }}"
-  loop: "{{ sys_conf_commands_private }}"
-  tags:
-    - corporate-do-not
+# TODO reactivate as soon as working once again
+# - name: Run OSX configuration command (#2/3) - as user only for private use
+#   shell: "{{ item }}"
+#   loop: "{{ sys_conf_commands_private }}"
+#   tags:
+#     - corporate-do-not
 
 - name: Run OSX configuration command (#3/3) - as root
   shell: "{{ item }}"
