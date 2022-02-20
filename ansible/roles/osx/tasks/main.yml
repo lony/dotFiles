@@ -8,13 +8,13 @@
     - corporate-do-not
 
 - name: Execute OSX iTerm2 install
-  import_tasks: osx-configure-iterm.yaml
+  import_tasks: osx-iterm-configure.yaml
   when: ansible_os_family == 'Darwin'
 
 - name: Execute OSX configuration
-  import_tasks: osx-configure-system.yaml
+  import_tasks: osx-system-configure.yaml
   when: ansible_os_family == 'Darwin'
 
 - name: Execute OSX Dock configuration
-  import_tasks: osx-configure-dock.yaml
+  import_tasks: osx-dock-configure.yaml
   when: ansible_os_family == 'Darwin'
