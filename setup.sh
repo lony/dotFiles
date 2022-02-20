@@ -18,7 +18,7 @@ fi
 GIT_REPO_URL="https://github.com/lony/dotFiles.git"
 GIT_CLONE_FOLDER="$HOME/dotFiles"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
-ANSIBLE_PLAYBOOK_CMD="ansible-playbook --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
+ANSIBLE_PLAYBOOK_CMD="ansible-playbook --ask-become-pass --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
 SYSTEM_OS="Unknown"
 SYSTEM_OS_VERSION="Unknown"
 PACKAGE_MANAGER="Unknown"
