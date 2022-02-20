@@ -1,5 +1,10 @@
 ---
 
+- name: Check if beyond-compare package is already installed
+  shell: brew list --cask | grep beyond-compare
+  register: homebrew_bc_installed
+  failed_when: homebrew_bc_installed.rc > 1
+
 - name: homebrew cask install beyond-compare packages
   homebrew:
     name: "{{ item.name | default(item) }}"
@@ -7,6 +12,7 @@
     state: present
   loop:
     - beyond-compare
+  when: '"beyond-compare" not in homebrew_bc_installed.stdout'
 
 # https://www.scootersoftware.com/v4help/index.html?where_settings_are_stored.html
 - name: Install beyond-compare settings
