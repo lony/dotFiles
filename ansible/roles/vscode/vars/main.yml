@@ -1,24 +1,40 @@
 ---
 
 vscode_extensions:
-  - hashicorp.terraform
-  - azemoh.one-monokai
-  - DavidWang.ini-for-vscode
-  - dbaeumer.vscode-eslint
-  - donjayamanne.githistory
-  - dzannotti.vscode-babel-coloring
-  - eamodio.gitlens
-  - EditorConfig.EditorConfig
-  - esbenp.prettier-vscode
+  - hediet.vscode-drawio
   - Gruntfuggly.todo-tree
-  - mblode.pretty-formatter
-  - ms-azuretools.vscode-docker
-  - ms-python.python
-  - ms-toolsai.jupyter
-  - golang.go
+  - streetsidesoftware.code-spell-checker
+  # Helper snippets
+  #- vscode-snippet.snippet
+  - visualstudioexptteam.vscodeintellicode
+  # UI
+  - azemoh.one-monokai
   - oderwat.indent-rainbow
   - PKief.material-icon-theme
-  - rbbit.typescript-hero
-  - streetsidesoftware.code-spell-checker
-  - usernamehw.errorlens
-  - vscode-snippet.snippet
+  # Format
+  - EditorConfig.EditorConfig
+  - dbaeumer.vscode-eslint
+  - esbenp.prettier-vscode
+  - mblode.pretty-formatter
+  # Git
+  - eamodio.gitlens
+  - donjayamanne.githistory
+  # Go
+  - golang.go
+  # Python
+  - njpwerner.autodocstring
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - ms-toolsai.jupyter
+  # JavaScript
+  #- rbbit.typescript-hero
+  #- usernamehw.errorlens
+  #- dzannotti.vscode-babel-coloring
+  #- alexkrechik.cucumberautocomplete
+  # Other formater
+  - redhat.ansible
+  - hashicorp.terraform
+  - redhat.vscode-xml
+  - redhat.vscode-yaml
+  - DavidWang.ini-for-vscode
+  - ms-azuretools.vscode-docker
