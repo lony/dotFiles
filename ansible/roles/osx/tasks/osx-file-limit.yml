@@ -44,6 +44,7 @@
   loop:
     - limit.maxfiles.plist
     - limit.maxproc.plist
+  become: yes
 
 - name: Adjust rights and ownership
   ansible.builtin.file:
@@ -54,3 +55,4 @@
   loop:
     - limit.maxfiles.plist
     - limit.maxproc.plist
+  become: yes
