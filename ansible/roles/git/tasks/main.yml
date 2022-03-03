@@ -30,6 +30,10 @@
 - name: Enable force with lease as default for git push
   shell: "git config --global alias.pushf 'push --force-with-lease'"
 
+# https://stackoverflow.com/questions/32056324/there-is-no-tracking-information-for-the-current-branch
+- name: Add helper to solve there is no tracking information for the current branch
+  shell: "git config --global alias.set-upstream '!git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)'"
+
 # https://stackoverflow.com/questions/6089294/why-do-i-need-to-do-set-upstream-all-the-time
 # https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
 - name: Set upstream for local branch push
