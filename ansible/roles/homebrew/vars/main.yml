@@ -123,14 +123,15 @@ brew_packages:
     #- openldap                                                     # CLI LDAP tool
 
 brew_cask_packages:
-    - avira-antivirus
+    #- avira-antivirus
     - keepassx
-    - osxfuse
+    #- osxfuse
     - veracrypt
     #- cryptomator
     - rectangle                                                     # Resize OS X windows https://github.com/rxhanson/Rectangle replaces spectacle
     - displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
     - iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
+    - aldente                                                       # Battery management https://apphousekitchen.com
 
     - google-chrome
     - firefox
@@ -171,7 +172,7 @@ brew_cask_packages:
     - microsoft-office
     - banking-4
 
-    - balsamiq-mockups
+    #- balsamiq-mockups
     - imageoptim
     - gimp
     #- krita
