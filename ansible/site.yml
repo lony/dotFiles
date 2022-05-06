@@ -24,6 +24,7 @@
 
   roles:
     - homebrew
+    - python
     - zsh_oh-my-zsh
     - dotfiles
     - git
@@ -31,7 +32,6 @@
     - sublime
     - vscode
     - tmux
-    - python
     - linux
     - osx
     - vlc
