@@ -5,7 +5,7 @@ mas_upgrade_all_apps: yes
 mas_apps:
   - { id: 408981434,  name: "iMovie (10.1.10)" }
   - { id: 1032755628,  name: "Duplicate File Finder (5.6)" }
-  - { id: 497799835,  name: "Xcode (10.1)" }
+  #- { id: 497799835,  name: "Xcode (10.1)" }
   - { id: 425424353,  name: "The Unarchiver (4.1.0)" }
   - { id: 1274495053,  name: "Microsoft To Do (2.13)" }
 
