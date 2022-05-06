@@ -176,7 +176,7 @@ case "${unameOut}" in
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
       #xcode-select --install
 
-      ROOT_RUN="" command_install brew "/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'"
+      command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s)"
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
