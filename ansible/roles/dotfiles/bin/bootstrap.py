@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # Script concat and copies shell configuration and
 # generates resulting configuration files
