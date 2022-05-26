@@ -132,6 +132,7 @@ brew_cask_packages:
     - displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
     - iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
     - aldente                                                       # Battery management https://apphousekitchen.com
+    - sound-control                                                 # Sound output management https://staticz.com/soundcontrol/
 
     - google-chrome
     - firefox
