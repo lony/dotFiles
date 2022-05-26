@@ -5,6 +5,15 @@
 ################
 
 # --------------------------
+# history                  #
+# --------------------------
+
+# https://ryantoddgarza.com/a-better-zsh-history-pt1
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=$HISTSIZE
+
+# --------------------------
 # bindkey                  #
 # --------------------------
 
