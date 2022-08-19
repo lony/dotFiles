@@ -38,3 +38,7 @@
 # https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
 - name: Set upstream for local branch push
   shell: "git config --global push.default current"
+
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote
+- name: On default push when no upstream tracking exists for the current branch
+  shell: "git config --global push.autoSetupRemote true"
