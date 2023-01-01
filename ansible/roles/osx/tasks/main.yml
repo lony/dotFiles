@@ -22,3 +22,6 @@
 - name: Execute OSX Dock configuration
   import_tasks: osx-dock-configure.yaml
   when: ansible_os_family == 'Darwin'
+  tags:
+    - travis-do-not
+    - corporate-do-not
