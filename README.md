@@ -19,6 +19,8 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 5. Generate SSH key in `/Users/<home>/.ssh` using `ssh-keygen -t rsa -b 4096 -C "<YOUR@EMAIL.COM>" -N ""`
 6. Add public SSH key to Github [https://github.com/settings/keys](https://github.com/settings/keys)
 
+_Hint_: To install the corporate subset just clone the repository and run `ansible-playbook --ask-become-pass --inventory localhost, ansible/site.yml --skip-tags corporate-do-not`.
+
 # Feature
 
 - [x] Setup script to prepare Ansible
@@ -53,7 +55,7 @@ This repository contains my `.`Files an [Ansible](https://en.wikipedia.org/w/ind
 
 # Architecture
 
-1. The [setup.sh](setup.sh) installs OS specific Ansible prequesites and starts Ansible
+1. The [setup.sh](setup.sh) installs OS specific Ansible prerequisites and starts Ansible
 2. Ansible has multiple [roles](ansible/site.yml) which each are triggered
 3. The dotfile role contains a [Python script](ansible/roles/dotfiles/bin/bootstrap.py) which creates shell scripts for bash, zsh and fish
 

@@ -1,16 +1,13 @@
 ---
 
-# TODO dockutil not available via homebrew
-# https://github.com/kcrawford/dockutil/issues/127
-
-# - name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
-#   homebrew:
-#     name: "{{ item.name | default(item) }}"
-#     install_options: "{{ item.install_options | default(omit) }}"
-#     state: present
-#     update_homebrew: yes
-#   loop:
-#     - dockutil
+- name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+    update_homebrew: yes
+  loop:
+    - dockutil
 
 - name: Install dockutil directly in /usr/local/bin (workaround) [1/2]
   shell: curl --silent "https://api.github.com/repos/kcrawford/dockutil/releases/latest" | jq -r '.assets[].browser_download_url' | grep pkg
@@ -22,8 +19,6 @@
     - curl -sL {{ dockutil_latest_pkg.stdout }} -o /tmp/dockutil.pkg
     - sudo installer -pkg "/tmp/dockutil.pkg" -target /
     - rm /tmp/dockutil.pkg
-
-
 
 - name: Remove all crap from Dock
   shell: dockutil --remove '{{ item }}'

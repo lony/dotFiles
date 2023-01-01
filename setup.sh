@@ -172,9 +172,11 @@ case "${unameOut}" in
       PACKAGE_MANAGER="brew install"
       status_print
 
-      # TODO maybe xcode is required as well - verify
+      # TODO fix setup for Ventura
+      # git is missing - xcode-select --install
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-      #xcode-select --install
+      # shell is missing - brew
+      # python is missing - brew install python
 
       command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s)"
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
