@@ -1,10 +1,10 @@
 ---
 
 brew_packages:
-    - python
-    - opencv
-    - pipenv
+  - python
+  - opencv
+  - pipenv
 
 python_packages:
-    - pip
-    - virtualenv
+  - pip
+  - virtualenv

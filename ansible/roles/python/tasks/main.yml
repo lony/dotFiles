@@ -15,7 +15,7 @@
     name: pip
     state: latest
   environment:
-        PIP_REQUIRE_VIRTUALENV: false
+    PIP_REQUIRE_VIRTUALENV: false
 
 - name: Install system python packages
   pip:
@@ -24,4 +24,4 @@
     extra_args: --user
   loop: "{{ python_packages }}"
   environment:
-        PIP_REQUIRE_VIRTUALENV: false
+    PIP_REQUIRE_VIRTUALENV: false

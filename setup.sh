@@ -3,9 +3,9 @@
 # Script prepares operating system with foundation to run Ansible
 # Tools installed depend on operating system and environment
 
-if [ "$TRAVIS" == "true" ]; then
+if [ "$TRAVIS" = "true" ]; then
   set -ex
-elif [ "$CORPORATE" == "true" ]; then
+elif [ "$CORPORATE" = "true" ]; then
   set -x
 else
   set -e
@@ -60,7 +60,7 @@ status_print() {
   printf "ROOT_RUN=$ROOT_RUN\n"
   printf "\n"
 
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     printf "\n"
     printf "df -h\n"
     df -h
@@ -102,11 +102,11 @@ command_exists() {
 #   $2 Command used to install if missing
 #######################################
 command_install() {
-  if ! command_exists $1; then
+  if ! which $1; then
     printf "\n### INSTALL $1 - run '$ROOT_RUN$2'...\n"
     $ROOT_RUN$2
 
-    if ! command_exists $1; then
+    if ! which $1; then
       error_print "Command '$1' could not be installed!\n"
       exit 1
     else
@@ -127,7 +127,7 @@ command_install() {
 git_clone() {
   if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
       printf "\n### RUN - git clone\n"
-      git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
+      git clone --depth=1 --branch main "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
   fi
   cd "$GIT_CLONE_FOLDER"
 }
@@ -141,15 +141,15 @@ git_clone() {
 #   None
 #######################################
 ansible_install_run() {
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD} --syntax-check\n"
     ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
   fi
 
   printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD}\n"
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
-  elif [ "$CORPORATE" == "true" ]; then
+  elif [ "$CORPORATE" = "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "corporate-do-not"
   else
     ${ANSIBLE_PLAYBOOK_CMD}
@@ -187,18 +187,18 @@ case "${unameOut}" in
     Linux*)
       SYSTEM_OS="Linux"
       SYSTEM_OS_VERSION="\n\n$(cat /etc/os-release)\n"
-      if [ -x $(command_exists yum) ]; then
+      if which yum ; then
         PACKAGE_MANAGER="yum install -y"
-      elif  [ -x $(command_exists apt-get) ]; then
-        PACKAGE_MANAGER="apt-get -y install"
+      elif which apt ;  then
+        PACKAGE_MANAGER="apt-get install -y"
       else
         error_print "Unknown package manager. Please add support in script!\n"
       fi
       status_print
 
       command_install git "$PACKAGE_MANAGER git"
-      command_install pip "$PACKAGE_MANAGER python-pip"
-      command_install ansible "pip install ansible --upgrade"
+      command_install pip "$PACKAGE_MANAGER python3-pip"
+      command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
       ansible_install_run
