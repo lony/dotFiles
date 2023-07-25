@@ -3,9 +3,9 @@
 # Script prepares operating system with foundation to run Ansible
 # Tools installed depend on operating system and environment
 
-if [ "$TRAVIS" == "true" ]; then
+if [ "$TRAVIS" = "true" ]; then
   set -ex
-elif [ "$CORPORATE" == "true" ]; then
+elif [ "$CORPORATE" = "true" ]; then
   set -x
 else
   set -e
@@ -16,6 +16,7 @@ fi
 #
 
 GIT_REPO_URL="https://github.com/lony/dotFiles.git"
+GIT_REPO_BRANCH="main"
 GIT_CLONE_FOLDER="$HOME/dotFiles"
 ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
 ANSIBLE_PLAYBOOK_CMD="ansible-playbook --ask-become-pass --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
@@ -60,7 +61,7 @@ status_print() {
   printf "ROOT_RUN=$ROOT_RUN\n"
   printf "\n"
 
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     printf "\n"
     printf "df -h\n"
     df -h
@@ -127,7 +128,7 @@ command_install() {
 git_clone() {
   if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
       printf "\n### RUN - git clone\n"
-      git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
+      git clone --depth=1 --branch "$GIT_REPO_BRANCH" "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
   fi
   cd "$GIT_CLONE_FOLDER"
 }
@@ -141,15 +142,15 @@ git_clone() {
 #   None
 #######################################
 ansible_install_run() {
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD} --syntax-check\n"
     ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
   fi
 
   printf "\n### RUN - ${ANSIBLE_PLAYBOOK_CMD}\n"
-  if [ "$TRAVIS" == "true" ]; then
+  if [ "$TRAVIS" = "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "travis-do-not"
-  elif [ "$CORPORATE" == "true" ]; then
+  elif [ "$CORPORATE" = "true" ]; then
     ${ANSIBLE_PLAYBOOK_CMD} --skip-tags "corporate-do-not"
   else
     ${ANSIBLE_PLAYBOOK_CMD}
@@ -173,12 +174,18 @@ case "${unameOut}" in
       status_print
 
       # TODO fix setup for Ventura
-      # git is missing - xcode-select --install
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+      # https://apple.stackexchange.com/questions/456832/installing-xcode-command-line-tools-on-m1-mac-after-upgrading-to-macos-ventura
+      if [ ! -x $(command_exists gcc) ]; then
+        printf "Install Apple Command Line Tools for Xcode, "
+        printf "which contains 'git' and other tools needed for homebrew.\n"
+        xcode-select --install
+      fi
+      # git is missing - xcode-select --install
       # shell is missing - brew
       # python is missing - brew install python
 
-      command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s)"
+      ROOT_RUN="" command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s)"
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
