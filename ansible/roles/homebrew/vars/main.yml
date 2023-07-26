@@ -226,6 +226,7 @@ brew_cask_packages:
     #- docker-completion
     #- podman
     #- podman-desktop
+    #- rancher
     #- kind
     #- kitematic
     #- vagrant
