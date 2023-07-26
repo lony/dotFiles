@@ -3,6 +3,7 @@
 vscode_extensions:
   - hediet.vscode-drawio
   - Gruntfuggly.todo-tree
+  - moshfeu.compare-folders
   - streetsidesoftware.code-spell-checker
   # Helper snippets
   #- vscode-snippet.snippet
@@ -16,6 +17,7 @@ vscode_extensions:
   - dbaeumer.vscode-eslint
   - esbenp.prettier-vscode
   - mblode.pretty-formatter
+  - aaron-bond.better-comments
   # Git
   - eamodio.gitlens
   - donjayamanne.githistory
@@ -26,15 +28,23 @@ vscode_extensions:
   - ms-python.python
   - ms-python.vscode-pylance
   - ms-toolsai.jupyter
+  - ms-python.isort
+  #- samuelcolvin.jinjahtml
   # JavaScript
   #- rbbit.typescript-hero
   #- usernamehw.errorlens
   #- dzannotti.vscode-babel-coloring
   #- alexkrechik.cucumberautocomplete
+  # Terraform
+  - 4ops.terraform
+  - hashicorp.terraform
+  # SQLite
+  - qwtel.sqlite-viewer
+  - adpyke.vscode-sql-formatter
   # Other formater
   - redhat.ansible
-  - hashicorp.terraform
   - redhat.vscode-xml
   - redhat.vscode-yaml
   - DavidWang.ini-for-vscode
-  - ms-azuretools.vscode-docker
+  - ms-vscode.makefile-tools
+  #- ms-azuretools.vscode-docker
