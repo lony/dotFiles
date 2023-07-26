@@ -195,7 +195,9 @@ case "${unameOut}" in
       # TODO Install homebrew currently needs admin rights. So make it work without admin privileges
       # https://www.reddit.com/r/macsysadmin/comments/yf5jsi/homebrew_install_through_an_mdm_script/
       # https://github.com/Honestpuck/homebrew.sh/tree/master
-      command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | /bin/bash -is)"
+      if ! command_exists brew; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      fi
       ROOT_RUN="" command_install python3 "$PACKAGE_MANAGER python"
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
