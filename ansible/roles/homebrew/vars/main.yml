@@ -1,21 +1,21 @@
 ---
 
 brew_taps:
-    - homebrew/cask-drivers
-    - homebrew/cask-fonts
-    - jakehilborn/jakehilborn
+    - homebrew/cask-drivers                                         # needed for fujitsu-scansnap-home
+    - homebrew/cask-fonts                                           # needed for font-*
+    #- jakehilborn/jakehilborn                                      # needed for displayplacer
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
     - binutils                                                      # FSF Binutils for native development
     - diffutils                                                     # File comparison utilities
     - findutils                                                     # GNU find, xargs, and locate
-    - gnu-sed
     - gawk
     - grep
     #- ack                                                          # Search tool like grep, but optimized for programmers
     #- ag                                                           # Code-search similar to ack
     - less
+    - gnu-sed
     - gnu-which
     - gnu-indent
     - gnu-getopt
@@ -30,6 +30,7 @@ brew_packages:
     - pigz                                                          # Parallel gzip
     - xz                                                            # General-purpose data compression with high compression ratio
     - p7zip                                                         # 7-Zip (high compression file archiver) implementation
+    - brotli                                                        # Generic-purpose lossless compression algorithm by Google https://github.com/google/brotli
 
     - bash
     #- zsh                                                          Installed via seperate role
@@ -40,7 +41,7 @@ brew_packages:
     #- fasd                                                         # quick access to files and directories https://github.com/clvv/fasd
     - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
     - grc                                                           # Colorize logfiles and command output
-    - mc                                                            # Midnight commander
+    - midnight-commander                                                            # Midnight commander
     - rename
     - hugo
     - grip                                                          # Github markdown preview
@@ -52,9 +53,12 @@ brew_packages:
     - curl
     - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
     - lynx                                                          # Text-based web browser
+    - httrack                                                       # Website copier/offline browser
     #- iperf
     - iperf3
-    - bind
+    #- bind
+    #- dnsmasq
+    #- unbound
 
     - gnutls                                                        # GNU TLS
     - gnupg
@@ -82,6 +86,7 @@ brew_packages:
     - git
     #- git-flow
     #- git-extras
+    - asdf
     - packer
 
     # Automation
@@ -121,6 +126,7 @@ brew_packages:
     #- mongodb
 
     #- openldap                                                     # CLI LDAP tool
+    #- tesseract                                                    # OCR (Optical Character Recognition) engine
 
 brew_cask_packages:
     #- avira-antivirus
@@ -129,26 +135,33 @@ brew_cask_packages:
     - veracrypt
     #- cryptomator
     - rectangle                                                     # Resize OS X windows https://github.com/rxhanson/Rectangle replaces spectacle
-    - displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
-    - iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
+    #- displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
+    #- iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
+    #- istat-menus
+    - tomatobar
+    - caffeine                                                      # Prevent your Mac from automatically going to sleep https://intelliscapesolutions.com/apps/caffeine
     - aldente                                                       # Battery management https://apphousekitchen.com
     - sound-control                                                 # Sound output management https://staticz.com/soundcontrol/
+    #- bluesnooze                                                   # Sleeping Mac = Bluetooth off https://github.com/odlp/bluesnooze
 
     - google-chrome
     - firefox
 
     - font-fira-code                                                # Fira Code enables font ligatures for example != https://github.com/tonsky/FiraCode
-    - font-iosevka                                                  # Possible replacement for Fira https://github.com/be5invis/Iosevka
+    #- font-iosevka                                                  # Possible replacement for Fira https://github.com/be5invis/Iosevka
     - visual-studio-code                                            # Configured in separate role
     - sourcetree
     #- meld
     - postman
+    - insomnia
     - hex-fiend
     #- jetbrains-toolbox
     #- folx
     #- unetbootin
+    #- balenaetcher
 
-    - wireshark
+    #- wireshark
+    #- wireshark-chmodbpf
     - charles                                                       # HTTP proxy https://www.charlesproxy.com
     #- mono-mdk                                                     # Needed by fiddler
     #- fiddler
@@ -156,13 +169,15 @@ brew_cask_packages:
     #- cyberduck
     #- tunnelblick
 
-    - dropbox
+    #- dropbox
     - google-drive                                                  # Replaces google-backup-and-sync which is no longer supported
     #- rescuetime
     - tomighty
     - teamviewer
 
     #- rambox
+    #- skype
+    #- zoom
     - signal
 
     #- xmind
@@ -170,7 +185,9 @@ brew_cask_packages:
     #- adobe-acrobat-reader
     #- boostnote
     - joplin
+    - microsoft-auto-update
     - microsoft-office
+    #- portfolioperformance
     - banking-4
 
     #- balsamiq-mockups
@@ -185,7 +202,7 @@ brew_cask_packages:
     #- freecad
     #- vlc                                                          Installed via seperate role
     #- elmedia-player                                               Better VLC alternative
-    #- spotify
+    - spotify
     #- handbrake
     #- obs                                                           # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
     - calibre                                                        # E-Book manager https://calibre-ebook.com
@@ -196,9 +213,10 @@ brew_cask_packages:
     #- google-web-designer
 
     # Kubernetes (K8s)
-    #- kubectl                                                       # CLI for Kubernetes
-    #- kubie                                                         # Manage K8s context, namespaces etc.
+    #- kubernetes-cli                                                # CLI for Kubernetes
+    #- kubectx                                                       # Tool that can switch between kubectl contexts easily and create aliases
     #- k9s                                                           # Monitor K8s cluster in CLI
+    #- openlens                                                      # Monitor K8s cluster in an app
     #- fzf                                                           # Fuzzy finder for CLI
     #- mkcert                                                        # Local development TLS helper https://github.com/FiloSottile/mkcert
     #- testssl                                                       # SSL test tool https://testssl.sh/
@@ -206,6 +224,8 @@ brew_cask_packages:
     # Virtualisation
     - docker
     #- docker-completion
+    #- podman
+    #- podman-desktop
     #- kind
     #- kitematic
     #- vagrant
