@@ -196,9 +196,14 @@ case "${unameOut}" in
       # https://www.reddit.com/r/macsysadmin/comments/yf5jsi/homebrew_install_through_an_mdm_script/
       # https://github.com/Honestpuck/homebrew.sh/tree/master
       if ! command_exists brew; then
+        # Tested against: Homebrew 4.1.1
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       fi
+
+      # Tested against: Python 3.11.4
       ROOT_RUN="" command_install python3 "$PACKAGE_MANAGER python"
+
+      # Tested against: ansible [core 2.15.2]
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
