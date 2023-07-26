@@ -173,19 +173,30 @@ case "${unameOut}" in
       PACKAGE_MANAGER="brew install"
       status_print
 
-      # TODO fix setup for Ventura
+      # https://stackoverflow.com/questions/15371925/how-to-check-if-xcode-command-line-tools-are-installed
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-      # https://apple.stackexchange.com/questions/456832/installing-xcode-command-line-tools-on-m1-mac-after-upgrading-to-macos-ventura
-      if [ ! -x $(command_exists gcc) ]; then
+      xcode-select -p >/dev/null 2>&1
+      if [ $? -ne 0 ]; then
         printf "Install Apple Command Line Tools for Xcode, "
         printf "which contains 'git' and other tools needed for homebrew.\n"
-        xcode-select --install
-      fi
-      # git is missing - xcode-select --install
-      # shell is missing - brew
-      # python is missing - brew install python
+        printf "Please confirm the following dialog with 'Install'.\n"
 
-      ROOT_RUN="" command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s)"
+        xcode-select --install
+
+        # src https://gist.github.com/phuctm97/946b5ced8cbfabc2f34e489c447456b1
+        until $(xcode-select --print-path &> /dev/null); do
+          printf "."
+          sleep 1
+        done
+
+        printf "Apple Command Line Tools for Xcode has finished installing.\n"
+      fi
+
+      # TODO Install homebrew currently needs admin rights. So make it work without admin privileges
+      # https://www.reddit.com/r/macsysadmin/comments/yf5jsi/homebrew_install_through_an_mdm_script/
+      # https://github.com/Honestpuck/homebrew.sh/tree/master
+      command_install brew "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | /bin/bash -is)"
+      ROOT_RUN="" command_install python3 "$PACKAGE_MANAGER python"
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
