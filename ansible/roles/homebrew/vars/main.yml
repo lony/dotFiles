@@ -138,7 +138,6 @@ brew_cask_packages:
     #- displayplacer                                                 # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
     #- iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
     #- istat-menus
-    - tomatobar
     - caffeine                                                      # Prevent your Mac from automatically going to sleep https://intelliscapesolutions.com/apps/caffeine
     - aldente                                                       # Battery management https://apphousekitchen.com
     - sound-control                                                 # Sound output management https://staticz.com/soundcontrol/
@@ -172,7 +171,8 @@ brew_cask_packages:
     #- dropbox
     - google-drive                                                  # Replaces google-backup-and-sync which is no longer supported
     #- rescuetime
-    - tomighty
+    #- tomighty                                                     # No longer used and replaced with next
+    - tomatobar                                                     # Pomodoro timer
     - teamviewer
 
     #- rambox
