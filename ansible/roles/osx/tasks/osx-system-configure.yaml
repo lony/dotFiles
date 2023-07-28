@@ -58,7 +58,7 @@
     - osx_notify.sh
     - osx_screen_align.sh
 
-- name: Missing manuel stepps [DO THIS MANUALLY]
+- name: Missing manuel steps [DO THIS MANUALLY]
   debug:
     msg:
       - "See --> 'ansible/roles/osx/doc/macOS Ventura Settings'"
