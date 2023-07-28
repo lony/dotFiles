@@ -1,7 +1,6 @@
 ---
 
 brew_taps:
-    - homebrew/cask-drivers                                         # needed for fujitsu-scansnap-home
     - homebrew/cask-fonts                                           # needed for font-*
     #- jakehilborn/jakehilborn                                      # needed for displayplacer
 
