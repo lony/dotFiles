@@ -27,6 +27,15 @@
   tags:
     - corporate-do-not
 
+- name: Create directory /usr/local/bin/..
+  file:
+    path: /usr/local/bin
+    state: directory
+    owner: "{{ ansible_real_user_id }}"
+    group: "{{ ansible_real_group_id }}"
+    mode: '0755'
+  become: yes
+
 - name: Copy user shell scripts to local /usr/local/bin/..
   copy:
     src:  "{{ role_path }}/files/{{item}}"
@@ -36,6 +45,18 @@
     - osx_screen_align.sh
   tags:
     - corporate-do-not
+
+- name: Change owner and mode for files in /usr/local/bin/..
+  file:
+    path: /usr/local/bin/{{item}}
+    state: file
+    owner: "{{ ansible_real_user_id }}"
+    group: "{{ ansible_real_group_id }}"
+    mode: '0755'
+  become: yes
+  loop:
+    - osx_notify.sh
+    - osx_screen_align.sh
 
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:
