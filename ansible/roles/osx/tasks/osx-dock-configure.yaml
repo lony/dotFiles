@@ -1,24 +1,42 @@
 ---
 
-- name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
-  homebrew:
-    name: "{{ item.name | default(item) }}"
-    install_options: "{{ item.install_options | default(omit) }}"
-    state: present
-    update_homebrew: yes
-  loop:
-    - dockutil
+# TODO use when brew package is updated to 3.x.x https://github.com/kcrawford/dockutil/issues/127
+# - name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
+#   homebrew:
+#     name: "{{ item.name | default(item) }}"
+#     install_options: "{{ item.install_options | default(omit) }}"
+#     state: present
+#     update_homebrew: yes
+#   loop:
+#     - dockutil
 
-- name: Install dockutil directly in /usr/local/bin (workaround) [1/2]
+- name: Check dockutil already installed in /usr/local/bin (workaround) [1/4]
+  stat:
+    path: "/usr/local/bin/dockutil"
+  register: dockutil
+
+- name: Check dockutil version on github (workaround) [2/4]
   shell: curl --silent "https://api.github.com/repos/kcrawford/dockutil/releases/latest" | jq -r '.assets[].browser_download_url' | grep pkg
   register: dockutil_latest_pkg
+  when: not dockutil.stat.exists
 
-- name: Install dockutil directly in /usr/local/bin (workaround) [1/2]
+- name: Install dockutil directly in /usr/local/bin (workaround) [2/4]
   shell: "{{ item }}"
   with_items:
     - curl -sL {{ dockutil_latest_pkg.stdout }} -o /tmp/dockutil.pkg
     - sudo installer -pkg "/tmp/dockutil.pkg" -target /
     - rm /tmp/dockutil.pkg
+  when: not dockutil.stat.exists
+
+- name: Change owner and mode for /usr/local/bin/dockutil (workaround) [4/4]
+  file:
+    path: /usr/local/bin/dockutil
+    state: file
+    owner: "{{ ansible_real_user_id }}"
+    group: "{{ ansible_real_group_id }}"
+    mode: '0755'
+  become: yes
+  when: not dockutil.stat.exists
 
 - name: Remove all crap from Dock
   shell: dockutil --remove '{{ item }}'
