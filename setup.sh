@@ -175,8 +175,12 @@ case "${unameOut}" in
 
       # https://stackoverflow.com/questions/15371925/how-to-check-if-xcode-command-line-tools-are-installed
       # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+      set +e
       xcode-select -p >/dev/null 2>&1
-      if [ $? -ne 0 ]; then
+      CMD_TOOLS_RETURN_CODE="$?"
+      set -e
+
+      if [ $CMD_TOOLS_RETURN_CODE -ne 0 ]; then
         printf "Install Apple Command Line Tools for Xcode, "
         printf "which contains 'git' and other tools needed for homebrew.\n"
         printf "Please confirm the following dialog with 'Install'.\n"
@@ -198,12 +202,12 @@ case "${unameOut}" in
       if ! command_exists brew; then
         # Tested against: Homebrew 4.1.1
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/goetz/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
 
-      # Tested against: Python 3.11.4
-      ROOT_RUN="" command_install python3 "$PACKAGE_MANAGER python"
-
       # Tested against: ansible [core 2.15.2]
+      # Tested against: Python 3.11.4
       ROOT_RUN="" command_install ansible "$PACKAGE_MANAGER ansible"
 
       git_clone
