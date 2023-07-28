@@ -5,9 +5,6 @@
 # ALL SECRETS  -
 ##############--
 
-# Red bg (PROD)
-#PRODUCTION_HOST_PATTERN=""
-
 # Github
 # see https://github.com/settings/tokens
 # token needs no scopes
