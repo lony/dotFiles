@@ -32,6 +32,8 @@ dockutil_remove:
   - "Terminal"
   - "Safari"
   - "System Preferences"
+  - "Freeform"
+  - "TextEdit"
 
 dockutil_persist:
   # List all existing: dockutil --list
