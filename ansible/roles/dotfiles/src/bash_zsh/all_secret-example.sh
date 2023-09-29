@@ -25,3 +25,6 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Spark
 #export SPARK_LOCAL_IP=127.0.0.1
+
+# Docker
+# export DOCKER_DEFAULT_PLATFORM=linux/amd64
