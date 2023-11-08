@@ -28,3 +28,6 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Docker
 # export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# Kubernetes - add krew package manager
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

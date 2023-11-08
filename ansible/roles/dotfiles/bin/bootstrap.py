@@ -26,7 +26,6 @@ config = [
     {"sys": "bash"},
     {"sys": "zsh", "framework": "oh-my-zsh"},
     {"sys": "fish"},
-    {"sys": "ssh"},
 ]
 
 system_list = {
@@ -93,13 +92,6 @@ system_list = {
             ],
             "comment_char": '#',
             "outfile": path_target + '/.config/fish/config.fish',
-        },
-    },
-    "ssh": {
-        "default": {
-            "handler": "copy",
-            "source": os.path.join(path_files, ".ssh"),
-            "destination": path_target,
         },
     },
 }
