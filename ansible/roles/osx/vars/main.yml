@@ -40,17 +40,15 @@ dockutil_persist:
   - { name: "Activity Monitor",     path: "/System/Applications/Utilities/Activity Monitor.app",  pos: 1}
   - { name: "Anki",                 path: "/Applications/Anki.app",                               pos: 2}
   - { name: "Spotify",              path: "/Applications/Spotify.app",                            pos: 3}
-  - { name: "System Settings",      path: "/System/Applications/System Settings.app",             pos: 4}
-  - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 5}
-  - { name: "Preview",              path: "/System/Applications/Preview.app",                     pos: 6}
-  - { name: "Microsoft To Do",      path: "/Applications/Microsoft To Do.app",                    pos: 7}
+  - { name: "Bitwarden",            path: "/Applications/Bitwarden.app",                          pos: 4}
+  - { name: "System Settings",      path: "/System/Applications/System Settings.app",             pos: 5}
+  - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 6}
+  - { name: "Preview",              path: "/System/Applications/Preview.app",                     pos: 7}
   - { name: "App Store",            path: "/Applications/App Store.app",                          pos: 8}
-  - { name: "KeePassX",             path: "/Applications/KeePassX.app",                           pos: 9}
-  - { name: "iTerm",                path: "/Applications/iTerm.app",                              pos: 10}
-  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 11}
-  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 12}
-  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 13}
-  #- { name: "Elmedia Player",       path: "/Applications/Elmedia Player.app",                     pos: 14}
+  - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 9}
+  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 10}
+  - { name: "Terminal",             path: "/System/Applications/Utilities/Terminal.app",          pos: 11}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 12}
 
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
@@ -73,7 +71,7 @@ sys_conf_commands:
   - "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" # Disable auto period insert
   - "defaults write -g AppleMiniaturizeOnDoubleClick -bool false" # Double-click a window's title bar to minimize
   - "defaults write -g com.apple.swipescrolldirection -bool false" # Set scroll direction
-  - "defaults write com.apple.finder AppleShowAllFiles YES" # Allowing Finder to show hidden files
+  - "defaults write com.apple.finder AppleShowAllFiles TRUE" # Allowing Finder to show hidden files
   - "defaults write com.apple.finder DisableAllAnimations -bool true" # Disable animation when opening the Info window in OS X Finder (cmd⌘ + i)
   - "defaults write com.apple.finder _FXShowPosixPathInTitle -bool true" # Display full posix path in OS X Finder title Bar
   - "defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false" # Disable the extension change warning in OS X Finder

@@ -122,6 +122,7 @@ brew_packages:
 
     #- sqlite
     #- postgresql
+    - libpq                                                         # Just Postgre tools like psql, pg_dump - see https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos
     #- mongodb
 
     #- openldap                                                     # CLI LDAP tool
@@ -138,7 +139,8 @@ brew_cask_packages:
     #- iglance                                                       # Status bar system info for OS X https://github.com/iglance/iGlance
     #- istat-menus
     - caffeine                                                      # Prevent your Mac from automatically going to sleep https://intelliscapesolutions.com/apps/caffeine
-    - aldente                                                       # Battery management https://apphousekitchen.com
+    # - aldente                                                       # Battery management https://apphousekitchen.com - replaced by energiza
+    - energiza                                                      # Battery management https://appgineers.de/energiza/
     - sound-control                                                 # Sound output management https://staticz.com/soundcontrol/
     #- bluesnooze                                                   # Sleeping Mac = Bluetooth off https://github.com/odlp/bluesnooze
 

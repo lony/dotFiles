@@ -1,0 +1,23 @@
+---
+
+- name: Check if ~/.ssh exists
+  stat:
+    path: "~/.ssh"
+  register: ssh
+
+- name: Ensures ~/.ssh dir exists
+  file:
+    path: "~/.ssh"
+    state: directory
+  when: not ssh.stat.exists
+
+- name: Check if ~/.ssh/config exists
+  stat:
+    path: "~/.ssh/config"
+  register: ssh_config
+
+- name: Copy ~/.ssh/config from .ssh/config
+  copy:
+    src:  "{{ role_path }}/files/.ssh/config"
+    dest: "~/.ssh/config"
+  when: not ssh_config.stat.exists

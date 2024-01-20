@@ -5,9 +5,6 @@
 # ALL SECRETS  -
 ##############--
 
-# Red bg (PROD)
-#PRODUCTION_HOST_PATTERN=""
-
 # Github
 # see https://github.com/settings/tokens
 # token needs no scopes
@@ -28,3 +25,9 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Spark
 #export SPARK_LOCAL_IP=127.0.0.1
+
+# Docker
+# export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# Kubernetes - add krew package manager
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

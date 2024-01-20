@@ -28,36 +28,6 @@ bindkey '[D' backward-word
 #bindkey "^[[1;3C" forward-word
 #bindkey "^[[1;3D" backward-word
 
-# --------------------------
-# Z folder completion      #
-# --------------------------
-
-# https://github.com/rupa/z
-Z_PLUGIN="/usr/local/etc/profile.d/z.sh"
-if [[ -s "${Z_PLUGIN}" ]]; then
-  source "${Z_PLUGIN}"
-fi
-
-# --------------------------
-# iTerm2 integration       #
-# --------------------------
-
-# https://www.iterm2.com/documentation-shell-integration.html
-ITERM2_PLUGIN="${HOME}/.iterm2_shell_integration.zsh"
-if [[ -s "${ITERM2_PLUGIN}" ]]; then
-  source "${ITERM2_PLUGIN}"
-fi
-
-# --------------------------
-# AWS CLI auto completion  #
-# --------------------------
-
-# http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-AWS_COMPLETE="/usr/local/bin/aws_zsh_completer.sh"
-if [[ -s "${AWS_COMPLETE}" ]]; then
-  source "${AWS_COMPLETE}"
-fi
-
 # -----------------------------
 # Show ls after every cd      #
 # -----------------------------
@@ -75,3 +45,25 @@ function chpwd() {
 
 git_patch_1() {	git show "$1" | git apply}
 git_patch_2() {	git cherry-pick "$1" && git reset --soft HEAD~1 }
+
+
+# -------------------------------------------
+# asdf package manager  https://asdf-vm.com #
+# -------------------------------------------
+
+ASDF="/opt/homebrew/opt/asdf/libexec/asdf.sh"
+if [[ -s "${ASDF}" ]]; then
+  source "${ASDF}"
+fi
+
+# -------------------------------------------------------------
+# zsh completions https://docs.brew.sh/Shell-Completion #
+# -------------------------------------------------------------
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
