@@ -1,15 +1,24 @@
 {
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.list.openMode": "singleClick",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreviewFromCodeNavigation": false,
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#05ef3c"
+  },
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "explorer.autoReveal": false,
   "problems.autoReveal": false,
   "breadcrumbs.enabled": true,
   "workbench.iconTheme": "material-icon-theme",
+  /* https://stackoverflow.com/questions/41115285/disable-tooltip-hint-in-visual-studio-code */
+  "editor.hover.enabled": false,
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 13,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "workbench.colorTheme": "One Monokai",
   "[javascript]": {
@@ -28,9 +37,25 @@
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.formatOnSave": true
   },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.tabSize": 2, // optionally
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.tabSize": 2, // optionally
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "todo-tree.tree.showScanModeButton": false,
-  "todo-tree.highlights.enabled": true
+  "todo-tree.highlights.enabled": true,
+  "files.associations": {
+    "*.tf": "terraform",
+    "*.hcl": "terragrunt"
+  }
 }
