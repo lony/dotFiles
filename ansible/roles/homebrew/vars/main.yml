@@ -122,6 +122,7 @@ brew_packages:
 
     #- sqlite
     #- postgresql
+    - libpq                                                         # Just Postgre tools like psql, pg_dump - see https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos
     #- mongodb
 
     #- openldap                                                     # CLI LDAP tool
