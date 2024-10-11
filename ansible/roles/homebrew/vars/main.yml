@@ -85,7 +85,7 @@ brew_packages:
     - git
     #- git-flow
     #- git-extras
-    - asdf
+    - mise
     - packer
 
     # Automation
