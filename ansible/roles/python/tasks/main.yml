@@ -9,19 +9,3 @@
     src: "{{ role_path }}/files/"
     dest: "~"
     force: yes
-
-- name: Upgrade pip
-  pip:
-    name: pip
-    state: latest
-  environment:
-        PIP_REQUIRE_VIRTUALENV: false
-
-- name: Install system python packages
-  pip:
-    name: "{{ item }}"
-    state: latest
-    extra_args: --user
-  loop: "{{ python_packages }}"
-  environment:
-        PIP_REQUIRE_VIRTUALENV: false

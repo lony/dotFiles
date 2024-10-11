@@ -24,13 +24,12 @@ function chpwd() {
 }
 alias cd='chpwd'
 
-
 # -----------------------------
 # AWS CLI auto completion     #
 # -----------------------------
 
 # http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html
-AWS_COMPLETE="/usr/local/bin/aws_completer"
+AWS_COMPLETE="$(which aws_completer)"
 if [[ -s "${AWS_COMPLETE}" ]]; then
   complete -C "${AWS_COMPLETE}" aws
 fi
