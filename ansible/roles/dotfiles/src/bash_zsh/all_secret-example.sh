@@ -10,6 +10,9 @@
 # token needs no scopes
 #export HOMEBREW_GITHUB_API_TOKEN=""
 
+# mise https://mise.jdx.dev/getting-started.html
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
 # Go
 export GOPATH="$HOME/Go"
 # https://stackoverflow.com/questions/36650052/golang-equivalent-of-npm-install-g

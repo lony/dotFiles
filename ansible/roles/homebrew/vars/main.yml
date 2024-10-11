@@ -86,7 +86,7 @@ brew_packages:
     #- git-flow
     #- git-extras
     - mise
-    - packer
+    #- packer
 
     # Automation
     - ansible

@@ -2,9 +2,5 @@
 
 brew_packages:
     - python
+    - python-setuptools
     - opencv
-    - pipenv
-
-python_packages:
-    - pip
-    - virtualenv

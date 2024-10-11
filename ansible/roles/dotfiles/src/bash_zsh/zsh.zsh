@@ -38,14 +38,12 @@ function chpwd() {
     ll
 }
 
-
 # -----------------------------
 # Git patch                   #
 # -----------------------------
 
 git_patch_1() {	git show "$1" | git apply}
 git_patch_2() {	git cherry-pick "$1" && git reset --soft HEAD~1 }
-
 
 # -------------------------------------------------------------
 # zsh completions https://docs.brew.sh/Shell-Completion #
