@@ -26,8 +26,6 @@ autocmd filetype crontab setlocal nobackup nowritebackup    " disables backups f
 let g:netrw_altv=1                                          " open splits to the right
 let g:netrw_banner=0                                        " disable banner
 let g:netrw_browse_split=4                                  " open in prior window
-let g:netrw_list_hide=netrw_gitignore#Hide()                " hide gitignore files
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'              " hide dotfiles by default (this is the string toggled by netrw-gh)
 let g:netrw_liststyle=3                                     " tree view
 let mapleader=","                                           " change leader key
 set autoindent                                              " always set autoindenting on
