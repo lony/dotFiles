@@ -42,3 +42,9 @@
     - vscode_installed.rc == 0
     - item not in vscode_extensions
   loop: "{{ vscode_extensions_installed.stdout_lines }}"
+
+- name: Install vscode plugin config for continue
+  copy:
+    src: "{{ role_path }}/files/continue_config.json"
+    dest: "~/.continue/config.json"
+    force: yes
