@@ -53,6 +53,11 @@ if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
+  # Instead of rebuilding the completion cache every time, we only do it once a day
   autoload -Uz compinit
-  compinit
+  if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+      compinit
+  else
+      compinit -C
+  fi
 fi

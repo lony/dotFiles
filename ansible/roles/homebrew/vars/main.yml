@@ -218,7 +218,7 @@ brew_cask_packages:
     #- kubectx                                                       # Tool that can switch between kubectl contexts easily and create aliases
     #- k9s                                                           # Monitor K8s cluster in CLI
     #- openlens                                                      # Monitor K8s cluster in an app
-    #- fzf                                                           # Fuzzy finder for CLI
+    - fzf                                                           # Fuzzy finder for CLI
     #- mkcert                                                        # Local development TLS helper https://github.com/FiloSottile/mkcert
     #- testssl                                                       # SSL test tool https://testssl.sh/
 
