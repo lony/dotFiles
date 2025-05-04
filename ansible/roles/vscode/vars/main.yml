@@ -8,6 +8,8 @@ vscode_extensions:
   # Helper snippets
   #- vscode-snippet.snippet
   - visualstudioexptteam.vscodeintellicode
+  # AI
+  - continue.continue
   # UI
   - azemoh.one-monokai
   - oderwat.indent-rainbow
@@ -18,33 +20,54 @@ vscode_extensions:
   - esbenp.prettier-vscode
   - mblode.pretty-formatter
   - aaron-bond.better-comments
+  # Formatter
+  - redhat.ansible
+  - redhat.vscode-xml
+  - redhat.vscode-yaml
+  - tamasfe.even-better-toml
+  - DavidWang.ini-for-vscode
+  - ms-vscode.makefile-tools
+  - aykutsarac.jsoncrack-vscode
   # Git
   - eamodio.gitlens
   - donjayamanne.githistory
+  # Rust
+  - dustypomerleau.rust-syntax
+  - fill-labs.dependi
+  - rust-lang.rust-analyzer
+  - jscearcy.rust-doc-viewer
+  - kale-lab.salt
+  - vadimcn.vscode-lldb
   # Go
   - golang.go
   # Python
   - njpwerner.autodocstring
   - ms-python.python
+  - ms-python.debugpy
+  - ms-python.isort
   - ms-python.vscode-pylance
   - ms-toolsai.jupyter
-  - ms-python.isort
   #- samuelcolvin.jinjahtml
   # JavaScript
   #- rbbit.typescript-hero
   #- usernamehw.errorlens
   #- dzannotti.vscode-babel-coloring
   #- alexkrechik.cucumberautocomplete
+  ## Astro
+  - astro-build.astro-vscode
+  ## Tailwind
+  - bradlc.vscode-tailwindcss
   # Terraform
   - 4ops.terraform
   - hashicorp.terraform
+  # R
+  #- reditorsupport.r
   # SQLite
   - qwtel.sqlite-viewer
   - adpyke.vscode-sql-formatter
-  # Other formater
-  - redhat.ansible
-  - redhat.vscode-xml
-  - redhat.vscode-yaml
-  - DavidWang.ini-for-vscode
-  - ms-vscode.makefile-tools
-  #- ms-azuretools.vscode-docker
+  # CSV
+  - mechatroner.rainbow-csv
+  # Markdown
+  - asciidoctor.asciidoctor-vscode
+  # PlantUML
+  - jebbs.plantuml

@@ -1,0 +1,111 @@
+{
+  "models": [
+    {
+      "title": "Qwen 2.5 Coder 7B",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "completionOptions": {},
+      "apiBase": "http://localhost:11434",
+      "prompt": {
+        "prefix": "<|im_start|>system\nYou are a helpful coding assistant. You write concise, clean code. Always explain decisions.<|im_end|>\n<|im_start|>user\n",
+        "suffix": "<|im_end|>\n<|im_start|>assistant\n"
+      }
+    },
+    {
+      "title": "Llama 3.1 8B",
+      "provider": "ollama",
+      "model": "llama3.1:8b",
+      "completionOptions": {},
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "docs": [
+    {
+      "title": "Rust Docs",
+      "startUrl": "https://doc.rust-lang.org/book/"
+    },
+    {
+      "title": "React",
+      "startUrl": "https://react.dev/reference/",
+      "faviconUrl": "https://react.dev/favicon.ico"
+    },
+    {
+      "title": "Nest.js",
+      "startUrl": "https://docs.nestjs.com/",
+      "faviconUrl": "https://docs.nestjs.com/favicon.ico"
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit selected code"
+    },
+    {
+      "name": "comment",
+      "description": "Write comments for the selected code"
+    },
+    {
+      "name": "share",
+      "description": "Export this session as markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "test",
+      "prompt": "{{{ input }}}\n\nWrite a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.",
+      "description": "Write unit tests for highlighted code"
+    },
+    {
+      "name": "step",
+      "prompt": "{{{ input }}}\n\nExplain the selected code step by step.",
+      "description": "Code explanation"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "open",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Qwen 2.5 Coder 7B",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:7b"
+  },
+  "allowAnonymousTelemetry": false,
+  "embeddingsProvider": {
+    "provider": "transformers.js"
+  }
+}
