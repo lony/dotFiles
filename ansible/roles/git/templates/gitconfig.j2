@@ -1,3 +1,42 @@
 [user]
     name = {{ git_fullname }}
     email = {{ git_mail }}
+
+[init]
+    # Set default branch to 'main'
+    defaultBranch = main
+
+[core]
+    # Use delta as syntax-highlighting pager https://github.com/dandavison/delta
+    pager = delta --diff-so-fancy | less --tabs=4 -RFX
+    # Switch git comment char to $ instead of \#
+    # https://stackoverflow.com/questions/2788092/start-a-git-commit-message-with-a-hashmark
+    # https://stackoverflow.com/questions/16164624/vim-syntax-highlighting-for-git-commit-messages-custom-commentchar
+    commentchar = $
+
+[delta]
+    keep-plus-minus-markers = true
+
+[pull]
+    # Enable rebase as default for git pull
+    # https://stackoverflow.com/questions/25430600/difference-between-git-pull-rebase-and-git-pull-ff-only
+    # https://stackoverflow.com/questions/13846300/how-to-make-git-pull-use-rebase-by-default-for-all-my-repositories
+    rebase = true
+
+[push]
+    # Use current branch name as refspec if not explicitly given for remote
+    # https://stackoverflow.com/questions/6089294/why-do-i-need-to-do-set-upstream-all-the-time
+    # https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
+    # https://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0
+    default = current
+    # Enable to set upstream automatically when pushing
+    # https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote
+    autoSetupRemote = true
+
+[alias]
+    # For: To git push --force-with-lease
+    # https://stackoverflow.com/questions/30542491/push-force-with-lease-by-default
+    pushf = push --force-with-lease
+    # For: To set upstream to origin for current branch
+    # https://stackoverflow.com/questions/32056324/there-is-no-tracking-information-for-the-current-branch
+    set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
