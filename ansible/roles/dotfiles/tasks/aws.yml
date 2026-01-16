@@ -1,0 +1,25 @@
+---
+
+- name: Check if ~/.aws exists
+  stat:
+    path: "~/.aws"
+  register: aws
+
+- name: Ensures ~/.aws dir exists
+  file:
+    path: "~/.aws"
+    state: directory
+  when: not aws.stat.exists
+
+- name: Check if ~/.aws/config exists
+  stat:
+    path: "~/.aws/config"
+  register: aws_config
+
+# https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html
+# https://docs.aws.amazon.com/cli/latest/topic/s3-config.html
+- name: Copy ~/.aws/config from .aws/config
+  copy:
+    src:  "{{ role_path }}/files/.aws/config"
+    dest: "~/.aws/config"
+  when: not aws_config.stat.exists

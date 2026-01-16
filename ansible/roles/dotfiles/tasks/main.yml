@@ -6,8 +6,12 @@
 - name: Setup ssh config
   import_tasks: ssh.yml
 
+- name: Setup aws config
+  import_tasks: aws.yml
+
 # https://developer.hashicorp.com/terraform/cli/config/config-file
 - name: Copy ~/.terraformrc from .terraformrc
   copy:
     src:  "{{ role_path }}/files/.terraformrc"
     dest: "~/.terraformrc"
+
