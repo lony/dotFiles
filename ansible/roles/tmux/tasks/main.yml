@@ -2,12 +2,12 @@
 
 - name: Install tmux package on OSX using hombrew
   import_tasks: osx-tmux-install.yaml
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 
 - name: Install tmux package on Linux
   import_tasks: linux-tmux-install.yaml
-  when: ansible_os_family == 'RedHat' or
-    ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'RedHat' or
+    ansible_facts['os_family'] == 'Debian'
 
 - name: Fetch tmux version
   command: "tmux -V"
