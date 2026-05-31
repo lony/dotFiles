@@ -14,6 +14,7 @@ brew_packages:
     - gnu-which
     - gnu-indent
     - gnu-getopt
+    - fzf                                                           # Fuzzy finder for CLI
 
     - jq                                                            # Lightweight and flexible command-line JSON processor
     - pv                                                            # Monitor data's progress through a pipe
@@ -25,7 +26,9 @@ brew_packages:
     - pigz                                                          # Parallel gzip
     - xz                                                            # General-purpose data compression with high compression ratio
     - p7zip                                                         # 7-Zip (high compression file archiver) implementation
-    - brotli                                                        # Generic-purpose lossless compression algorithm by Google https://github.com/google/brotli
+    #- brotli                                                       # Generic-purpose lossless compression algorithm by Google https://github.com/google/brotli
+    #- zstd
+    #- snappy
 
     - bash
     #- zsh                                                          # Installed via separate role
@@ -34,7 +37,9 @@ brew_packages:
     - screen
     - z                                                             # Tracks most-used directories to make cd smarter
     #- fasd                                                         # quick access to files and directories https://github.com/clvv/fasd
-    - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
+    #- diff-so-fancy                                                # Good-lookin' diffs with diff-highlight and more
+    - git-delta
+    - shellcheck
     - grc                                                           # Colorize logfiles and command output
     - midnight-commander                                            # Midnight commander
     - rename
@@ -44,9 +49,11 @@ brew_packages:
     - ipcalc                                                        # Calculate various network masks
     - netcat                                                        # Utility for managing network connections
     - nmap                                                          # Port scanning utility for large networks
+    - rustscan
     - rsync
     - curl
-    - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
+    - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)
+    - wget --with-iri                                               # Internet file retriever
     - lynx                                                          # Text-based web browser
     - httrack                                                       # Website copier/offline browser
     #- iperf
@@ -60,7 +67,8 @@ brew_packages:
     - openssl                                                       # SSL/TLS cryptography library
     #- ssh-copy-id                                                  # Copy identity to authorized keys of remote machine
     - pwgen                                                         # Password generator
-    - testssl                                                       # Tool which checks for the support of TLS/SSL ciphers and flaws
+    #- mkcert                                                       # Local development TLS helper https://github.com/FiloSottile/mkcert
+    - testssl                                                       # Tool which checks for the support of TLS/SSL ciphers and flaws https://testssl.sh/
 
     - watch                                                         # Executes a program periodically, showing output fullscreen
     - htop                                                          # Improved top (interactive process viewer)
@@ -81,6 +89,7 @@ brew_packages:
     - git
     #- git-flow
     #- git-extras
+    #- pre-commit
     - mise
     #- packer
 
@@ -91,7 +100,11 @@ brew_packages:
 
     # AWS
     - awscli
+    #- session-manager-plugin
     #- awsume
+
+    # Google
+    #- gcloud-cli
 
     # Go
     #- go
@@ -100,6 +113,7 @@ brew_packages:
     #- nvm
     #- node
     #- yarn
+    #- deno
 
     # Ruby
     #- rbenv
@@ -116,6 +130,11 @@ brew_packages:
     #- scala
     #- apache-spark
 
+    # Rust
+    #- rust
+    #- rustup
+    #- rustup-init
+
     #- sqlite
     #- postgresql
     - libpq                                                         # Just Postgre tools like psql, pg_dump - see https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos
@@ -123,57 +142,84 @@ brew_packages:
 
     #- openldap                                                     # CLI LDAP tool
     #- tesseract                                                    # OCR (Optical Character Recognition) engine
+    #- tesseract-lang
+
+    # LLM
+    #- ollama
+    #- onnx
+    #- llmfit
 
 brew_cask_packages:
     #- avira-antivirus
     - keepassx
+    - keepassxc
     - bitwarden
+
     #- osxfuse
-    #- cryptomator
+    #- macfuse
+    #- xquartz
+
+    #- font-iosevka                                                 # Possible replacement for Fira https://github.com/be5invis/Iosevka
+    - font-fira-code                                                # Fira Code enables font ligatures for example != https://github.com/tonsky/FiraCode
+    - font-jetbrains-mono-nerd-font
+
     - rectangle                                                     # Resize OS X windows https://github.com/rxhanson/Rectangle replaces spectacle
     #- displayplacer                                                # Arrange OS X screens https://github.com/jakehilborn/displayplacer --> depends on jakehilborn/jakehilborn
     #- iglance                                                      # Status bar system info for OS X https://github.com/iglance/iGlance
     #- istat-menus
-    - caffeine                                                      # Prevent your Mac from automatically going to sleep https://intelliscapesolutions.com/apps/caffeine
     #- aldente                                                      # Battery management https://apphousekitchen.com - replaced by energiza
-    - energiza                                                      # Battery management https://appgineers.de/energiza/
+    #- caffeine                                                     # Prevent your Mac from automatically going to sleep https://intelliscapesolutions.com/apps/caffeine
+    #- energiza                                                     # Battery management https://appgineers.de/energiza/
     #- sound-control                                                # Sound output management https://staticz.com/soundcontrol/
     #- bluesnooze                                                   # Sleeping Mac = Bluetooth off https://github.com/odlp/bluesnooze
 
     - google-chrome
     - firefox
+    #- brave-browser
+    #- thunderbird
+    #- gmvault
 
-    - font-fira-code                                                # Fira Code enables font ligatures for example != https://github.com/tonsky/FiraCode
-    #- font-iosevka                                                 # Possible replacement for Fira https://github.com/be5invis/Iosevka
     - visual-studio-code                                            # Configured in separate role
-    - sourcetree
+    #- zed
+    #- sourcetree
     #- meld
     #- postman
     #- insomnia
+    - bruno
+    - bruno-cli
     - hex-fiend
     #- jetbrains-toolbox
-    #- folx
+
     #- unetbootin
     #- balenaetcher
+    #- usbimager
+    #- raspberry-pi-imager
 
     #- wireshark
     #- wireshark-chmodbpf
     #- charles                                                      # HTTP proxy https://www.charlesproxy.com
-    #- mono-mdk                                                     # Needed by fiddler
     #- fiddler
+    #- mono-mdk                                                     # Needed by fiddler
+    #- tunnelblick
+    #- winbox                                                       # Administration tool for MikroTik RouterOS
+
     #- filezilla
     #- cyberduck
-    #- tunnelblick
+    #- folx
+    #- yt-dlp
 
     - dropbox
+    #- cryptomator
+
     #- rescuetime
     #- tomighty                                                     # No longer used and replaced with next
-    - tomatobar                                                     # Pomodoro timer
+    #- tomatobar                                                    # Pomodoro timer
 
     #- rambox
     #- skype
     #- zoom
     - signal
+    #- rustdesk
 
     #- xmind
     #- freemind
@@ -182,16 +228,24 @@ brew_cask_packages:
     - joplin
     #- portfolioperformance
 
-    #- balsamiq-mockups
-    - imageoptim
-    - gimp
-    #- krita
-    - rar
-    #- pencil
-    #- xquartz
-    #- inkscape
+    #- libreoffice
     #- scribus
+
+    #- balsamiq-mockups
+    #- imageoptim
+    - gimp
+    #- pencil
+    #- krita
+    #- inkscape
+    #- figma
     #- freecad
+    #- balsamiq-wireframes
+    #- origami-studio
+    #- google-web-designer
+
+    #- the-unarchiver
+    #- rar
+
     #- vlc                                                          # Installed via seperate role
     #- elmedia-player                                               # Better VLC alternative
     #- spotify
@@ -199,24 +253,20 @@ brew_cask_packages:
     #- obs                                                          # Screen capturing https://obsproject.com/ driver needed https://obsproject.com/forum/threads/how-to-capture-desktop-audio-on-mac.16491/
     #- calibre                                                      # E-Book manager https://calibre-ebook.com
     - anki
-    #- gmvault
-
-    #- origami-studio
-    #- google-web-designer
 
     # Kubernetes (K8s)
     #- kubernetes-cli                                               # CLI for Kubernetes
     #- kubectx                                                      # Tool that can switch between kubectl contexts easily and create aliases
     #- k9s                                                          # Monitor K8s cluster in CLI
     #- openlens                                                     # Monitor K8s cluster in an app
-    - fzf                                                           # Fuzzy finder for CLI
-    #- mkcert                                                       # Local development TLS helper https://github.com/FiloSottile/mkcert
-    #- testssl                                                      # SSL test tool https://testssl.sh/
+    #- krew
 
     # Virtualisation
-    - docker
+    #- docker
     #- docker-completion
+    #- docker-desktop
     #- podman
+    #- podman-compose
     #- podman-desktop
     #- rancher
     #- kind
@@ -225,11 +275,21 @@ brew_cask_packages:
     #- vagrant-manager
     #- virtualbox
     #- virtualbox-extension-pack
+    #- utm
+
+    # LLM
+    #- ollama-app
+    #- lm-studio
+    #- cursor
+    #- claude-code
+    #- ccusage
+    #- chatgpt
 
     # Java
     #- netbeans
     #- java
     #- java8
+    #- openjdk
     #- jce-unlimited-strength-policy8
 
     # Haskell
