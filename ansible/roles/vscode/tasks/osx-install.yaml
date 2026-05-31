@@ -43,6 +43,11 @@
     - item not in vscode_extensions
   loop: "{{ vscode_extensions_installed.stdout_lines }}"
 
+- name: Create ~/.continue if not exist
+  file:
+    path: "~/.continue"
+    state: directory
+
 - name: Install vscode plugin config for continue
   copy:
     src: "{{ role_path }}/files/continue_config.json"
