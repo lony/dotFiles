@@ -1,8 +1,5 @@
 ---
 
-brew_taps:
-    #- jakehilborn/jakehilborn                                      # needed for displayplacer
-
 brew_packages:
     - dockutil
     - coreutils                                                     # GNU File, Shell, and Text utilities
