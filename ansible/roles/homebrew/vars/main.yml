@@ -1,7 +1,6 @@
 ---
 
 brew_packages:
-    - dockutil
     - coreutils                                                     # GNU File, Shell, and Text utilities
     - binutils                                                      # FSF Binutils for native development
     - diffutils                                                     # File comparison utilities

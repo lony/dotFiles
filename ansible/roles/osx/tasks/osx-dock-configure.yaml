@@ -1,14 +1,18 @@
 ---
 
-# TODO use when brew package is updated to 3.x.x https://github.com/kcrawford/dockutil/issues/127
-# - name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
-#   homebrew:
-#     name: "{{ item.name | default(item) }}"
-#     install_options: "{{ item.install_options | default(omit) }}"
-#     state: present
-#     update_homebrew: yes
-#   loop:
-#     - dockutil
+- name: Check if dockutil package is already installed
+  shell: brew list | grep dockutil
+  register: homebrew_dockutil_installed
+  failed_when: homebrew_dockutil_installed.rc > 1
+
+- name: homebrew install dockutil package see https://github.com/kcrawford/dockutil
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop:
+    - dockutil
+  when: '"dockutil" not in homebrew_dockutil_installed.stdout'
 
 - name: Check dockutil already installed in /usr/local/bin (workaround) [1/4]
   stat:
@@ -32,8 +36,8 @@
   file:
     path: /usr/local/bin/dockutil
     state: file
-    owner: "{{ ansible_real_user_id }}"
-    group: "{{ ansible_real_group_id }}"
+    owner: "{{ ansible_facts['real_user_id'] }}"
+    group: "{{ ansible_facts['real_group_id'] }}"
     mode: '0755'
   become: yes
   when: not dockutil.stat.exists
