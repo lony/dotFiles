@@ -7,6 +7,10 @@
     - travis-do-not
     - corporate-do-not
 
+- name: Execute OSX Terminal install
+  import_tasks: osx-terminal-configure.yaml
+  when: ansible_facts['os_family'] == 'Darwin'
+
 - name: Execute OSX iTerm2 install
   import_tasks: osx-iterm-configure.yaml
   when: ansible_facts['os_family'] == 'Darwin'

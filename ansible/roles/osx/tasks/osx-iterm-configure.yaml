@@ -21,5 +21,5 @@
 - name: Link iterm2 to settings folder
   shell: "{{ item }}"
   loop:
-    - "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '{{ role_path }}/filesIterm'"   # Specify the preferences directory
+    - "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '{{ role_path }}/files/iterm2'"   # Specify the preferences directory
     - "defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true"                     # Tell iTerm2 to use the custom preferences in the directory
