@@ -4,7 +4,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.enablePreviewFromCodeNavigation": false,
-  "workbench.tree.indent": 15,
+  "workbench.tree.indent": 10,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.colorCustomizations": {
     "tree.indentGuidesStroke": "#05ef3c"
@@ -17,8 +17,8 @@
   "workbench.iconTheme": "material-icon-theme",
   /* https://stackoverflow.com/questions/41115285/disable-tooltip-hint-in-visual-studio-code */
   "editor.hover.enabled": false,
-  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 14,
+  "editor.fontFamily": "'JetBrainsMono NF', 'JetBrains Mono', Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "workbench.colorTheme": "One Monokai",
   "[javascript]": {

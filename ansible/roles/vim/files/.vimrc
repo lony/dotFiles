@@ -1,6 +1,6 @@
 " Plugins
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'vim-airline/vim-airline'
 call plug#end()
 let g:airline#extensions#tabline#enabled = 1

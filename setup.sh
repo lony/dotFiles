@@ -24,6 +24,7 @@ SYSTEM_OS="Unknown"
 SYSTEM_OS_VERSION="Unknown"
 PACKAGE_MANAGER="Unknown"
 ROOT_RUN=""
+ANSIBLE_PYTHON_INTERPRETER=auto_silent
 
 
 ## Func

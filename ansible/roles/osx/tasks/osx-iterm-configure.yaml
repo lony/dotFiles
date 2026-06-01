@@ -10,7 +10,7 @@
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
   loop:
-    - iterm2                                                                                                # A better Terminal https://www.iterm2.com
+    - iterm2                                                                                                  # A better Terminal https://www.iterm2.com
   when: "item.name | default(item) not in brew_cask_list.stdout"
 
 # - name: Download iterm2 shell integration
@@ -21,5 +21,5 @@
 - name: Link iterm2 to settings folder
   shell: "{{ item }}"
   loop:
-    - "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '{{ role_path }}/filesIterm'"   # Specify the preferences directory
-    - "defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true"                     # Tell iTerm2 to use the custom preferences in the directory
+    - "defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '{{ role_path }}/files/iterm2'"   # Specify the preferences directory (to view use plutil: -p com.googlecode.iterm2.plist)
+    - "defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true"                       # Tell iTerm2 to use the custom preferences in the directory

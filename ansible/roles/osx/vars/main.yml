@@ -34,21 +34,26 @@ dockutil_remove:
   - "System Preferences"
   - "Freeform"
   - "TextEdit"
+  - "Apps"
+  - "Phone"
+  - "Keynote"
+  - "Numbers"
+  - "Pages"
+  - "Games"
 
 dockutil_persist:
   # List all existing: dockutil --list
   - { name: "Activity Monitor",     path: "/System/Applications/Utilities/Activity Monitor.app",  pos: 1}
-  - { name: "Anki",                 path: "/Applications/Anki.app",                               pos: 2}
-  - { name: "Spotify",              path: "/Applications/Spotify.app",                            pos: 3}
+  - { name: "App Store",            path: "/Applications/App Store.app",                          pos: 2}
+  - { name: "Anki",                 path: "/Applications/Anki.app",                               pos: 3}
   - { name: "Bitwarden",            path: "/Applications/Bitwarden.app",                          pos: 4}
   - { name: "System Settings",      path: "/System/Applications/System Settings.app",             pos: 5}
   - { name: "Joplin",               path: "/Applications/Joplin.app",                             pos: 6}
   - { name: "Preview",              path: "/System/Applications/Preview.app",                     pos: 7}
-  - { name: "App Store",            path: "/Applications/App Store.app",                          pos: 8}
+  - { name: "Firefox",              path: "/Applications/Firefox.app",                            pos: 8}
   - { name: "Visual Studio Code",   path: "/Applications/Visual Studio Code.app",                 pos: 9}
-  - { name: "Google Chrome",        path: "/Applications/Google Chrome.app",                      pos: 10}
-  - { name: "Terminal",             path: "/System/Applications/Utilities/Terminal.app",          pos: 11}
-  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 12}
+  - { name: "Terminal",             path: "/System/Applications/Utilities/Terminal.app",          pos: 10}
+  - { name: "Sublime Text",         path: "/Applications/Sublime Text.app",                       pos: 11}
 
 # See https://github.com/herrbischoff/awesome-osx-command-line
 sys_conf_commands:
@@ -96,7 +101,6 @@ sys_conf_commands:
   - "defaults write com.apple.screensaver askForPasswordDelay -int 0" # -"-
   - "defaults write com.apple.screencapture disable-shadow -bool true" # Screenshots without window shadows
   - "defaults write com.apple.TextEdit RichText -int 0" # Use plain text as default format in TextEdit
-  - "defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25" # Disable the standard delay in rendering safari a web page
 
 sys_conf_commands_private:
   - "launchctl stop com.apple.rcd && launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist" # Disable autostart on bluetooth connect https://apple.stackexchange.com/questions/86315/prevent-itunes-from-opening-when-connecting-bluetooth-headset

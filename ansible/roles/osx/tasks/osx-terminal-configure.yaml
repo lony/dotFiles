@@ -1,0 +1,11 @@
+---
+
+- name: Import profile (to view use plutil -p Clear_Dark__Custom.terminal)
+  shell: "open {{ role_path }}/files/terminal/Clear_Dark__Custom.terminal"
+
+- name: Set imported profile as default
+  shell: "{{ item }}"
+  loop:
+    - "defaults write com.apple.Terminal 'Default Window Settings' -string 'Clear_Dark__Custom'"
+    - "defaults write com.apple.Terminal 'Startup Window Settings' -string 'Clear_Dark__Custom'"
+    - "killall cfprefsd"
